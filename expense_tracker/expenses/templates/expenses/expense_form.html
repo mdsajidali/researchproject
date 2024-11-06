@@ -1,0 +1,15 @@
+{% extends 'expenses/base.html' %}
+
+{% block title %}{{ form_title }}{% endblock %}
+
+{% block content %}
+<h2>{{ form_title }}</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">{{ button_text }}</button>
+</form>
+
+<a href="{% url 'expense_list' %}">Back to Expense List</a>
+{% endblock %}

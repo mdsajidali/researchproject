@@ -1,0 +1,77 @@
+/* expense_list.css */
+
+/* Styling for the container holding both charts */
+.chart-container {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Individual chart styling */
+.chart {
+    width: 250px; /* Sets each chart to occupy 45% of the container width */
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .chart-container {
+        flex-direction: column; /* Stacks charts vertically on smaller screens */
+    }
+}
+
+/* Table and button styling for expenses */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+.button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    max-height: fit-content;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+/* Styling for the home container */
+.container2 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.home-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.home-button:hover {
+    background-color: #0056b3;
+}
+
+.outer_layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
