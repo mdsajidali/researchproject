@@ -2,16 +2,16 @@ pipeline {
     agent any
 
     environment {
-        DEPLOY_HOST = 'your-deployment-ec2-public-ip'
+        DEPLOY_HOST = 'https://ec2-3-255-137-150.eu-west-1.compute.amazonaws.com/'
         DEPLOY_USER = 'ec2-user'
-        DEPLOY_KEY = credentials('your-ssh-key-id') // SSH key credentials stored in Jenkins
+        DEPLOY_KEY = credentials('ec2 ssh creds') // SSH key credentials stored in Jenkins
     }
 
     stages {
         stage('Checkout') {
             steps {
                 // Pull code from GitHub
-                git 'https://github.com/yourusername/your-repo.git'
+                git 'https://github.com/mdsajidali/ncidevopssec_project'
             }
         }
 
@@ -39,7 +39,7 @@ pipeline {
         stage('Deploy to EC2') {
             steps {
                 // Transfer and deploy code to the deployment EC2 instance
-                sshagent(credentials: ['your-ssh-key-id']) {
+                sshagent(credentials: ['ec2 ssh creds']) {
                     sh """
                     scp -o StrictHostKeyChecking=no expense_tracker.tar.gz ${DEPLOY_USER}@${DEPLOY_HOST}:/home/ec2-user/
                     ssh ${DEPLOY_USER}@${DEPLOY_HOST} 'tar -xzvf /home/ec2-user/expense_tracker.tar.gz -C /home/ec2-user/expense_tracker && \
