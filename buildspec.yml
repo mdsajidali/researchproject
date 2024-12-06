@@ -19,4 +19,4 @@ phases:
 artifacts:
   files:
     - '**/*'
-  base-directory: /codebuild/output/src1505004579/src
+
