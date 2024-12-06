@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: "3.9"
+    commands:
+      - pip install --upgrade pip
+      - pip install -r requirements.txt pylint
+      - yum update -y
+      - yum install -y libjpeg-devel zlib-devel
+  pre_build:
+    commands:
+      - pylint $CODEBUILD_SRC_DIR/your_projectname/* || true
+artifacts:
+  files:
+    - '/*'
