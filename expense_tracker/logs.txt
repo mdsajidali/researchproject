@@ -1,140 +1,428 @@
 Retrieving logs...
 ============= i-00b9ba9c6db591a63 ==============
 ----------------------------------------
+/var/log/web.stdout.log
+----------------------------------------
+Dec  7 20:05:17 ip-172-31-32-201 web[63133]:  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+Dec  7 20:05:17 ip-172-31-32-201 web[63133]:  File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
+Dec  7 20:05:17 ip-172-31-32-201 web[63133]: ModuleNotFoundError: No module named 'expense_tracker.wsgi'
+Dec  7 20:05:17 ip-172-31-32-201 web[63133]: [2024-12-07 20:05:17 +0000] [63133] [INFO] Worker exiting (pid: 63133)
+Dec  7 20:05:17 ip-172-31-32-201 web[63129]: [2024-12-07 20:05:17 +0000] [63129] [ERROR] Worker (pid:63133) exited with code 3
+Dec  7 20:05:17 ip-172-31-32-201 web[63129]: [2024-12-07 20:05:17 +0000] [63129] [ERROR] Shutting down: Master
+Dec  7 20:05:17 ip-172-31-32-201 web[63129]: [2024-12-07 20:05:17 +0000] [63129] [ERROR] Reason: Worker failed to boot.
+Dec  7 20:05:17 ip-172-31-32-201 web[63135]: [2024-12-07 20:05:17 +0000] [63135] [INFO] Starting gunicorn 21.2.0
+Dec  7 20:05:17 ip-172-31-32-201 web[63135]: [2024-12-07 20:05:17 +0000] [63135] [INFO] Listening at: http://127.0.0.1:8000 (63135)
+Dec  7 20:05:17 ip-172-31-32-201 web[63135]: [2024-12-07 20:05:17 +0000] [63135] [INFO] Using worker: gthread
+Dec  7 20:05:17 ip-172-31-32-201 web[63140]: [2024-12-07 20:05:17 +0000] [63140] [INFO] Booting worker with pid: 63140
+Dec  7 20:05:17 ip-172-31-32-201 web[63140]: [2024-12-07 20:05:17 +0000] [63140] [ERROR] Exception in worker process
+Dec  7 20:05:17 ip-172-31-32-201 web[63140]: Traceback (most recent call last):
+Dec  7 20:05:17 ip-172-31-32-201 web[63140]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+Dec  7 20:05:17 ip-172-31-32-201 web[63140]:    worker.init_process()
+Dec  7 20:05:17 ip-172-31-32-201 web[63140]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
+Dec  7 20:05:17 ip-172-31-32-201 web[63140]:    super().init_process()
+Dec  7 20:05:17 ip-172-31-32-201 web[63140]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+Dec  7 20:05:17 ip-172-31-32-201 web[63140]:    self.load_wsgi()
+Dec  7 20:05:17 ip-172-31-32-201 web[63140]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+Dec  7 20:05:17 ip-172-31-32-201 web[63140]:    self.wsgi = self.app.wsgi()
+Dec  7 20:05:17 ip-172-31-32-201 web[63140]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Dec  7 20:05:17 ip-172-31-32-201 web[63140]:    self.callable = self.load()
+Dec  7 20:05:17 ip-172-31-32-201 web[63140]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+Dec  7 20:05:17 ip-172-31-32-201 web[63140]:    return self.load_wsgiapp()
+Dec  7 20:05:17 ip-172-31-32-201 web[63140]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+Dec  7 20:05:17 ip-172-31-32-201 web[63140]:    return util.import_app(self.app_uri)
+Dec  7 20:05:17 ip-172-31-32-201 web[63140]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+Dec  7 20:05:17 ip-172-31-32-201 web[63140]:    mod = importlib.import_module(module)
+Dec  7 20:05:17 ip-172-31-32-201 web[63140]:  File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
+Dec  7 20:05:17 ip-172-31-32-201 web[63140]:    return _bootstrap._gcd_import(name[level:], package, level)
+Dec  7 20:05:17 ip-172-31-32-201 web[63140]:  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+Dec  7 20:05:17 ip-172-31-32-201 web[63140]:  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+Dec  7 20:05:17 ip-172-31-32-201 web[63140]:  File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
+Dec  7 20:05:17 ip-172-31-32-201 web[63140]: ModuleNotFoundError: No module named 'expense_tracker.wsgi'
+Dec  7 20:05:17 ip-172-31-32-201 web[63140]: [2024-12-07 20:05:17 +0000] [63140] [INFO] Worker exiting (pid: 63140)
+Dec  7 20:05:17 ip-172-31-32-201 web[63135]: [2024-12-07 20:05:17 +0000] [63135] [ERROR] Worker (pid:63140) exited with code 3
+Dec  7 20:05:17 ip-172-31-32-201 web[63135]: [2024-12-07 20:05:17 +0000] [63135] [ERROR] Shutting down: Master
+Dec  7 20:05:17 ip-172-31-32-201 web[63135]: [2024-12-07 20:05:17 +0000] [63135] [ERROR] Reason: Worker failed to boot.
+Dec  7 20:25:21 ip-172-31-32-201 web[64217]: [2024-12-07 20:25:21 +0000] [64217] [INFO] Starting gunicorn 21.2.0
+Dec  7 20:25:21 ip-172-31-32-201 web[64217]: [2024-12-07 20:25:21 +0000] [64217] [INFO] Listening at: http://127.0.0.1:8000 (64217)
+Dec  7 20:25:21 ip-172-31-32-201 web[64217]: [2024-12-07 20:25:21 +0000] [64217] [INFO] Using worker: gthread
+Dec  7 20:25:21 ip-172-31-32-201 web[64225]: [2024-12-07 20:25:21 +0000] [64225] [INFO] Booting worker with pid: 64225
+Dec  7 20:32:57 ip-172-31-32-201 web[1427]: [2024-12-07 20:32:57 +0000] [1427] [INFO] Starting gunicorn 21.2.0
+Dec  7 20:32:57 ip-172-31-32-201 web[1427]: [2024-12-07 20:32:57 +0000] [1427] [INFO] Listening at: http://127.0.0.1:8000 (1427)
+Dec  7 20:32:57 ip-172-31-32-201 web[1427]: [2024-12-07 20:32:57 +0000] [1427] [INFO] Using worker: gthread
+Dec  7 20:32:57 ip-172-31-32-201 web[1468]: [2024-12-07 20:32:57 +0000] [1468] [INFO] Booting worker with pid: 1468
+Dec  7 20:33:11 ip-172-31-32-201 web[1427]: [2024-12-07 20:33:11 +0000] [1427] [INFO] Handling signal: term
+Dec  7 20:33:12 ip-172-31-32-201 web[1468]: [2024-12-07 20:33:12 +0000] [1468] [INFO] Worker exiting (pid: 1468)
+Dec  7 20:33:12 ip-172-31-32-201 web[1427]: [2024-12-07 20:33:12 +0000] [1427] [INFO] Shutting down: Master
+Dec  7 20:33:12 ip-172-31-32-201 web[1944]: [2024-12-07 20:33:12 +0000] [1944] [INFO] Starting gunicorn 21.2.0
+Dec  7 20:33:12 ip-172-31-32-201 web[1944]: [2024-12-07 20:33:12 +0000] [1944] [INFO] Listening at: http://127.0.0.1:8000 (1944)
+Dec  7 20:33:12 ip-172-31-32-201 web[1944]: [2024-12-07 20:33:12 +0000] [1944] [INFO] Using worker: gthread
+Dec  7 20:33:12 ip-172-31-32-201 web[1953]: [2024-12-07 20:33:12 +0000] [1953] [INFO] Booting worker with pid: 1953
+Dec  7 20:33:16 ip-172-31-32-201 web[1944]: [2024-12-07 20:33:16 +0000] [1944] [INFO] Handling signal: term
+Dec  7 20:33:17 ip-172-31-32-201 web[1953]: [2024-12-07 20:33:17 +0000] [1953] [INFO] Worker exiting (pid: 1953)
+Dec  7 20:33:17 ip-172-31-32-201 web[1944]: [2024-12-07 20:33:17 +0000] [1944] [INFO] Shutting down: Master
+Dec  7 20:33:20 ip-172-31-32-201 web[2161]: [2024-12-07 20:33:20 +0000] [2161] [INFO] Starting gunicorn 21.2.0
+Dec  7 20:33:20 ip-172-31-32-201 web[2161]: [2024-12-07 20:33:20 +0000] [2161] [INFO] Listening at: http://127.0.0.1:8000 (2161)
+Dec  7 20:33:20 ip-172-31-32-201 web[2161]: [2024-12-07 20:33:20 +0000] [2161] [INFO] Using worker: gthread
+Dec  7 20:33:20 ip-172-31-32-201 web[2170]: [2024-12-07 20:33:20 +0000] [2170] [INFO] Booting worker with pid: 2170
+Dec  7 20:46:32 ip-172-31-32-201 web[2161]: [2024-12-07 20:46:32 +0000] [2161] [INFO] Handling signal: term
+Dec  7 20:46:32 ip-172-31-32-201 web[2170]: [2024-12-07 20:46:32 +0000] [2170] [INFO] Worker exiting (pid: 2170)
+Dec  7 20:46:32 ip-172-31-32-201 web[2161]: [2024-12-07 20:46:32 +0000] [2161] [INFO] Shutting down: Master
+Dec  7 20:46:33 ip-172-31-32-201 web[2708]: [2024-12-07 20:46:33 +0000] [2708] [INFO] Starting gunicorn 21.2.0
+Dec  7 20:46:33 ip-172-31-32-201 web[2708]: [2024-12-07 20:46:33 +0000] [2708] [INFO] Listening at: http://127.0.0.1:8000 (2708)
+Dec  7 20:46:33 ip-172-31-32-201 web[2708]: [2024-12-07 20:46:33 +0000] [2708] [INFO] Using worker: gthread
+Dec  7 20:46:33 ip-172-31-32-201 web[2713]: [2024-12-07 20:46:33 +0000] [2713] [INFO] Booting worker with pid: 2713
+Dec  7 21:04:36 ip-172-31-32-201 web[1432]: [2024-12-07 21:04:36 +0000] [1432] [INFO] Starting gunicorn 21.2.0
+Dec  7 21:04:36 ip-172-31-32-201 web[1432]: [2024-12-07 21:04:36 +0000] [1432] [INFO] Listening at: http://127.0.0.1:8000 (1432)
+Dec  7 21:04:36 ip-172-31-32-201 web[1432]: [2024-12-07 21:04:36 +0000] [1432] [INFO] Using worker: gthread
+Dec  7 21:04:36 ip-172-31-32-201 web[1458]: [2024-12-07 21:04:36 +0000] [1458] [INFO] Booting worker with pid: 1458
+Dec  7 21:04:56 ip-172-31-32-201 web[1432]: [2024-12-07 21:04:56 +0000] [1432] [INFO] Handling signal: term
+Dec  7 21:04:57 ip-172-31-32-201 web[1458]: [2024-12-07 21:04:57 +0000] [1458] [INFO] Worker exiting (pid: 1458)
+Dec  7 21:04:57 ip-172-31-32-201 web[1432]: [2024-12-07 21:04:57 +0000] [1432] [INFO] Shutting down: Master
+Dec  7 21:05:00 ip-172-31-32-201 web[2111]: [2024-12-07 21:05:00 +0000] [2111] [INFO] Starting gunicorn 21.2.0
+Dec  7 21:05:00 ip-172-31-32-201 web[2111]: [2024-12-07 21:05:00 +0000] [2111] [INFO] Listening at: http://127.0.0.1:8000 (2111)
+Dec  7 21:05:00 ip-172-31-32-201 web[2111]: [2024-12-07 21:05:00 +0000] [2111] [INFO] Using worker: gthread
+Dec  7 21:05:00 ip-172-31-32-201 web[2121]: [2024-12-07 21:05:00 +0000] [2121] [INFO] Booting worker with pid: 2121
+Dec  7 21:07:39 ip-172-31-32-201 web[2111]: [2024-12-07 21:07:39 +0000] [2111] [INFO] Handling signal: term
+Dec  7 21:07:40 ip-172-31-32-201 web[2121]: [2024-12-07 21:07:40 +0000] [2121] [INFO] Worker exiting (pid: 2121)
+Dec  7 21:07:40 ip-172-31-32-201 web[2111]: [2024-12-07 21:07:40 +0000] [2111] [INFO] Shutting down: Master
+Dec  7 21:07:42 ip-172-31-32-201 web[2717]: [2024-12-07 21:07:42 +0000] [2717] [INFO] Starting gunicorn 21.2.0
+Dec  7 21:07:42 ip-172-31-32-201 web[2717]: [2024-12-07 21:07:42 +0000] [2717] [INFO] Listening at: http://127.0.0.1:8000 (2717)
+Dec  7 21:07:42 ip-172-31-32-201 web[2717]: [2024-12-07 21:07:42 +0000] [2717] [INFO] Using worker: gthread
+Dec  7 21:07:42 ip-172-31-32-201 web[2744]: [2024-12-07 21:07:42 +0000] [2744] [INFO] Booting worker with pid: 2744
+Dec  7 21:15:53 ip-172-31-32-201 web[2717]: [2024-12-07 21:15:53 +0000] [2717] [INFO] Handling signal: term
+Dec  7 21:15:53 ip-172-31-32-201 web[2744]: [2024-12-07 21:15:53 +0000] [2744] [INFO] Worker exiting (pid: 2744)
+Dec  7 21:15:53 ip-172-31-32-201 web[2717]: [2024-12-07 21:15:53 +0000] [2717] [INFO] Shutting down: Master
+Dec  7 21:15:55 ip-172-31-32-201 web[3476]: [2024-12-07 21:15:55 +0000] [3476] [INFO] Starting gunicorn 21.2.0
+Dec  7 21:15:55 ip-172-31-32-201 web[3476]: [2024-12-07 21:15:55 +0000] [3476] [INFO] Listening at: http://127.0.0.1:8000 (3476)
+Dec  7 21:15:55 ip-172-31-32-201 web[3476]: [2024-12-07 21:15:55 +0000] [3476] [INFO] Using worker: gthread
+Dec  7 21:15:55 ip-172-31-32-201 web[3484]: [2024-12-07 21:15:55 +0000] [3484] [INFO] Booting worker with pid: 3484
+Dec  7 21:27:16 ip-172-31-32-201 web[3476]: [2024-12-07 21:27:16 +0000] [3476] [INFO] Handling signal: term
+Dec  7 21:27:17 ip-172-31-32-201 web[3484]: [2024-12-07 21:27:17 +0000] [3484] [INFO] Worker exiting (pid: 3484)
+Dec  7 21:27:17 ip-172-31-32-201 web[3476]: [2024-12-07 21:27:17 +0000] [3476] [INFO] Shutting down: Master
+Dec  7 21:27:19 ip-172-31-32-201 web[4344]: [2024-12-07 21:27:19 +0000] [4344] [INFO] Starting gunicorn 21.2.0
+Dec  7 21:27:19 ip-172-31-32-201 web[4344]: [2024-12-07 21:27:19 +0000] [4344] [INFO] Listening at: http://127.0.0.1:8000 (4344)
+Dec  7 21:27:19 ip-172-31-32-201 web[4344]: [2024-12-07 21:27:19 +0000] [4344] [INFO] Using worker: gthread
+Dec  7 21:27:19 ip-172-31-32-201 web[4352]: [2024-12-07 21:27:19 +0000] [4352] [INFO] Booting worker with pid: 4352
+
+
+----------------------------------------
+/var/log/eb-engine.log
+----------------------------------------
+2024/12/07 21:31:51.892214 [INFO] This is a web server environment instance, skip stop sqsd daemon ...
+2024/12/07 21:31:51.892218 [INFO] Executing instruction: PreBuildEbExtension
+2024/12/07 21:31:51.892222 [INFO] Starting executing the config set Infra-EmbeddedPreBuild.
+2024/12/07 21:31:51.892265 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-init -s arn:aws:cloudformation:eu-west-1:250738637992:stack/awseb-e-ii2fhia2ez-stack/5b6abbb0-b3ec-11ef-b3e9-06dab945c80f -r AWSEBAutoScalingGroup --region eu-west-1 --configsets Infra-EmbeddedPreBuild
+2024/12/07 21:31:52.292395 [INFO] Finished executing the config set Infra-EmbeddedPreBuild.
+
+2024/12/07 21:31:52.292416 [INFO] Executing instruction: StageApplication
+2024/12/07 21:31:52.292658 [INFO] extracting /opt/elasticbeanstalk/deployment/app_source_bundle to /var/app/staging/
+2024/12/07 21:31:52.292672 [INFO] Running command /bin/sh -c /usr/bin/unzip -q -o /opt/elasticbeanstalk/deployment/app_source_bundle -d /var/app/staging/
+2024/12/07 21:31:52.342554 [INFO] finished extracting /opt/elasticbeanstalk/deployment/app_source_bundle to /var/app/staging/ successfully
+2024/12/07 21:31:52.346375 [INFO] Executing instruction: RunAppDeployPreBuildHooks
+2024/12/07 21:31:52.346389 [WARN] skipping hooks scripts under /opt/elasticbeanstalk/hooks/
+2024/12/07 21:31:52.346400 [INFO] Executing platform hooks in .platform/hooks/prebuild/
+2024/12/07 21:31:52.346418 [INFO] The dir .platform/hooks/prebuild/ does not exist
+2024/12/07 21:31:52.346420 [INFO] Finished running scripts in /var/app/staging/.platform/hooks/prebuild
+2024/12/07 21:31:52.346425 [INFO] Executing instruction: InstallDependency
+2024/12/07 21:31:52.346429 [INFO] checking dependencies file
+2024/12/07 21:31:52.346442 [INFO] Installing dependencies with requirements.txt by using Pip
+2024/12/07 21:31:52.346452 [INFO] Running command /bin/sh -c /var/app/venv/staging-LQM1lest/bin/pip install -r requirements.txt
+2024/12/07 21:31:52.829445 [INFO] Requirement already satisfied: asgiref==3.8.1 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 1)) (3.8.1)
+Requirement already satisfied: Django==4.2.16 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 2)) (4.2.16)
+Requirement already satisfied: gunicorn in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 3)) (21.2.0)
+Requirement already satisfied: sqlparse==0.5.1 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 4)) (0.5.1)
+Requirement already satisfied: typing_extensions==4.12.2 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 5)) (4.12.2)
+Requirement already satisfied: packaging in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from gunicorn->-r requirements.txt (line 3)) (23.2)
+
+2024/12/07 21:31:52.829517 [INFO] WARNING: You are using pip version 21.3.1; however, version 24.3.1 is available.
+You should consider upgrading via the '/var/app/venv/staging-LQM1lest/bin/python3.9 -m pip install --upgrade pip' command.
+
+2024/12/07 21:31:52.829525 [INFO] Executing instruction: check Procfile
+2024/12/07 21:31:52.829577 [INFO] creating default Procfile...
+2024/12/07 21:31:52.829942 [INFO] Executing instruction: configure X-Ray
+2024/12/07 21:31:52.829948 [INFO] X-Ray is not enabled.
+2024/12/07 21:31:52.829952 [INFO] Executing instruction: configure proxy server
+2024/12/07 21:31:52.833502 [WARN] skipping nginx folder under .ebextensions
+2024/12/07 21:31:52.833526 [INFO] Running command /bin/sh -c cp -rp /var/app/staging/.platform/nginx/. /var/proxy/staging/nginx
+2024/12/07 21:31:52.841980 [INFO] Executing instruction: configure healthd specific proxy conf
+2024/12/07 21:31:52.844037 [INFO] Running command /bin/sh -c systemctl show -p PartOf healthd.service
+2024/12/07 21:31:52.856504 [WARN] Warning: process healthd is already registered...
+Deregistering the process ...
+2024/12/07 21:31:52.856559 [INFO] Running command /bin/sh -c systemctl show -p PartOf healthd.service
+2024/12/07 21:31:52.867359 [INFO] Running command /bin/sh -c systemctl is-active healthd.service
+2024/12/07 21:31:52.875549 [INFO] Running command /bin/sh -c systemctl show -p PartOf healthd.service
+2024/12/07 21:31:52.886388 [INFO] Running command /bin/sh -c systemctl stop healthd.service
+2024/12/07 21:31:52.944956 [INFO] Running command /bin/sh -c systemctl disable healthd.service
+2024/12/07 21:31:53.208540 [INFO] Removed "/etc/systemd/system/multi-user.target.wants/healthd.service".
+
+2024/12/07 21:31:53.208804 [INFO] Running command /bin/sh -c systemctl daemon-reload
+2024/12/07 21:31:53.462998 [INFO] Running command /bin/sh -c systemctl reset-failed
+2024/12/07 21:31:53.473902 [INFO] Running command /bin/sh -c systemctl daemon-reload
+2024/12/07 21:31:53.806520 [INFO] Running command /bin/sh -c systemctl reset-failed
+2024/12/07 21:31:53.816489 [INFO] Running command /bin/sh -c systemctl is-enabled aws-eb.target
+2024/12/07 21:31:53.824936 [INFO] Running command /bin/sh -c systemctl enable aws-eb.target
+2024/12/07 21:31:54.080838 [INFO] Running command /bin/sh -c systemctl start aws-eb.target
+2024/12/07 21:31:54.090558 [INFO] Running command /bin/sh -c systemctl enable healthd.service
+2024/12/07 21:31:54.379513 [INFO] Created symlink /etc/systemd/system/multi-user.target.wants/healthd.service → /etc/systemd/system/healthd.service.
+
+2024/12/07 21:31:54.379550 [INFO] Running command /bin/sh -c systemctl show -p PartOf healthd.service
+2024/12/07 21:31:54.390564 [INFO] Running command /bin/sh -c systemctl is-active healthd.service
+2024/12/07 21:31:54.397931 [INFO] Running command /bin/sh -c systemctl start healthd.service
+2024/12/07 21:31:54.447482 [INFO] Copying file /opt/elasticbeanstalk/config/private/healthd/healthd_logformat.conf to /var/proxy/staging/nginx/conf.d/healthd_logformat.conf
+2024/12/07 21:31:54.448677 [INFO] Copying file /opt/elasticbeanstalk/config/private/healthd/healthd_nginx.conf to /var/proxy/staging/nginx/conf.d/elasticbeanstalk/healthd.conf
+2024/12/07 21:31:54.449808 [INFO] Executing instruction: configure log streaming
+2024/12/07 21:31:54.449819 [INFO] log streaming is not enabled
+2024/12/07 21:31:54.449822 [INFO] disable log stream
+2024/12/07 21:31:54.449837 [INFO] Running command /bin/sh -c systemctl show -p PartOf amazon-cloudwatch-agent.service
+2024/12/07 21:31:54.467190 [INFO] Running command /bin/sh -c systemctl stop amazon-cloudwatch-agent.service
+2024/12/07 21:31:54.484250 [INFO] Executing instruction: GetToggleForceRotate
+2024/12/07 21:31:54.484276 [INFO] Checking if logs need forced rotation
+2024/12/07 21:31:54.484296 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:eu-west-1:250738637992:stack/awseb-e-ii2fhia2ez-stack/5b6abbb0-b3ec-11ef-b3e9-06dab945c80f -r AWSEBAutoScalingGroup --region eu-west-1
+2024/12/07 21:31:54.954259 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:eu-west-1:250738637992:stack/awseb-e-ii2fhia2ez-stack/5b6abbb0-b3ec-11ef-b3e9-06dab945c80f -r AWSEBBeanstalkMetadata --region eu-west-1
+2024/12/07 21:31:55.332172 [INFO] Generating rsyslog config from Procfile
+2024/12/07 21:31:55.334206 [INFO] Running command /bin/sh -c systemctl restart rsyslog.service
+2024/12/07 21:31:55.407445 [INFO] Executing instruction: PostBuildEbExtension
+2024/12/07 21:31:55.407474 [INFO] Starting executing the config set Infra-EmbeddedPostBuild.
+2024/12/07 21:31:55.407487 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-init -s arn:aws:cloudformation:eu-west-1:250738637992:stack/awseb-e-ii2fhia2ez-stack/5b6abbb0-b3ec-11ef-b3e9-06dab945c80f -r AWSEBAutoScalingGroup --region eu-west-1 --configsets Infra-EmbeddedPostBuild
+2024/12/07 21:31:56.113075 [INFO] Error occurred during build: Command 01_collectstatic failed
+
+2024/12/07 21:31:56.113100 [ERROR] An error occurred during execution of command [app-deploy] - [PostBuildEbExtension]. Stop running the command. Error: container commands build failed. Please refer to /var/log/cfn-init.log for more details. 
+
+2024/12/07 21:31:56.113104 [INFO] Executing cleanup logic
+2024/12/07 21:31:56.113189 [INFO] CommandService Response: {"status":"FAILURE","api_version":"1.0","results":[{"status":"FAILURE","msg":"Engine execution has encountered an error.","returncode":1,"events":[{"msg":"Instance deployment successfully generated a 'Procfile'.","timestamp":1733607112829,"severity":"INFO"},{"msg":"Instance deployment failed. For details, see 'eb-engine.log'.","timestamp":1733607116113,"severity":"ERROR"}]}]}
+
+2024/12/07 21:31:56.114219 [INFO] Platform Engine finished execution on command: app-deploy
+
+2024/12/07 21:32:43.901410 [INFO] Starting...
+2024/12/07 21:32:43.901465 [INFO] Starting EBPlatform-PlatformEngine
+2024/12/07 21:32:43.901494 [INFO] reading event message file
+2024/12/07 21:32:43.901739 [INFO] Engine received EB command cfn-hup-exec
+
+2024/12/07 21:32:43.971795 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:eu-west-1:250738637992:stack/awseb-e-ii2fhia2ez-stack/5b6abbb0-b3ec-11ef-b3e9-06dab945c80f -r AWSEBAutoScalingGroup --region eu-west-1
+2024/12/07 21:32:44.296886 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:eu-west-1:250738637992:stack/awseb-e-ii2fhia2ez-stack/5b6abbb0-b3ec-11ef-b3e9-06dab945c80f -r AWSEBBeanstalkMetadata --region eu-west-1
+2024/12/07 21:32:44.698912 [INFO] checking whether command tail-log is applicable to this instance...
+2024/12/07 21:32:44.698922 [INFO] this command is applicable to the instance, thus instance should execute command
+2024/12/07 21:32:44.698925 [INFO] Engine command: (tail-log)
+
+2024/12/07 21:32:44.698971 [INFO] Executing instruction: GetTailLogs
+2024/12/07 21:32:44.698973 [INFO] Tail Logs...
+2024/12/07 21:32:44.700245 [INFO] Running command /bin/sh -c tail -n 100 /var/log/web.stdout.log
+2024/12/07 21:32:44.703811 [INFO] Running command /bin/sh -c tail -n 100 /var/log/eb-engine.log
+
+
+----------------------------------------
 /var/log/eb-hooks.log
 ----------------------------------------
+  Apply all migrations: admin, auth, contenttypes, expenses, sessions
+Running migrations:
+  No migrations to apply.
+
+2024/12/07 20:25:18.954372 [INFO] WARNING: You are using pip version 21.3.1; however, version 24.3.1 is available.
+You should consider upgrading via the '/var/app/venv/staging-LQM1lest/bin/python3.9 -m pip install --upgrade pip' command.
+
+2024/12/07 20:33:12.660791 [INFO] Running command .platform/hooks/predeploy/01_setup.sh
+2024/12/07 20:33:15.146694 [INFO] Requirement already satisfied: asgiref==3.8.1 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 1)) (3.8.1)
+Requirement already satisfied: Django==4.2.16 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 2)) (4.2.16)
+Requirement already satisfied: sqlparse==0.5.1 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 3)) (0.5.1)
+Requirement already satisfied: typing_extensions==4.12.2 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 4)) (4.12.2)
+Requirement already satisfied: gunicorn==21.2.0 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 5)) (21.2.0)
+Requirement already satisfied: packaging in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from gunicorn==21.2.0->-r requirements.txt (line 5)) (23.2)
+
+0 static files copied to '/var/app/staging/staticfiles', 128 unmodified.
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, expenses, sessions
+Running migrations:
+  No migrations to apply.
+
+2024/12/07 20:33:15.146721 [INFO] WARNING: You are using pip version 21.3.1; however, version 24.3.1 is available.
+You should consider upgrading via the '/var/app/venv/staging-LQM1lest/bin/python3.9 -m pip install --upgrade pip' command.
+
+2024/12/07 21:04:53.157504 [INFO] Running command .platform/hooks/predeploy/01_setup.sh
+2024/12/07 21:04:55.743210 [INFO] Requirement already satisfied: asgiref==3.8.1 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 1)) (3.8.1)
+Requirement already satisfied: Django==4.2.16 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 2)) (4.2.16)
+Requirement already satisfied: sqlparse==0.5.1 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 3)) (0.5.1)
+Requirement already satisfied: typing_extensions==4.12.2 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 4)) (4.12.2)
+Requirement already satisfied: gunicorn==21.2.0 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 5)) (21.2.0)
+Requirement already satisfied: packaging in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from gunicorn==21.2.0->-r requirements.txt (line 5)) (23.2)
+
+0 static files copied to '/var/app/staging/staticfiles', 128 unmodified.
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, expenses, sessions
+Running migrations:
+  No migrations to apply.
+
+2024/12/07 21:04:55.743267 [INFO] WARNING: You are using pip version 21.3.1; however, version 24.3.1 is available.
+You should consider upgrading via the '/var/app/venv/staging-LQM1lest/bin/python3.9 -m pip install --upgrade pip' command.
+
+2024/12/07 21:07:36.940830 [INFO] Running command .platform/hooks/predeploy/01_setup.sh
+2024/12/07 21:07:38.305074 [INFO] Requirement already satisfied: asgiref==3.8.1 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 1)) (3.8.1)
+Requirement already satisfied: Django==4.2.16 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 2)) (4.2.16)
+Requirement already satisfied: gunicorn in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 3)) (21.2.0)
+Requirement already satisfied: sqlparse==0.5.1 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 4)) (0.5.1)
+Requirement already satisfied: typing_extensions==4.12.2 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 5)) (4.12.2)
+Requirement already satisfied: packaging in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from gunicorn->-r requirements.txt (line 3)) (23.2)
+
+0 static files copied to '/var/app/staging/staticfiles', 128 unmodified.
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, expenses, sessions
+Running migrations:
+  No migrations to apply.
+
+2024/12/07 21:07:38.305098 [INFO] WARNING: You are using pip version 21.3.1; however, version 24.3.1 is available.
+You should consider upgrading via the '/var/app/venv/staging-LQM1lest/bin/python3.9 -m pip install --upgrade pip' command.
+
+2024/12/07 21:15:51.347748 [INFO] Running command .platform/hooks/predeploy/01_setup.sh
+2024/12/07 21:15:52.577470 [INFO] Requirement already satisfied: asgiref==3.8.1 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 1)) (3.8.1)
+Requirement already satisfied: Django==4.2.16 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 2)) (4.2.16)
+Requirement already satisfied: gunicorn in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 3)) (21.2.0)
+Requirement already satisfied: sqlparse==0.5.1 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 4)) (0.5.1)
+Requirement already satisfied: typing_extensions==4.12.2 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 5)) (4.12.2)
+Requirement already satisfied: packaging in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from gunicorn->-r requirements.txt (line 3)) (23.2)
+
+0 static files copied to '/var/app/staging/staticfiles', 128 unmodified.
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, expenses, sessions
+Running migrations:
+  No migrations to apply.
+
+2024/12/07 21:15:52.577498 [INFO] WARNING: You are using pip version 21.3.1; however, version 24.3.1 is available.
+You should consider upgrading via the '/var/app/venv/staging-LQM1lest/bin/python3.9 -m pip install --upgrade pip' command.
+
+2024/12/07 21:27:14.367728 [INFO] Running command .platform/hooks/predeploy/01_setup.sh
+2024/12/07 21:27:15.717744 [INFO] Requirement already satisfied: asgiref==3.8.1 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 1)) (3.8.1)
+Requirement already satisfied: Django==4.2.16 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 2)) (4.2.16)
+Requirement already satisfied: gunicorn in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 3)) (21.2.0)
+Requirement already satisfied: sqlparse==0.5.1 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 4)) (0.5.1)
+Requirement already satisfied: typing_extensions==4.12.2 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 5)) (4.12.2)
+Requirement already satisfied: packaging in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from gunicorn->-r requirements.txt (line 3)) (23.2)
+
+0 static files copied to '/var/app/staging/static', 125 unmodified.
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, expenses, sessions
+Running migrations:
+  No migrations to apply.
+
+2024/12/07 21:27:15.717777 [INFO] WARNING: You are using pip version 21.3.1; however, version 24.3.1 is available.
+You should consider upgrading via the '/var/app/venv/staging-LQM1lest/bin/python3.9 -m pip install --upgrade pip' command.
+System check identified some issues:
+
+WARNINGS:
+?: (staticfiles.W004) The directory '/var/app/staging/expenses/static' in the STATICFILES_DIRS setting does not exist.
+System check identified some issues:
+
+WARNINGS:
+?: (staticfiles.W004) The directory '/var/app/staging/expenses/static' in the STATICFILES_DIRS setting does not exist.
+
 
 
 ----------------------------------------
 /var/log/nginx/access.log
 ----------------------------------------
-172.31.32.88 - - [07/Dec/2024:17:30:46 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:30:52 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:31:01 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:31:07 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:31:16 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:31:22 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:31:32 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:31:37 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:31:47 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:31:52 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:32:02 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:32:07 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:32:17 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:32:22 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:32:32 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:32:37 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:32:47 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:32:52 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:33:02 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:33:07 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:33:17 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:33:22 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:33:32 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:33:37 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:33:47 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:33:52 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:34:02 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:34:07 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:34:17 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:34:22 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:34:32 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:34:37 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:34:47 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:34:52 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:35:02 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:35:07 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:35:17 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:35:22 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:35:32 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:35:37 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:35:47 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:35:52 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:36:02 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:36:07 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:36:17 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:36:22 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:36:32 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:36:37 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:36:47 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:36:52 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:37:02 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:37:07 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:37:17 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:37:22 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:37:32 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:37:33 +0000] "GET /.env HTTP/1.1" 502 552 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.5845.140 Safari/537.36" "51.161.83.117"
-172.31.15.41 - - [07/Dec/2024:17:37:33 +0000] "POST / HTTP/1.1" 502 552 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.5845.140 Safari/537.36" "51.161.83.117"
-172.31.15.41 - - [07/Dec/2024:17:37:37 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:37:47 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:37:52 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:38:02 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:38:07 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:38:17 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:38:22 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:38:32 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:38:37 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:38:47 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:38:52 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:39:02 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:39:07 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:39:09 +0000] "GET / HTTP/1.1" 502 150 "-" "Mozilla/5.0 (Linux; U; Android 4.0.3; ko-kr; LG-L160L Build/IML74K) AppleWebkit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30" "1.231.222.25"
-172.31.32.88 - - [07/Dec/2024:17:39:17 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:39:22 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:39:32 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:39:37 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:39:47 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:39:53 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:40:02 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:40:08 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:40:17 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:40:23 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:40:32 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:40:38 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:40:47 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:40:53 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:41:02 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:41:08 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:41:17 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:41:23 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:41:32 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:41:38 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:41:47 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:41:53 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:42:02 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:42:08 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:42:17 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:42:23 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:42:32 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:17:42:38 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:17:42:47 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:21:00 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:21:00 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:21:15 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:21:15 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:21:30 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:21:30 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:21:45 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:21:45 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:22:00 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:22:00 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:22:15 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:22:15 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:22:30 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:22:30 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:22:45 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:22:45 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:23:00 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:23:00 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:23:15 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:23:15 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:23:30 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:23:30 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:23:45 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:23:45 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:24:00 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:24:00 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:24:15 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:24:15 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:24:18 +0000] "HEAD /Core/Skin/Login.aspx HTTP/1.1" 404 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" "101.32.192.203"
+172.31.32.88 - - [07/Dec/2024:21:24:30 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:24:30 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:24:45 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:24:45 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:25:00 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:25:00 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:25:15 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:25:15 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:25:30 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:25:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:25:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:25:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:26:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:26:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:26:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:26:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:26:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:26:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:26:40 +0000] "GET /.env HTTP/1.1" 404 179 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.5845.140 Safari/537.36" "51.161.83.117"
+172.31.15.41 - - [07/Dec/2024:21:26:40 +0000] "POST / HTTP/1.1" 403 1382 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.5845.140 Safari/537.36" "51.161.83.117"
+172.31.32.88 - - [07/Dec/2024:21:26:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:26:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:27:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:27:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:27:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:27:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:27:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:27:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:28:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:28:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:28:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:28:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:28:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:28:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:28:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:28:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:29:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:29:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:29:02 +0000] "GET / HTTP/1.1" 200 979 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
+172.31.32.88 - - [07/Dec/2024:21:29:03 +0000] "GET /static/expenses/styles.css HTTP/1.1" 404 179 "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
+172.31.32.88 - - [07/Dec/2024:21:29:03 +0000] "GET /static/styles.css HTTP/1.1" 404 179 "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
+172.31.32.88 - - [07/Dec/2024:21:29:03 +0000] "GET /static/expenses/expense_list.css HTTP/1.1" 404 179 "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
+172.31.32.88 - - [07/Dec/2024:21:29:03 +0000] "GET /static/expenses/expense_list_styles.css HTTP/1.1" 404 179 "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
+172.31.32.88 - - [07/Dec/2024:21:29:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:29:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:29:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:29:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:29:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:29:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:30:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:30:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:30:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:30:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:30:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:30:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:30:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:30:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:31:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:31:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:31:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:31:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:31:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:31:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:31:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:31:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:32:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:32:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:32:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:32:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:32:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:32:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
 
 
 ----------------------------------------
 /var/log/nginx/error.log
 ----------------------------------------
-2024/12/07 17:33:22 [error] 54069#54069: *282 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:33:32 [error] 54069#54069: *284 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:33:37 [error] 54069#54069: *286 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:33:47 [error] 54069#54069: *288 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:33:52 [error] 54069#54069: *290 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:34:02 [error] 54069#54069: *292 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:34:07 [error] 54070#54070: *294 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:34:17 [error] 54070#54070: *296 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:34:22 [error] 54070#54070: *298 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:34:32 [error] 54070#54070: *300 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:34:37 [error] 54070#54070: *302 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:34:47 [error] 54070#54070: *304 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:34:52 [error] 54070#54070: *306 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:35:02 [error] 54070#54070: *308 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:35:07 [error] 54070#54070: *310 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:35:17 [error] 54070#54070: *312 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:35:22 [error] 54070#54070: *314 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:35:32 [error] 54070#54070: *316 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:35:37 [error] 54070#54070: *318 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:35:47 [error] 54070#54070: *320 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:35:52 [error] 54070#54070: *322 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:36:02 [error] 54070#54070: *324 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
 2024/12/07 17:36:07 [error] 54069#54069: *326 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
 2024/12/07 17:36:17 [error] 54069#54069: *328 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
 2024/12/07 17:36:22 [error] 54069#54069: *330 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
@@ -213,215 +501,27 @@ Retrieving logs...
 2024/12/07 20:05:14 [warn] 63012#63012: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
 2024/12/07 20:05:15 [warn] 63047#63047: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
 2024/12/07 20:05:15 [warn] 63048#63048: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
-
-
-----------------------------------------
-/var/log/web.stdout.log
-----------------------------------------
-Dec  7 20:05:16 ip-172-31-32-201 web[63121]: [2024-12-07 20:05:16 +0000] [63121] [INFO] Worker exiting (pid: 63121)
-Dec  7 20:05:16 ip-172-31-32-201 web[63072]: [2024-12-07 20:05:16 +0000] [63072] [ERROR] Worker (pid:63121) exited with code 3
-Dec  7 20:05:16 ip-172-31-32-201 web[63072]: [2024-12-07 20:05:16 +0000] [63072] [ERROR] Shutting down: Master
-Dec  7 20:05:16 ip-172-31-32-201 web[63072]: [2024-12-07 20:05:16 +0000] [63072] [ERROR] Reason: Worker failed to boot.
-Dec  7 20:05:16 ip-172-31-32-201 web[63123]: [2024-12-07 20:05:16 +0000] [63123] [INFO] Starting gunicorn 21.2.0
-Dec  7 20:05:16 ip-172-31-32-201 web[63123]: [2024-12-07 20:05:16 +0000] [63123] [INFO] Listening at: http://127.0.0.1:8000 (63123)
-Dec  7 20:05:16 ip-172-31-32-201 web[63123]: [2024-12-07 20:05:16 +0000] [63123] [INFO] Using worker: gthread
-Dec  7 20:05:16 ip-172-31-32-201 web[63127]: [2024-12-07 20:05:16 +0000] [63127] [INFO] Booting worker with pid: 63127
-Dec  7 20:05:16 ip-172-31-32-201 web[63127]: [2024-12-07 20:05:16 +0000] [63127] [ERROR] Exception in worker process
-Dec  7 20:05:16 ip-172-31-32-201 web[63127]: Traceback (most recent call last):
-Dec  7 20:05:16 ip-172-31-32-201 web[63127]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
-Dec  7 20:05:16 ip-172-31-32-201 web[63127]:    worker.init_process()
-Dec  7 20:05:16 ip-172-31-32-201 web[63127]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
-Dec  7 20:05:16 ip-172-31-32-201 web[63127]:    super().init_process()
-Dec  7 20:05:16 ip-172-31-32-201 web[63127]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
-Dec  7 20:05:16 ip-172-31-32-201 web[63127]:    self.load_wsgi()
-Dec  7 20:05:16 ip-172-31-32-201 web[63127]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
-Dec  7 20:05:16 ip-172-31-32-201 web[63127]:    self.wsgi = self.app.wsgi()
-Dec  7 20:05:16 ip-172-31-32-201 web[63127]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
-Dec  7 20:05:16 ip-172-31-32-201 web[63127]:    self.callable = self.load()
-Dec  7 20:05:16 ip-172-31-32-201 web[63127]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
-Dec  7 20:05:16 ip-172-31-32-201 web[63127]:    return self.load_wsgiapp()
-Dec  7 20:05:16 ip-172-31-32-201 web[63127]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
-Dec  7 20:05:16 ip-172-31-32-201 web[63127]:    return util.import_app(self.app_uri)
-Dec  7 20:05:16 ip-172-31-32-201 web[63127]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
-Dec  7 20:05:16 ip-172-31-32-201 web[63127]:    mod = importlib.import_module(module)
-Dec  7 20:05:16 ip-172-31-32-201 web[63127]:  File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
-Dec  7 20:05:16 ip-172-31-32-201 web[63127]:    return _bootstrap._gcd_import(name[level:], package, level)
-Dec  7 20:05:16 ip-172-31-32-201 web[63127]:  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-Dec  7 20:05:16 ip-172-31-32-201 web[63127]:  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-Dec  7 20:05:16 ip-172-31-32-201 web[63127]:  File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
-Dec  7 20:05:16 ip-172-31-32-201 web[63127]: ModuleNotFoundError: No module named 'expense_tracker.wsgi'
-Dec  7 20:05:16 ip-172-31-32-201 web[63127]: [2024-12-07 20:05:16 +0000] [63127] [INFO] Worker exiting (pid: 63127)
-Dec  7 20:05:16 ip-172-31-32-201 web[63123]: [2024-12-07 20:05:16 +0000] [63123] [ERROR] Worker (pid:63127) exited with code 3
-Dec  7 20:05:16 ip-172-31-32-201 web[63123]: [2024-12-07 20:05:16 +0000] [63123] [ERROR] Shutting down: Master
-Dec  7 20:05:16 ip-172-31-32-201 web[63123]: [2024-12-07 20:05:16 +0000] [63123] [ERROR] Reason: Worker failed to boot.
-Dec  7 20:05:17 ip-172-31-32-201 web[63129]: [2024-12-07 20:05:17 +0000] [63129] [INFO] Starting gunicorn 21.2.0
-Dec  7 20:05:17 ip-172-31-32-201 web[63129]: [2024-12-07 20:05:17 +0000] [63129] [INFO] Listening at: http://127.0.0.1:8000 (63129)
-Dec  7 20:05:17 ip-172-31-32-201 web[63129]: [2024-12-07 20:05:17 +0000] [63129] [INFO] Using worker: gthread
-Dec  7 20:05:17 ip-172-31-32-201 web[63133]: [2024-12-07 20:05:17 +0000] [63133] [INFO] Booting worker with pid: 63133
-Dec  7 20:05:17 ip-172-31-32-201 web[63133]: [2024-12-07 20:05:17 +0000] [63133] [ERROR] Exception in worker process
-Dec  7 20:05:17 ip-172-31-32-201 web[63133]: Traceback (most recent call last):
-Dec  7 20:05:17 ip-172-31-32-201 web[63133]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
-Dec  7 20:05:17 ip-172-31-32-201 web[63133]:    worker.init_process()
-Dec  7 20:05:17 ip-172-31-32-201 web[63133]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
-Dec  7 20:05:17 ip-172-31-32-201 web[63133]:    super().init_process()
-Dec  7 20:05:17 ip-172-31-32-201 web[63133]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
-Dec  7 20:05:17 ip-172-31-32-201 web[63133]:    self.load_wsgi()
-Dec  7 20:05:17 ip-172-31-32-201 web[63133]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
-Dec  7 20:05:17 ip-172-31-32-201 web[63133]:    self.wsgi = self.app.wsgi()
-Dec  7 20:05:17 ip-172-31-32-201 web[63133]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
-Dec  7 20:05:17 ip-172-31-32-201 web[63133]:    self.callable = self.load()
-Dec  7 20:05:17 ip-172-31-32-201 web[63133]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
-Dec  7 20:05:17 ip-172-31-32-201 web[63133]:    return self.load_wsgiapp()
-Dec  7 20:05:17 ip-172-31-32-201 web[63133]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
-Dec  7 20:05:17 ip-172-31-32-201 web[63133]:    return util.import_app(self.app_uri)
-Dec  7 20:05:17 ip-172-31-32-201 web[63133]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
-Dec  7 20:05:17 ip-172-31-32-201 web[63133]:    mod = importlib.import_module(module)
-Dec  7 20:05:17 ip-172-31-32-201 web[63133]:  File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
-Dec  7 20:05:17 ip-172-31-32-201 web[63133]:    return _bootstrap._gcd_import(name[level:], package, level)
-Dec  7 20:05:17 ip-172-31-32-201 web[63133]:  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-Dec  7 20:05:17 ip-172-31-32-201 web[63133]:  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-Dec  7 20:05:17 ip-172-31-32-201 web[63133]:  File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
-Dec  7 20:05:17 ip-172-31-32-201 web[63133]: ModuleNotFoundError: No module named 'expense_tracker.wsgi'
-Dec  7 20:05:17 ip-172-31-32-201 web[63133]: [2024-12-07 20:05:17 +0000] [63133] [INFO] Worker exiting (pid: 63133)
-Dec  7 20:05:17 ip-172-31-32-201 web[63129]: [2024-12-07 20:05:17 +0000] [63129] [ERROR] Worker (pid:63133) exited with code 3
-Dec  7 20:05:17 ip-172-31-32-201 web[63129]: [2024-12-07 20:05:17 +0000] [63129] [ERROR] Shutting down: Master
-Dec  7 20:05:17 ip-172-31-32-201 web[63129]: [2024-12-07 20:05:17 +0000] [63129] [ERROR] Reason: Worker failed to boot.
-Dec  7 20:05:17 ip-172-31-32-201 web[63135]: [2024-12-07 20:05:17 +0000] [63135] [INFO] Starting gunicorn 21.2.0
-Dec  7 20:05:17 ip-172-31-32-201 web[63135]: [2024-12-07 20:05:17 +0000] [63135] [INFO] Listening at: http://127.0.0.1:8000 (63135)
-Dec  7 20:05:17 ip-172-31-32-201 web[63135]: [2024-12-07 20:05:17 +0000] [63135] [INFO] Using worker: gthread
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]: [2024-12-07 20:05:17 +0000] [63140] [INFO] Booting worker with pid: 63140
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]: [2024-12-07 20:05:17 +0000] [63140] [ERROR] Exception in worker process
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]: Traceback (most recent call last):
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:    worker.init_process()
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:    super().init_process()
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:    self.load_wsgi()
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:    self.wsgi = self.app.wsgi()
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:    self.callable = self.load()
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:    return self.load_wsgiapp()
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:    return util.import_app(self.app_uri)
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:    mod = importlib.import_module(module)
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:  File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:    return _bootstrap._gcd_import(name[level:], package, level)
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:  File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]: ModuleNotFoundError: No module named 'expense_tracker.wsgi'
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]: [2024-12-07 20:05:17 +0000] [63140] [INFO] Worker exiting (pid: 63140)
-Dec  7 20:05:17 ip-172-31-32-201 web[63135]: [2024-12-07 20:05:17 +0000] [63135] [ERROR] Worker (pid:63140) exited with code 3
-Dec  7 20:05:17 ip-172-31-32-201 web[63135]: [2024-12-07 20:05:17 +0000] [63135] [ERROR] Shutting down: Master
-Dec  7 20:05:17 ip-172-31-32-201 web[63135]: [2024-12-07 20:05:17 +0000] [63135] [ERROR] Reason: Worker failed to boot.
-
-
-----------------------------------------
-/var/log/eb-engine.log
-----------------------------------------
-2024/12/07 20:05:12.141612 [INFO] Executing instruction: stop proxy
-2024/12/07 20:05:12.141648 [INFO] Running command /bin/sh -c systemctl show -p PartOf httpd.service
-2024/12/07 20:05:12.161030 [WARN] deregisterProcess Warning: process httpd is not registered, skipping...
-
-2024/12/07 20:05:12.161063 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
-2024/12/07 20:05:12.178589 [INFO] Running command /bin/sh -c systemctl is-active nginx.service
-2024/12/07 20:05:12.189057 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
-2024/12/07 20:05:12.198642 [INFO] Running command /bin/sh -c systemctl stop nginx.service
-2024/12/07 20:05:12.388840 [INFO] Running command /bin/sh -c systemctl disable nginx.service
-2024/12/07 20:05:12.681662 [INFO] Running command /bin/sh -c systemctl daemon-reload
-2024/12/07 20:05:12.965091 [INFO] Running command /bin/sh -c systemctl reset-failed
-2024/12/07 20:05:12.975240 [INFO] Executing instruction: FlipApplication
-2024/12/07 20:05:12.975265 [INFO] Fetching environment variables...
-2024/12/07 20:05:12.975604 [INFO] Purge old process...
-2024/12/07 20:05:12.975658 [INFO] Running command /bin/sh -c systemctl stop eb-app.target
-2024/12/07 20:05:12.984054 [INFO] Running command /bin/sh -c systemctl show -p ConsistsOf eb-app.target | cut -d= -f2
-2024/12/07 20:05:12.995631 [INFO] web.service
-
-2024/12/07 20:05:12.995655 [INFO] deregistering process: web
-2024/12/07 20:05:12.995667 [INFO] Running command /bin/sh -c systemctl show -p PartOf web.service
-2024/12/07 20:05:13.006578 [INFO] Running command /bin/sh -c systemctl is-active web.service
-2024/12/07 20:05:13.014574 [INFO] Running command /bin/sh -c systemctl disable web.service
-2024/12/07 20:05:13.299936 [INFO] Removed "/etc/systemd/system/multi-user.target.wants/web.service".
-
-2024/12/07 20:05:13.300020 [INFO] Running command /bin/sh -c systemctl daemon-reload
-2024/12/07 20:05:13.533882 [INFO] Running command /bin/sh -c systemctl reset-failed
-2024/12/07 20:05:13.543848 [INFO] Running command /bin/sh -c systemctl is-active web.service
-2024/12/07 20:05:13.551213 [INFO] Process web has been fully terminated
-2024/12/07 20:05:13.551225 [INFO] All processes have been fully terminated
-2024/12/07 20:05:13.551229 [INFO] Removing /var/app/current/ if it exists
-2024/12/07 20:05:13.855437 [INFO] Renaming /var/app/staging/ to /var/app/current/
-2024/12/07 20:05:13.855466 [INFO] Register application processes...
-2024/12/07 20:05:13.855471 [INFO] Registering the proc: web
-
-2024/12/07 20:05:13.855485 [INFO] Running command /bin/sh -c systemctl show -p PartOf web.service
-2024/12/07 20:05:13.902666 [INFO] Running command /bin/sh -c systemctl daemon-reload
-2024/12/07 20:05:14.199226 [INFO] Running command /bin/sh -c systemctl reset-failed
-2024/12/07 20:05:14.212124 [INFO] Running command /bin/sh -c systemctl is-enabled eb-app.target
-2024/12/07 20:05:14.221744 [INFO] Running command /bin/sh -c systemctl enable eb-app.target
-2024/12/07 20:05:14.505512 [INFO] Running command /bin/sh -c systemctl start eb-app.target
-2024/12/07 20:05:14.514386 [INFO] Running command /bin/sh -c systemctl enable web.service
-2024/12/07 20:05:14.812877 [INFO] Created symlink /etc/systemd/system/multi-user.target.wants/web.service → /etc/systemd/system/web.service.
-
-2024/12/07 20:05:14.812914 [INFO] Running command /bin/sh -c systemctl show -p PartOf web.service
-2024/12/07 20:05:14.827708 [INFO] Running command /bin/sh -c systemctl is-active web.service
-2024/12/07 20:05:14.836403 [INFO] Running command /bin/sh -c systemctl start web.service
-2024/12/07 20:05:14.891189 [INFO] Executing instruction: start X-Ray
-2024/12/07 20:05:14.891211 [INFO] X-Ray is not enabled.
-2024/12/07 20:05:14.891217 [INFO] Executing instruction: start proxy with new configuration
-2024/12/07 20:05:14.891240 [INFO] Running command /bin/sh -c /usr/sbin/nginx -t -c /var/proxy/staging/nginx/nginx.conf
-2024/12/07 20:05:14.915576 [INFO] nginx: [warn] could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
-nginx: the configuration file /var/proxy/staging/nginx/nginx.conf syntax is ok
-nginx: configuration file /var/proxy/staging/nginx/nginx.conf test is successful
-
-2024/12/07 20:05:14.915833 [INFO] Running command /bin/sh -c cp -rp /var/proxy/staging/nginx/* /etc/nginx
-2024/12/07 20:05:14.919417 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
-2024/12/07 20:05:14.939606 [INFO] Running command /bin/sh -c systemctl daemon-reload
-2024/12/07 20:05:15.259744 [INFO] Running command /bin/sh -c systemctl reset-failed
-2024/12/07 20:05:15.302203 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
-2024/12/07 20:05:15.315100 [INFO] Running command /bin/sh -c systemctl is-active nginx.service
-2024/12/07 20:05:15.323537 [INFO] Running command /bin/sh -c systemctl start nginx.service
-2024/12/07 20:05:15.462122 [INFO] Executing instruction: configureSqsd
-2024/12/07 20:05:15.462148 [INFO] This is a web server environment instance, skip configure sqsd daemon ...
-2024/12/07 20:05:15.462156 [INFO] Executing instruction: startSqsd
-2024/12/07 20:05:15.462159 [INFO] This is a web server environment instance, skip start sqsd daemon ...
-2024/12/07 20:05:15.462163 [INFO] Executing instruction: Track pids in healthd
-2024/12/07 20:05:15.462168 [INFO] This is an enhanced health env...
-2024/12/07 20:05:15.462182 [INFO] Running command /bin/sh -c systemctl show -p ConsistsOf aws-eb.target | cut -d= -f2
-2024/12/07 20:05:15.484425 [INFO] cfn-hup.service healthd.service nginx.service
-
-2024/12/07 20:05:15.484462 [INFO] Running command /bin/sh -c systemctl show -p ConsistsOf eb-app.target | cut -d= -f2
-2024/12/07 20:05:15.509314 [INFO] web.service
-
-2024/12/07 20:05:15.509723 [INFO] Executing instruction: RunAppDeployPostDeployHooks
-2024/12/07 20:05:15.509742 [INFO] Executing platform hooks in .platform/hooks/postdeploy/
-2024/12/07 20:05:15.509761 [INFO] The dir .platform/hooks/postdeploy/ does not exist
-2024/12/07 20:05:15.509764 [INFO] Finished running scripts in /var/app/current/.platform/hooks/postdeploy
-2024/12/07 20:05:15.509771 [INFO] Executing cleanup logic
-2024/12/07 20:05:15.509886 [INFO] CommandService Response: {"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"Engine execution has succeeded.","returncode":0,"events":[{"msg":"Instance deployment successfully generated a 'Procfile'.","timestamp":1733601909046,"severity":"INFO"},{"msg":"Instance deployment completed successfully.","timestamp":1733601915509,"severity":"INFO"}]}]}
-
-2024/12/07 20:05:15.510129 [INFO] Platform Engine finished execution on command: app-deploy
-
-2024/12/07 20:07:41.875356 [INFO] Starting...
-2024/12/07 20:07:41.875413 [INFO] Starting EBPlatform-PlatformEngine
-2024/12/07 20:07:41.875436 [INFO] reading event message file
-2024/12/07 20:07:41.875707 [INFO] Engine received EB command cfn-hup-exec
-
-2024/12/07 20:07:41.976985 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:eu-west-1:250738637992:stack/awseb-e-ii2fhia2ez-stack/5b6abbb0-b3ec-11ef-b3e9-06dab945c80f -r AWSEBAutoScalingGroup --region eu-west-1
-2024/12/07 20:07:42.340279 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:eu-west-1:250738637992:stack/awseb-e-ii2fhia2ez-stack/5b6abbb0-b3ec-11ef-b3e9-06dab945c80f -r AWSEBBeanstalkMetadata --region eu-west-1
-2024/12/07 20:07:42.657567 [INFO] checking whether command tail-log is applicable to this instance...
-2024/12/07 20:07:42.657582 [INFO] this command is applicable to the instance, thus instance should execute command
-2024/12/07 20:07:42.657586 [INFO] Engine command: (tail-log)
-
-2024/12/07 20:07:42.657664 [INFO] Executing instruction: GetTailLogs
-2024/12/07 20:07:42.657668 [INFO] Tail Logs...
-2024/12/07 20:07:42.658121 [INFO] Running command /bin/sh -c tail -n 100 /var/log/eb-hooks.log
-2024/12/07 20:07:42.660797 [INFO] Running command /bin/sh -c tail -n 100 /var/log/nginx/access.log
-2024/12/07 20:07:42.662735 [INFO] Running command /bin/sh -c tail -n 100 /var/log/nginx/error.log
-2024/12/07 20:07:42.664585 [INFO] Running command /bin/sh -c tail -n 100 /var/log/web.stdout.log
-2024/12/07 20:07:42.666299 [INFO] Running command /bin/sh -c tail -n 100 /var/log/eb-engine.log
+2024/12/07 20:25:21 [warn] 64221#64221: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 20:25:22 [warn] 64255#64255: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 20:25:22 [warn] 64256#64256: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 20:33:12 [warn] 1925#1925: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 20:33:12 [warn] 1926#1926: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 20:33:20 [warn] 2165#2165: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 20:33:21 [warn] 2200#2200: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 20:33:21 [warn] 2201#2201: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 20:46:32 [warn] 2689#2689: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 20:46:32 [warn] 2690#2690: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 21:04:59 [warn] 2117#2117: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 21:05:00 [warn] 2151#2151: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 21:05:00 [warn] 2152#2152: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 21:07:41 [warn] 2721#2721: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 21:07:42 [warn] 2755#2755: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 21:07:42 [warn] 2756#2756: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 21:15:54 [warn] 3480#3480: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 21:15:55 [warn] 3514#3514: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 21:15:55 [warn] 3515#3515: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 21:27:19 [warn] 4348#4348: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 21:27:19 [warn] 4382#4382: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 21:27:19 [warn] 4383#4383: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
 
 
