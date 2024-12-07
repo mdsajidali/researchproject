@@ -3,432 +3,426 @@ Retrieving logs...
 ----------------------------------------
 /var/log/web.stdout.log
 ----------------------------------------
-Dec  7 20:05:17 ip-172-31-32-201 web[63133]:  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-Dec  7 20:05:17 ip-172-31-32-201 web[63133]:  File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
-Dec  7 20:05:17 ip-172-31-32-201 web[63133]: ModuleNotFoundError: No module named 'expense_tracker.wsgi'
-Dec  7 20:05:17 ip-172-31-32-201 web[63133]: [2024-12-07 20:05:17 +0000] [63133] [INFO] Worker exiting (pid: 63133)
-Dec  7 20:05:17 ip-172-31-32-201 web[63129]: [2024-12-07 20:05:17 +0000] [63129] [ERROR] Worker (pid:63133) exited with code 3
-Dec  7 20:05:17 ip-172-31-32-201 web[63129]: [2024-12-07 20:05:17 +0000] [63129] [ERROR] Shutting down: Master
-Dec  7 20:05:17 ip-172-31-32-201 web[63129]: [2024-12-07 20:05:17 +0000] [63129] [ERROR] Reason: Worker failed to boot.
-Dec  7 20:05:17 ip-172-31-32-201 web[63135]: [2024-12-07 20:05:17 +0000] [63135] [INFO] Starting gunicorn 21.2.0
-Dec  7 20:05:17 ip-172-31-32-201 web[63135]: [2024-12-07 20:05:17 +0000] [63135] [INFO] Listening at: http://127.0.0.1:8000 (63135)
-Dec  7 20:05:17 ip-172-31-32-201 web[63135]: [2024-12-07 20:05:17 +0000] [63135] [INFO] Using worker: gthread
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]: [2024-12-07 20:05:17 +0000] [63140] [INFO] Booting worker with pid: 63140
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]: [2024-12-07 20:05:17 +0000] [63140] [ERROR] Exception in worker process
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]: Traceback (most recent call last):
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:    worker.init_process()
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:    super().init_process()
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:    self.load_wsgi()
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:    self.wsgi = self.app.wsgi()
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:    self.callable = self.load()
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:    return self.load_wsgiapp()
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:    return util.import_app(self.app_uri)
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:    mod = importlib.import_module(module)
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:  File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:    return _bootstrap._gcd_import(name[level:], package, level)
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]:  File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]: ModuleNotFoundError: No module named 'expense_tracker.wsgi'
-Dec  7 20:05:17 ip-172-31-32-201 web[63140]: [2024-12-07 20:05:17 +0000] [63140] [INFO] Worker exiting (pid: 63140)
-Dec  7 20:05:17 ip-172-31-32-201 web[63135]: [2024-12-07 20:05:17 +0000] [63135] [ERROR] Worker (pid:63140) exited with code 3
-Dec  7 20:05:17 ip-172-31-32-201 web[63135]: [2024-12-07 20:05:17 +0000] [63135] [ERROR] Shutting down: Master
-Dec  7 20:05:17 ip-172-31-32-201 web[63135]: [2024-12-07 20:05:17 +0000] [63135] [ERROR] Reason: Worker failed to boot.
-Dec  7 20:25:21 ip-172-31-32-201 web[64217]: [2024-12-07 20:25:21 +0000] [64217] [INFO] Starting gunicorn 21.2.0
-Dec  7 20:25:21 ip-172-31-32-201 web[64217]: [2024-12-07 20:25:21 +0000] [64217] [INFO] Listening at: http://127.0.0.1:8000 (64217)
-Dec  7 20:25:21 ip-172-31-32-201 web[64217]: [2024-12-07 20:25:21 +0000] [64217] [INFO] Using worker: gthread
-Dec  7 20:25:21 ip-172-31-32-201 web[64225]: [2024-12-07 20:25:21 +0000] [64225] [INFO] Booting worker with pid: 64225
-Dec  7 20:32:57 ip-172-31-32-201 web[1427]: [2024-12-07 20:32:57 +0000] [1427] [INFO] Starting gunicorn 21.2.0
-Dec  7 20:32:57 ip-172-31-32-201 web[1427]: [2024-12-07 20:32:57 +0000] [1427] [INFO] Listening at: http://127.0.0.1:8000 (1427)
-Dec  7 20:32:57 ip-172-31-32-201 web[1427]: [2024-12-07 20:32:57 +0000] [1427] [INFO] Using worker: gthread
-Dec  7 20:32:57 ip-172-31-32-201 web[1468]: [2024-12-07 20:32:57 +0000] [1468] [INFO] Booting worker with pid: 1468
-Dec  7 20:33:11 ip-172-31-32-201 web[1427]: [2024-12-07 20:33:11 +0000] [1427] [INFO] Handling signal: term
-Dec  7 20:33:12 ip-172-31-32-201 web[1468]: [2024-12-07 20:33:12 +0000] [1468] [INFO] Worker exiting (pid: 1468)
-Dec  7 20:33:12 ip-172-31-32-201 web[1427]: [2024-12-07 20:33:12 +0000] [1427] [INFO] Shutting down: Master
-Dec  7 20:33:12 ip-172-31-32-201 web[1944]: [2024-12-07 20:33:12 +0000] [1944] [INFO] Starting gunicorn 21.2.0
-Dec  7 20:33:12 ip-172-31-32-201 web[1944]: [2024-12-07 20:33:12 +0000] [1944] [INFO] Listening at: http://127.0.0.1:8000 (1944)
-Dec  7 20:33:12 ip-172-31-32-201 web[1944]: [2024-12-07 20:33:12 +0000] [1944] [INFO] Using worker: gthread
-Dec  7 20:33:12 ip-172-31-32-201 web[1953]: [2024-12-07 20:33:12 +0000] [1953] [INFO] Booting worker with pid: 1953
-Dec  7 20:33:16 ip-172-31-32-201 web[1944]: [2024-12-07 20:33:16 +0000] [1944] [INFO] Handling signal: term
-Dec  7 20:33:17 ip-172-31-32-201 web[1953]: [2024-12-07 20:33:17 +0000] [1953] [INFO] Worker exiting (pid: 1953)
-Dec  7 20:33:17 ip-172-31-32-201 web[1944]: [2024-12-07 20:33:17 +0000] [1944] [INFO] Shutting down: Master
-Dec  7 20:33:20 ip-172-31-32-201 web[2161]: [2024-12-07 20:33:20 +0000] [2161] [INFO] Starting gunicorn 21.2.0
-Dec  7 20:33:20 ip-172-31-32-201 web[2161]: [2024-12-07 20:33:20 +0000] [2161] [INFO] Listening at: http://127.0.0.1:8000 (2161)
-Dec  7 20:33:20 ip-172-31-32-201 web[2161]: [2024-12-07 20:33:20 +0000] [2161] [INFO] Using worker: gthread
-Dec  7 20:33:20 ip-172-31-32-201 web[2170]: [2024-12-07 20:33:20 +0000] [2170] [INFO] Booting worker with pid: 2170
-Dec  7 20:46:32 ip-172-31-32-201 web[2161]: [2024-12-07 20:46:32 +0000] [2161] [INFO] Handling signal: term
-Dec  7 20:46:32 ip-172-31-32-201 web[2170]: [2024-12-07 20:46:32 +0000] [2170] [INFO] Worker exiting (pid: 2170)
-Dec  7 20:46:32 ip-172-31-32-201 web[2161]: [2024-12-07 20:46:32 +0000] [2161] [INFO] Shutting down: Master
-Dec  7 20:46:33 ip-172-31-32-201 web[2708]: [2024-12-07 20:46:33 +0000] [2708] [INFO] Starting gunicorn 21.2.0
-Dec  7 20:46:33 ip-172-31-32-201 web[2708]: [2024-12-07 20:46:33 +0000] [2708] [INFO] Listening at: http://127.0.0.1:8000 (2708)
-Dec  7 20:46:33 ip-172-31-32-201 web[2708]: [2024-12-07 20:46:33 +0000] [2708] [INFO] Using worker: gthread
-Dec  7 20:46:33 ip-172-31-32-201 web[2713]: [2024-12-07 20:46:33 +0000] [2713] [INFO] Booting worker with pid: 2713
-Dec  7 21:04:36 ip-172-31-32-201 web[1432]: [2024-12-07 21:04:36 +0000] [1432] [INFO] Starting gunicorn 21.2.0
-Dec  7 21:04:36 ip-172-31-32-201 web[1432]: [2024-12-07 21:04:36 +0000] [1432] [INFO] Listening at: http://127.0.0.1:8000 (1432)
-Dec  7 21:04:36 ip-172-31-32-201 web[1432]: [2024-12-07 21:04:36 +0000] [1432] [INFO] Using worker: gthread
-Dec  7 21:04:36 ip-172-31-32-201 web[1458]: [2024-12-07 21:04:36 +0000] [1458] [INFO] Booting worker with pid: 1458
-Dec  7 21:04:56 ip-172-31-32-201 web[1432]: [2024-12-07 21:04:56 +0000] [1432] [INFO] Handling signal: term
-Dec  7 21:04:57 ip-172-31-32-201 web[1458]: [2024-12-07 21:04:57 +0000] [1458] [INFO] Worker exiting (pid: 1458)
-Dec  7 21:04:57 ip-172-31-32-201 web[1432]: [2024-12-07 21:04:57 +0000] [1432] [INFO] Shutting down: Master
-Dec  7 21:05:00 ip-172-31-32-201 web[2111]: [2024-12-07 21:05:00 +0000] [2111] [INFO] Starting gunicorn 21.2.0
-Dec  7 21:05:00 ip-172-31-32-201 web[2111]: [2024-12-07 21:05:00 +0000] [2111] [INFO] Listening at: http://127.0.0.1:8000 (2111)
-Dec  7 21:05:00 ip-172-31-32-201 web[2111]: [2024-12-07 21:05:00 +0000] [2111] [INFO] Using worker: gthread
-Dec  7 21:05:00 ip-172-31-32-201 web[2121]: [2024-12-07 21:05:00 +0000] [2121] [INFO] Booting worker with pid: 2121
-Dec  7 21:07:39 ip-172-31-32-201 web[2111]: [2024-12-07 21:07:39 +0000] [2111] [INFO] Handling signal: term
-Dec  7 21:07:40 ip-172-31-32-201 web[2121]: [2024-12-07 21:07:40 +0000] [2121] [INFO] Worker exiting (pid: 2121)
-Dec  7 21:07:40 ip-172-31-32-201 web[2111]: [2024-12-07 21:07:40 +0000] [2111] [INFO] Shutting down: Master
-Dec  7 21:07:42 ip-172-31-32-201 web[2717]: [2024-12-07 21:07:42 +0000] [2717] [INFO] Starting gunicorn 21.2.0
-Dec  7 21:07:42 ip-172-31-32-201 web[2717]: [2024-12-07 21:07:42 +0000] [2717] [INFO] Listening at: http://127.0.0.1:8000 (2717)
-Dec  7 21:07:42 ip-172-31-32-201 web[2717]: [2024-12-07 21:07:42 +0000] [2717] [INFO] Using worker: gthread
-Dec  7 21:07:42 ip-172-31-32-201 web[2744]: [2024-12-07 21:07:42 +0000] [2744] [INFO] Booting worker with pid: 2744
-Dec  7 21:15:53 ip-172-31-32-201 web[2717]: [2024-12-07 21:15:53 +0000] [2717] [INFO] Handling signal: term
-Dec  7 21:15:53 ip-172-31-32-201 web[2744]: [2024-12-07 21:15:53 +0000] [2744] [INFO] Worker exiting (pid: 2744)
-Dec  7 21:15:53 ip-172-31-32-201 web[2717]: [2024-12-07 21:15:53 +0000] [2717] [INFO] Shutting down: Master
-Dec  7 21:15:55 ip-172-31-32-201 web[3476]: [2024-12-07 21:15:55 +0000] [3476] [INFO] Starting gunicorn 21.2.0
-Dec  7 21:15:55 ip-172-31-32-201 web[3476]: [2024-12-07 21:15:55 +0000] [3476] [INFO] Listening at: http://127.0.0.1:8000 (3476)
-Dec  7 21:15:55 ip-172-31-32-201 web[3476]: [2024-12-07 21:15:55 +0000] [3476] [INFO] Using worker: gthread
-Dec  7 21:15:55 ip-172-31-32-201 web[3484]: [2024-12-07 21:15:55 +0000] [3484] [INFO] Booting worker with pid: 3484
-Dec  7 21:27:16 ip-172-31-32-201 web[3476]: [2024-12-07 21:27:16 +0000] [3476] [INFO] Handling signal: term
-Dec  7 21:27:17 ip-172-31-32-201 web[3484]: [2024-12-07 21:27:17 +0000] [3484] [INFO] Worker exiting (pid: 3484)
-Dec  7 21:27:17 ip-172-31-32-201 web[3476]: [2024-12-07 21:27:17 +0000] [3476] [INFO] Shutting down: Master
-Dec  7 21:27:19 ip-172-31-32-201 web[4344]: [2024-12-07 21:27:19 +0000] [4344] [INFO] Starting gunicorn 21.2.0
-Dec  7 21:27:19 ip-172-31-32-201 web[4344]: [2024-12-07 21:27:19 +0000] [4344] [INFO] Listening at: http://127.0.0.1:8000 (4344)
-Dec  7 21:27:19 ip-172-31-32-201 web[4344]: [2024-12-07 21:27:19 +0000] [4344] [INFO] Using worker: gthread
-Dec  7 21:27:19 ip-172-31-32-201 web[4352]: [2024-12-07 21:27:19 +0000] [4352] [INFO] Booting worker with pid: 4352
+Dec  7 21:47:11 ip-172-31-32-201 web[6441]: [2024-12-07 21:47:11 +0000] [6441] [INFO] Worker exiting (pid: 6441)
+Dec  7 21:47:11 ip-172-31-32-201 web[6437]: [2024-12-07 21:47:11 +0000] [6437] [ERROR] Worker (pid:6441) exited with code 3
+Dec  7 21:47:11 ip-172-31-32-201 web[6437]: [2024-12-07 21:47:11 +0000] [6437] [ERROR] Shutting down: Master
+Dec  7 21:47:11 ip-172-31-32-201 web[6437]: [2024-12-07 21:47:11 +0000] [6437] [ERROR] Reason: Worker failed to boot.
+Dec  7 21:47:11 ip-172-31-32-201 web[6443]: [2024-12-07 21:47:11 +0000] [6443] [INFO] Starting gunicorn 21.2.0
+Dec  7 21:47:11 ip-172-31-32-201 web[6443]: [2024-12-07 21:47:11 +0000] [6443] [INFO] Listening at: http://127.0.0.1:8000 (6443)
+Dec  7 21:47:11 ip-172-31-32-201 web[6443]: [2024-12-07 21:47:11 +0000] [6443] [INFO] Using worker: gthread
+Dec  7 21:47:11 ip-172-31-32-201 web[6447]: [2024-12-07 21:47:11 +0000] [6447] [INFO] Booting worker with pid: 6447
+Dec  7 21:47:11 ip-172-31-32-201 web[6447]: [2024-12-07 21:47:11 +0000] [6447] [ERROR] Exception in worker process
+Dec  7 21:47:11 ip-172-31-32-201 web[6447]: Traceback (most recent call last):
+Dec  7 21:47:11 ip-172-31-32-201 web[6447]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+Dec  7 21:47:11 ip-172-31-32-201 web[6447]:    worker.init_process()
+Dec  7 21:47:11 ip-172-31-32-201 web[6447]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
+Dec  7 21:47:11 ip-172-31-32-201 web[6447]:    super().init_process()
+Dec  7 21:47:11 ip-172-31-32-201 web[6447]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+Dec  7 21:47:11 ip-172-31-32-201 web[6447]:    self.load_wsgi()
+Dec  7 21:47:11 ip-172-31-32-201 web[6447]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+Dec  7 21:47:11 ip-172-31-32-201 web[6447]:    self.wsgi = self.app.wsgi()
+Dec  7 21:47:11 ip-172-31-32-201 web[6447]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Dec  7 21:47:11 ip-172-31-32-201 web[6447]:    self.callable = self.load()
+Dec  7 21:47:11 ip-172-31-32-201 web[6447]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+Dec  7 21:47:11 ip-172-31-32-201 web[6447]:    return self.load_wsgiapp()
+Dec  7 21:47:11 ip-172-31-32-201 web[6447]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+Dec  7 21:47:11 ip-172-31-32-201 web[6447]:    return util.import_app(self.app_uri)
+Dec  7 21:47:11 ip-172-31-32-201 web[6447]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+Dec  7 21:47:11 ip-172-31-32-201 web[6447]:    mod = importlib.import_module(module)
+Dec  7 21:47:11 ip-172-31-32-201 web[6447]:  File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
+Dec  7 21:47:11 ip-172-31-32-201 web[6447]:    return _bootstrap._gcd_import(name[level:], package, level)
+Dec  7 21:47:11 ip-172-31-32-201 web[6447]:  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+Dec  7 21:47:11 ip-172-31-32-201 web[6447]:  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+Dec  7 21:47:11 ip-172-31-32-201 web[6447]:  File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
+Dec  7 21:47:11 ip-172-31-32-201 web[6447]: ModuleNotFoundError: No module named 'expense_tracker.wsgi'
+Dec  7 21:47:11 ip-172-31-32-201 web[6447]: [2024-12-07 21:47:11 +0000] [6447] [INFO] Worker exiting (pid: 6447)
+Dec  7 21:47:11 ip-172-31-32-201 web[6443]: [2024-12-07 21:47:11 +0000] [6443] [ERROR] Worker (pid:6447) exited with code 3
+Dec  7 21:47:11 ip-172-31-32-201 web[6443]: [2024-12-07 21:47:11 +0000] [6443] [ERROR] Shutting down: Master
+Dec  7 21:47:11 ip-172-31-32-201 web[6443]: [2024-12-07 21:47:11 +0000] [6443] [ERROR] Reason: Worker failed to boot.
+Dec  7 21:47:12 ip-172-31-32-201 web[6449]: [2024-12-07 21:47:12 +0000] [6449] [INFO] Starting gunicorn 21.2.0
+Dec  7 21:47:12 ip-172-31-32-201 web[6449]: [2024-12-07 21:47:12 +0000] [6449] [INFO] Listening at: http://127.0.0.1:8000 (6449)
+Dec  7 21:47:12 ip-172-31-32-201 web[6449]: [2024-12-07 21:47:12 +0000] [6449] [INFO] Using worker: gthread
+Dec  7 21:47:12 ip-172-31-32-201 web[6453]: [2024-12-07 21:47:12 +0000] [6453] [INFO] Booting worker with pid: 6453
+Dec  7 21:47:12 ip-172-31-32-201 web[6453]: [2024-12-07 21:47:12 +0000] [6453] [ERROR] Exception in worker process
+Dec  7 21:47:12 ip-172-31-32-201 web[6453]: Traceback (most recent call last):
+Dec  7 21:47:12 ip-172-31-32-201 web[6453]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+Dec  7 21:47:12 ip-172-31-32-201 web[6453]:    worker.init_process()
+Dec  7 21:47:12 ip-172-31-32-201 web[6453]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
+Dec  7 21:47:12 ip-172-31-32-201 web[6453]:    super().init_process()
+Dec  7 21:47:12 ip-172-31-32-201 web[6453]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+Dec  7 21:47:12 ip-172-31-32-201 web[6453]:    self.load_wsgi()
+Dec  7 21:47:12 ip-172-31-32-201 web[6453]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+Dec  7 21:47:12 ip-172-31-32-201 web[6453]:    self.wsgi = self.app.wsgi()
+Dec  7 21:47:12 ip-172-31-32-201 web[6453]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Dec  7 21:47:12 ip-172-31-32-201 web[6453]:    self.callable = self.load()
+Dec  7 21:47:12 ip-172-31-32-201 web[6453]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+Dec  7 21:47:12 ip-172-31-32-201 web[6453]:    return self.load_wsgiapp()
+Dec  7 21:47:12 ip-172-31-32-201 web[6453]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+Dec  7 21:47:12 ip-172-31-32-201 web[6453]:    return util.import_app(self.app_uri)
+Dec  7 21:47:12 ip-172-31-32-201 web[6453]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+Dec  7 21:47:12 ip-172-31-32-201 web[6453]:    mod = importlib.import_module(module)
+Dec  7 21:47:12 ip-172-31-32-201 web[6453]:  File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
+Dec  7 21:47:12 ip-172-31-32-201 web[6453]:    return _bootstrap._gcd_import(name[level:], package, level)
+Dec  7 21:47:12 ip-172-31-32-201 web[6453]:  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+Dec  7 21:47:12 ip-172-31-32-201 web[6453]:  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+Dec  7 21:47:12 ip-172-31-32-201 web[6453]:  File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
+Dec  7 21:47:12 ip-172-31-32-201 web[6453]: ModuleNotFoundError: No module named 'expense_tracker.wsgi'
+Dec  7 21:47:12 ip-172-31-32-201 web[6453]: [2024-12-07 21:47:12 +0000] [6453] [INFO] Worker exiting (pid: 6453)
+Dec  7 21:47:12 ip-172-31-32-201 web[6449]: [2024-12-07 21:47:12 +0000] [6449] [ERROR] Worker (pid:6453) exited with code 3
+Dec  7 21:47:12 ip-172-31-32-201 web[6449]: [2024-12-07 21:47:12 +0000] [6449] [ERROR] Shutting down: Master
+Dec  7 21:47:12 ip-172-31-32-201 web[6449]: [2024-12-07 21:47:12 +0000] [6449] [ERROR] Reason: Worker failed to boot.
+Dec  7 21:47:12 ip-172-31-32-201 web[6455]: [2024-12-07 21:47:12 +0000] [6455] [INFO] Starting gunicorn 21.2.0
+Dec  7 21:47:12 ip-172-31-32-201 web[6455]: [2024-12-07 21:47:12 +0000] [6455] [INFO] Listening at: http://127.0.0.1:8000 (6455)
+Dec  7 21:47:12 ip-172-31-32-201 web[6455]: [2024-12-07 21:47:12 +0000] [6455] [INFO] Using worker: gthread
+Dec  7 21:47:12 ip-172-31-32-201 web[6459]: [2024-12-07 21:47:12 +0000] [6459] [INFO] Booting worker with pid: 6459
+Dec  7 21:47:12 ip-172-31-32-201 web[6459]: [2024-12-07 21:47:12 +0000] [6459] [ERROR] Exception in worker process
+Dec  7 21:47:12 ip-172-31-32-201 web[6459]: Traceback (most recent call last):
+Dec  7 21:47:12 ip-172-31-32-201 web[6459]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+Dec  7 21:47:12 ip-172-31-32-201 web[6459]:    worker.init_process()
+Dec  7 21:47:12 ip-172-31-32-201 web[6459]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
+Dec  7 21:47:12 ip-172-31-32-201 web[6459]:    super().init_process()
+Dec  7 21:47:12 ip-172-31-32-201 web[6459]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+Dec  7 21:47:12 ip-172-31-32-201 web[6459]:    self.load_wsgi()
+Dec  7 21:47:12 ip-172-31-32-201 web[6459]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+Dec  7 21:47:12 ip-172-31-32-201 web[6459]:    self.wsgi = self.app.wsgi()
+Dec  7 21:47:12 ip-172-31-32-201 web[6459]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Dec  7 21:47:12 ip-172-31-32-201 web[6459]:    self.callable = self.load()
+Dec  7 21:47:12 ip-172-31-32-201 web[6459]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+Dec  7 21:47:12 ip-172-31-32-201 web[6459]:    return self.load_wsgiapp()
+Dec  7 21:47:12 ip-172-31-32-201 web[6459]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+Dec  7 21:47:12 ip-172-31-32-201 web[6459]:    return util.import_app(self.app_uri)
+Dec  7 21:47:12 ip-172-31-32-201 web[6459]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+Dec  7 21:47:12 ip-172-31-32-201 web[6459]:    mod = importlib.import_module(module)
+Dec  7 21:47:12 ip-172-31-32-201 web[6459]:  File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
+Dec  7 21:47:12 ip-172-31-32-201 web[6459]:    return _bootstrap._gcd_import(name[level:], package, level)
+Dec  7 21:47:12 ip-172-31-32-201 web[6459]:  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+Dec  7 21:47:12 ip-172-31-32-201 web[6459]:  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+Dec  7 21:47:12 ip-172-31-32-201 web[6459]:  File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
+Dec  7 21:47:12 ip-172-31-32-201 web[6459]: ModuleNotFoundError: No module named 'expense_tracker.wsgi'
+Dec  7 21:47:12 ip-172-31-32-201 web[6459]: [2024-12-07 21:47:12 +0000] [6459] [INFO] Worker exiting (pid: 6459)
+Dec  7 21:47:12 ip-172-31-32-201 web[6455]: [2024-12-07 21:47:12 +0000] [6455] [ERROR] Worker (pid:6459) exited with code 3
+Dec  7 21:47:12 ip-172-31-32-201 web[6455]: [2024-12-07 21:47:12 +0000] [6455] [ERROR] Shutting down: Master
+Dec  7 21:47:12 ip-172-31-32-201 web[6455]: [2024-12-07 21:47:12 +0000] [6455] [ERROR] Reason: Worker failed to boot.
 
 
 ----------------------------------------
 /var/log/eb-engine.log
 ----------------------------------------
-2024/12/07 21:31:51.892214 [INFO] This is a web server environment instance, skip stop sqsd daemon ...
-2024/12/07 21:31:51.892218 [INFO] Executing instruction: PreBuildEbExtension
-2024/12/07 21:31:51.892222 [INFO] Starting executing the config set Infra-EmbeddedPreBuild.
-2024/12/07 21:31:51.892265 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-init -s arn:aws:cloudformation:eu-west-1:250738637992:stack/awseb-e-ii2fhia2ez-stack/5b6abbb0-b3ec-11ef-b3e9-06dab945c80f -r AWSEBAutoScalingGroup --region eu-west-1 --configsets Infra-EmbeddedPreBuild
-2024/12/07 21:31:52.292395 [INFO] Finished executing the config set Infra-EmbeddedPreBuild.
+2024/12/07 21:47:06.847643 [INFO] Executing instruction: stop proxy
+2024/12/07 21:47:06.847672 [INFO] Running command /bin/sh -c systemctl show -p PartOf httpd.service
+2024/12/07 21:47:06.860853 [WARN] deregisterProcess Warning: process httpd is not registered, skipping...
 
-2024/12/07 21:31:52.292416 [INFO] Executing instruction: StageApplication
-2024/12/07 21:31:52.292658 [INFO] extracting /opt/elasticbeanstalk/deployment/app_source_bundle to /var/app/staging/
-2024/12/07 21:31:52.292672 [INFO] Running command /bin/sh -c /usr/bin/unzip -q -o /opt/elasticbeanstalk/deployment/app_source_bundle -d /var/app/staging/
-2024/12/07 21:31:52.342554 [INFO] finished extracting /opt/elasticbeanstalk/deployment/app_source_bundle to /var/app/staging/ successfully
-2024/12/07 21:31:52.346375 [INFO] Executing instruction: RunAppDeployPreBuildHooks
-2024/12/07 21:31:52.346389 [WARN] skipping hooks scripts under /opt/elasticbeanstalk/hooks/
-2024/12/07 21:31:52.346400 [INFO] Executing platform hooks in .platform/hooks/prebuild/
-2024/12/07 21:31:52.346418 [INFO] The dir .platform/hooks/prebuild/ does not exist
-2024/12/07 21:31:52.346420 [INFO] Finished running scripts in /var/app/staging/.platform/hooks/prebuild
-2024/12/07 21:31:52.346425 [INFO] Executing instruction: InstallDependency
-2024/12/07 21:31:52.346429 [INFO] checking dependencies file
-2024/12/07 21:31:52.346442 [INFO] Installing dependencies with requirements.txt by using Pip
-2024/12/07 21:31:52.346452 [INFO] Running command /bin/sh -c /var/app/venv/staging-LQM1lest/bin/pip install -r requirements.txt
-2024/12/07 21:31:52.829445 [INFO] Requirement already satisfied: asgiref==3.8.1 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 1)) (3.8.1)
-Requirement already satisfied: Django==4.2.16 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 2)) (4.2.16)
-Requirement already satisfied: gunicorn in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 3)) (21.2.0)
-Requirement already satisfied: sqlparse==0.5.1 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 4)) (0.5.1)
-Requirement already satisfied: typing_extensions==4.12.2 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 5)) (4.12.2)
-Requirement already satisfied: packaging in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from gunicorn->-r requirements.txt (line 3)) (23.2)
+2024/12/07 21:47:06.860887 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
+2024/12/07 21:47:06.872206 [INFO] Running command /bin/sh -c systemctl is-active nginx.service
+2024/12/07 21:47:06.880195 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
+2024/12/07 21:47:06.888597 [INFO] Running command /bin/sh -c systemctl stop nginx.service
+2024/12/07 21:47:07.032360 [INFO] Running command /bin/sh -c systemctl disable nginx.service
+2024/12/07 21:47:07.283714 [INFO] Running command /bin/sh -c systemctl daemon-reload
+2024/12/07 21:47:07.522892 [INFO] Running command /bin/sh -c systemctl reset-failed
+2024/12/07 21:47:07.530943 [INFO] Executing instruction: FlipApplication
+2024/12/07 21:47:07.530965 [INFO] Fetching environment variables...
+2024/12/07 21:47:07.531136 [INFO] Purge old process...
+2024/12/07 21:47:07.531161 [INFO] Running command /bin/sh -c systemctl stop eb-app.target
+2024/12/07 21:47:07.540759 [INFO] Running command /bin/sh -c systemctl show -p ConsistsOf eb-app.target | cut -d= -f2
+2024/12/07 21:47:07.550523 [INFO] web.service
 
-2024/12/07 21:31:52.829517 [INFO] WARNING: You are using pip version 21.3.1; however, version 24.3.1 is available.
-You should consider upgrading via the '/var/app/venv/staging-LQM1lest/bin/python3.9 -m pip install --upgrade pip' command.
+2024/12/07 21:47:07.550564 [INFO] deregistering process: web
+2024/12/07 21:47:07.550576 [INFO] Running command /bin/sh -c systemctl show -p PartOf web.service
+2024/12/07 21:47:07.560869 [INFO] Running command /bin/sh -c systemctl is-active web.service
+2024/12/07 21:47:07.567805 [INFO] Running command /bin/sh -c systemctl disable web.service
+2024/12/07 21:47:07.853700 [INFO] Removed "/etc/systemd/system/multi-user.target.wants/web.service".
 
-2024/12/07 21:31:52.829525 [INFO] Executing instruction: check Procfile
-2024/12/07 21:31:52.829577 [INFO] creating default Procfile...
-2024/12/07 21:31:52.829942 [INFO] Executing instruction: configure X-Ray
-2024/12/07 21:31:52.829948 [INFO] X-Ray is not enabled.
-2024/12/07 21:31:52.829952 [INFO] Executing instruction: configure proxy server
-2024/12/07 21:31:52.833502 [WARN] skipping nginx folder under .ebextensions
-2024/12/07 21:31:52.833526 [INFO] Running command /bin/sh -c cp -rp /var/app/staging/.platform/nginx/. /var/proxy/staging/nginx
-2024/12/07 21:31:52.841980 [INFO] Executing instruction: configure healthd specific proxy conf
-2024/12/07 21:31:52.844037 [INFO] Running command /bin/sh -c systemctl show -p PartOf healthd.service
-2024/12/07 21:31:52.856504 [WARN] Warning: process healthd is already registered...
-Deregistering the process ...
-2024/12/07 21:31:52.856559 [INFO] Running command /bin/sh -c systemctl show -p PartOf healthd.service
-2024/12/07 21:31:52.867359 [INFO] Running command /bin/sh -c systemctl is-active healthd.service
-2024/12/07 21:31:52.875549 [INFO] Running command /bin/sh -c systemctl show -p PartOf healthd.service
-2024/12/07 21:31:52.886388 [INFO] Running command /bin/sh -c systemctl stop healthd.service
-2024/12/07 21:31:52.944956 [INFO] Running command /bin/sh -c systemctl disable healthd.service
-2024/12/07 21:31:53.208540 [INFO] Removed "/etc/systemd/system/multi-user.target.wants/healthd.service".
+2024/12/07 21:47:07.853876 [INFO] Running command /bin/sh -c systemctl daemon-reload
+2024/12/07 21:47:08.100781 [INFO] Running command /bin/sh -c systemctl reset-failed
+2024/12/07 21:47:08.109935 [INFO] Running command /bin/sh -c systemctl is-active web.service
+2024/12/07 21:47:08.117728 [INFO] Process web has not been fully terminated
+2024/12/07 21:47:08.117745 [INFO] Some processes have not been fully terminated, sleeping 1 seconds now
+2024/12/07 21:47:09.117867 [INFO] Running command /bin/sh -c systemctl is-active web.service
+2024/12/07 21:47:09.130067 [INFO] Process web has been fully terminated
+2024/12/07 21:47:09.130090 [INFO] All processes have been fully terminated
+2024/12/07 21:47:09.130094 [INFO] Removing /var/app/current/ if it exists
+2024/12/07 21:47:09.146732 [INFO] Renaming /var/app/staging/ to /var/app/current/
+2024/12/07 21:47:09.146802 [INFO] Register application processes...
+2024/12/07 21:47:09.146809 [INFO] Registering the proc: web
 
-2024/12/07 21:31:53.208804 [INFO] Running command /bin/sh -c systemctl daemon-reload
-2024/12/07 21:31:53.462998 [INFO] Running command /bin/sh -c systemctl reset-failed
-2024/12/07 21:31:53.473902 [INFO] Running command /bin/sh -c systemctl daemon-reload
-2024/12/07 21:31:53.806520 [INFO] Running command /bin/sh -c systemctl reset-failed
-2024/12/07 21:31:53.816489 [INFO] Running command /bin/sh -c systemctl is-enabled aws-eb.target
-2024/12/07 21:31:53.824936 [INFO] Running command /bin/sh -c systemctl enable aws-eb.target
-2024/12/07 21:31:54.080838 [INFO] Running command /bin/sh -c systemctl start aws-eb.target
-2024/12/07 21:31:54.090558 [INFO] Running command /bin/sh -c systemctl enable healthd.service
-2024/12/07 21:31:54.379513 [INFO] Created symlink /etc/systemd/system/multi-user.target.wants/healthd.service → /etc/systemd/system/healthd.service.
+2024/12/07 21:47:09.146821 [INFO] Running command /bin/sh -c systemctl show -p PartOf web.service
+2024/12/07 21:47:09.168675 [INFO] Running command /bin/sh -c systemctl daemon-reload
+2024/12/07 21:47:09.438164 [INFO] Running command /bin/sh -c systemctl reset-failed
+2024/12/07 21:47:09.448111 [INFO] Running command /bin/sh -c systemctl is-enabled eb-app.target
+2024/12/07 21:47:09.457097 [INFO] Running command /bin/sh -c systemctl enable eb-app.target
+2024/12/07 21:47:09.736111 [INFO] Running command /bin/sh -c systemctl start eb-app.target
+2024/12/07 21:47:09.744801 [INFO] Running command /bin/sh -c systemctl enable web.service
+2024/12/07 21:47:09.986239 [INFO] Created symlink /etc/systemd/system/multi-user.target.wants/web.service → /etc/systemd/system/web.service.
 
-2024/12/07 21:31:54.379550 [INFO] Running command /bin/sh -c systemctl show -p PartOf healthd.service
-2024/12/07 21:31:54.390564 [INFO] Running command /bin/sh -c systemctl is-active healthd.service
-2024/12/07 21:31:54.397931 [INFO] Running command /bin/sh -c systemctl start healthd.service
-2024/12/07 21:31:54.447482 [INFO] Copying file /opt/elasticbeanstalk/config/private/healthd/healthd_logformat.conf to /var/proxy/staging/nginx/conf.d/healthd_logformat.conf
-2024/12/07 21:31:54.448677 [INFO] Copying file /opt/elasticbeanstalk/config/private/healthd/healthd_nginx.conf to /var/proxy/staging/nginx/conf.d/elasticbeanstalk/healthd.conf
-2024/12/07 21:31:54.449808 [INFO] Executing instruction: configure log streaming
-2024/12/07 21:31:54.449819 [INFO] log streaming is not enabled
-2024/12/07 21:31:54.449822 [INFO] disable log stream
-2024/12/07 21:31:54.449837 [INFO] Running command /bin/sh -c systemctl show -p PartOf amazon-cloudwatch-agent.service
-2024/12/07 21:31:54.467190 [INFO] Running command /bin/sh -c systemctl stop amazon-cloudwatch-agent.service
-2024/12/07 21:31:54.484250 [INFO] Executing instruction: GetToggleForceRotate
-2024/12/07 21:31:54.484276 [INFO] Checking if logs need forced rotation
-2024/12/07 21:31:54.484296 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:eu-west-1:250738637992:stack/awseb-e-ii2fhia2ez-stack/5b6abbb0-b3ec-11ef-b3e9-06dab945c80f -r AWSEBAutoScalingGroup --region eu-west-1
-2024/12/07 21:31:54.954259 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:eu-west-1:250738637992:stack/awseb-e-ii2fhia2ez-stack/5b6abbb0-b3ec-11ef-b3e9-06dab945c80f -r AWSEBBeanstalkMetadata --region eu-west-1
-2024/12/07 21:31:55.332172 [INFO] Generating rsyslog config from Procfile
-2024/12/07 21:31:55.334206 [INFO] Running command /bin/sh -c systemctl restart rsyslog.service
-2024/12/07 21:31:55.407445 [INFO] Executing instruction: PostBuildEbExtension
-2024/12/07 21:31:55.407474 [INFO] Starting executing the config set Infra-EmbeddedPostBuild.
-2024/12/07 21:31:55.407487 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-init -s arn:aws:cloudformation:eu-west-1:250738637992:stack/awseb-e-ii2fhia2ez-stack/5b6abbb0-b3ec-11ef-b3e9-06dab945c80f -r AWSEBAutoScalingGroup --region eu-west-1 --configsets Infra-EmbeddedPostBuild
-2024/12/07 21:31:56.113075 [INFO] Error occurred during build: Command 01_collectstatic failed
+2024/12/07 21:47:09.986278 [INFO] Running command /bin/sh -c systemctl show -p PartOf web.service
+2024/12/07 21:47:09.998263 [INFO] Running command /bin/sh -c systemctl is-active web.service
+2024/12/07 21:47:10.005712 [INFO] Running command /bin/sh -c systemctl start web.service
+2024/12/07 21:47:10.109065 [INFO] Executing instruction: start X-Ray
+2024/12/07 21:47:10.109086 [INFO] X-Ray is not enabled.
+2024/12/07 21:47:10.109092 [INFO] Executing instruction: start proxy with new configuration
+2024/12/07 21:47:10.109118 [INFO] Running command /bin/sh -c /usr/sbin/nginx -t -c /var/proxy/staging/nginx/nginx.conf
+2024/12/07 21:47:10.134080 [INFO] nginx: [warn] could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+nginx: the configuration file /var/proxy/staging/nginx/nginx.conf syntax is ok
+nginx: configuration file /var/proxy/staging/nginx/nginx.conf test is successful
 
-2024/12/07 21:31:56.113100 [ERROR] An error occurred during execution of command [app-deploy] - [PostBuildEbExtension]. Stop running the command. Error: container commands build failed. Please refer to /var/log/cfn-init.log for more details. 
+2024/12/07 21:47:10.134411 [INFO] Running command /bin/sh -c cp -rp /var/proxy/staging/nginx/* /etc/nginx
+2024/12/07 21:47:10.138866 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
+2024/12/07 21:47:10.159628 [INFO] Running command /bin/sh -c systemctl daemon-reload
+2024/12/07 21:47:10.541911 [INFO] Running command /bin/sh -c systemctl reset-failed
+2024/12/07 21:47:10.592401 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
+2024/12/07 21:47:10.619891 [INFO] Running command /bin/sh -c systemctl is-active nginx.service
+2024/12/07 21:47:10.639431 [INFO] Running command /bin/sh -c systemctl start nginx.service
+2024/12/07 21:47:10.847722 [INFO] Executing instruction: configureSqsd
+2024/12/07 21:47:10.847743 [INFO] This is a web server environment instance, skip configure sqsd daemon ...
+2024/12/07 21:47:10.847748 [INFO] Executing instruction: startSqsd
+2024/12/07 21:47:10.847751 [INFO] This is a web server environment instance, skip start sqsd daemon ...
+2024/12/07 21:47:10.847755 [INFO] Executing instruction: Track pids in healthd
+2024/12/07 21:47:10.847759 [INFO] This is an enhanced health env...
+2024/12/07 21:47:10.847773 [INFO] Running command /bin/sh -c systemctl show -p ConsistsOf aws-eb.target | cut -d= -f2
+2024/12/07 21:47:10.863688 [INFO] healthd.service cfn-hup.service nginx.service
 
-2024/12/07 21:31:56.113104 [INFO] Executing cleanup logic
-2024/12/07 21:31:56.113189 [INFO] CommandService Response: {"status":"FAILURE","api_version":"1.0","results":[{"status":"FAILURE","msg":"Engine execution has encountered an error.","returncode":1,"events":[{"msg":"Instance deployment successfully generated a 'Procfile'.","timestamp":1733607112829,"severity":"INFO"},{"msg":"Instance deployment failed. For details, see 'eb-engine.log'.","timestamp":1733607116113,"severity":"ERROR"}]}]}
+2024/12/07 21:47:10.863726 [INFO] Running command /bin/sh -c systemctl show -p ConsistsOf eb-app.target | cut -d= -f2
+2024/12/07 21:47:10.881262 [INFO] web.service
 
-2024/12/07 21:31:56.114219 [INFO] Platform Engine finished execution on command: app-deploy
+2024/12/07 21:47:10.881668 [INFO] Executing instruction: RunAppDeployPostDeployHooks
+2024/12/07 21:47:10.881803 [INFO] Executing platform hooks in .platform/hooks/postdeploy/
+2024/12/07 21:47:10.881823 [INFO] The dir .platform/hooks/postdeploy/ does not exist
+2024/12/07 21:47:10.881826 [INFO] Finished running scripts in /var/app/current/.platform/hooks/postdeploy
+2024/12/07 21:47:10.881833 [INFO] Executing cleanup logic
+2024/12/07 21:47:10.881983 [INFO] CommandService Response: {"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"Engine execution has succeeded.","returncode":0,"events":[{"msg":"Instance deployment successfully generated a 'Procfile'.","timestamp":1733608023695,"severity":"INFO"},{"msg":"Instance deployment completed successfully.","timestamp":1733608030881,"severity":"INFO"}]}]}
 
-2024/12/07 21:32:43.901410 [INFO] Starting...
-2024/12/07 21:32:43.901465 [INFO] Starting EBPlatform-PlatformEngine
-2024/12/07 21:32:43.901494 [INFO] reading event message file
-2024/12/07 21:32:43.901739 [INFO] Engine received EB command cfn-hup-exec
+2024/12/07 21:47:10.882156 [INFO] Platform Engine finished execution on command: app-deploy
 
-2024/12/07 21:32:43.971795 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:eu-west-1:250738637992:stack/awseb-e-ii2fhia2ez-stack/5b6abbb0-b3ec-11ef-b3e9-06dab945c80f -r AWSEBAutoScalingGroup --region eu-west-1
-2024/12/07 21:32:44.296886 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:eu-west-1:250738637992:stack/awseb-e-ii2fhia2ez-stack/5b6abbb0-b3ec-11ef-b3e9-06dab945c80f -r AWSEBBeanstalkMetadata --region eu-west-1
-2024/12/07 21:32:44.698912 [INFO] checking whether command tail-log is applicable to this instance...
-2024/12/07 21:32:44.698922 [INFO] this command is applicable to the instance, thus instance should execute command
-2024/12/07 21:32:44.698925 [INFO] Engine command: (tail-log)
+2024/12/07 21:50:01.532085 [INFO] Starting...
+2024/12/07 21:50:01.532131 [INFO] Starting EBPlatform-PlatformEngine
+2024/12/07 21:50:01.532152 [INFO] reading event message file
+2024/12/07 21:50:01.532293 [INFO] Engine received EB command cfn-hup-exec
 
-2024/12/07 21:32:44.698971 [INFO] Executing instruction: GetTailLogs
-2024/12/07 21:32:44.698973 [INFO] Tail Logs...
-2024/12/07 21:32:44.700245 [INFO] Running command /bin/sh -c tail -n 100 /var/log/web.stdout.log
-2024/12/07 21:32:44.703811 [INFO] Running command /bin/sh -c tail -n 100 /var/log/eb-engine.log
+2024/12/07 21:50:01.638474 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:eu-west-1:250738637992:stack/awseb-e-ii2fhia2ez-stack/5b6abbb0-b3ec-11ef-b3e9-06dab945c80f -r AWSEBAutoScalingGroup --region eu-west-1
+2024/12/07 21:50:01.994006 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:eu-west-1:250738637992:stack/awseb-e-ii2fhia2ez-stack/5b6abbb0-b3ec-11ef-b3e9-06dab945c80f -r AWSEBBeanstalkMetadata --region eu-west-1
+2024/12/07 21:50:02.302365 [INFO] checking whether command tail-log is applicable to this instance...
+2024/12/07 21:50:02.302379 [INFO] this command is applicable to the instance, thus instance should execute command
+2024/12/07 21:50:02.302382 [INFO] Engine command: (tail-log)
+
+2024/12/07 21:50:02.302430 [INFO] Executing instruction: GetTailLogs
+2024/12/07 21:50:02.302433 [INFO] Tail Logs...
+2024/12/07 21:50:02.302730 [INFO] Running command /bin/sh -c tail -n 100 /var/log/web.stdout.log
+2024/12/07 21:50:02.304863 [INFO] Running command /bin/sh -c tail -n 100 /var/log/eb-engine.log
 
 
 ----------------------------------------
 /var/log/eb-hooks.log
 ----------------------------------------
-  Apply all migrations: admin, auth, contenttypes, expenses, sessions
-Running migrations:
-  No migrations to apply.
+Found another file with the destination path 'admin/js/change_form.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/collapse.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/core.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/filters.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/inlines.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/jquery.init.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/nav_sidebar.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/popup_response.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/prepopulate.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/prepopulate_init.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/theme.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/urlify.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/admin/DateTimeShortcuts.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/admin/RelatedObjectLookups.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/jquery/LICENSE.txt'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/jquery/jquery.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/jquery/jquery.min.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/LICENSE.md'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/select2.full.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/select2.full.min.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/af.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/ar.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/az.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/bg.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/bn.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/bs.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/ca.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/cs.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/da.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/de.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/dsb.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/el.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/en.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/es.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/et.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/eu.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/fa.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/fi.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/fr.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/gl.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/he.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/hi.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/hr.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/hsb.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/hu.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/hy.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/id.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/is.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/it.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/ja.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/ka.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/km.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/ko.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/lt.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/lv.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/mk.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/ms.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/nb.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/ne.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/nl.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/pl.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/ps.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/pt-BR.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/pt.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/ro.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/ru.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/sk.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/sl.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/sq.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/sr-Cyrl.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/sr.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/sv.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/th.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/tk.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/tr.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/uk.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/vi.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/zh-CN.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/select2/i18n/zh-TW.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/xregexp/LICENSE.txt'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/xregexp/xregexp.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+Found another file with the destination path 'admin/js/vendor/xregexp/xregexp.min.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
 
-2024/12/07 20:25:18.954372 [INFO] WARNING: You are using pip version 21.3.1; however, version 24.3.1 is available.
-You should consider upgrading via the '/var/app/venv/staging-LQM1lest/bin/python3.9 -m pip install --upgrade pip' command.
-
-2024/12/07 20:33:12.660791 [INFO] Running command .platform/hooks/predeploy/01_setup.sh
-2024/12/07 20:33:15.146694 [INFO] Requirement already satisfied: asgiref==3.8.1 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 1)) (3.8.1)
-Requirement already satisfied: Django==4.2.16 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 2)) (4.2.16)
-Requirement already satisfied: sqlparse==0.5.1 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 3)) (0.5.1)
-Requirement already satisfied: typing_extensions==4.12.2 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 4)) (4.12.2)
-Requirement already satisfied: gunicorn==21.2.0 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 5)) (21.2.0)
-Requirement already satisfied: packaging in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from gunicorn==21.2.0->-r requirements.txt (line 5)) (23.2)
-
-0 static files copied to '/var/app/staging/staticfiles', 128 unmodified.
+0 static files copied to '/var/app/staging/expenses/static', 125 unmodified.
 Operations to perform:
   Apply all migrations: admin, auth, contenttypes, expenses, sessions
 Running migrations:
   No migrations to apply.
 
-2024/12/07 20:33:15.146721 [INFO] WARNING: You are using pip version 21.3.1; however, version 24.3.1 is available.
-You should consider upgrading via the '/var/app/venv/staging-LQM1lest/bin/python3.9 -m pip install --upgrade pip' command.
-
-2024/12/07 21:04:53.157504 [INFO] Running command .platform/hooks/predeploy/01_setup.sh
-2024/12/07 21:04:55.743210 [INFO] Requirement already satisfied: asgiref==3.8.1 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 1)) (3.8.1)
-Requirement already satisfied: Django==4.2.16 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 2)) (4.2.16)
-Requirement already satisfied: sqlparse==0.5.1 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 3)) (0.5.1)
-Requirement already satisfied: typing_extensions==4.12.2 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 4)) (4.12.2)
-Requirement already satisfied: gunicorn==21.2.0 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 5)) (21.2.0)
-Requirement already satisfied: packaging in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from gunicorn==21.2.0->-r requirements.txt (line 5)) (23.2)
-
-0 static files copied to '/var/app/staging/staticfiles', 128 unmodified.
-Operations to perform:
-  Apply all migrations: admin, auth, contenttypes, expenses, sessions
-Running migrations:
-  No migrations to apply.
-
-2024/12/07 21:04:55.743267 [INFO] WARNING: You are using pip version 21.3.1; however, version 24.3.1 is available.
-You should consider upgrading via the '/var/app/venv/staging-LQM1lest/bin/python3.9 -m pip install --upgrade pip' command.
-
-2024/12/07 21:07:36.940830 [INFO] Running command .platform/hooks/predeploy/01_setup.sh
-2024/12/07 21:07:38.305074 [INFO] Requirement already satisfied: asgiref==3.8.1 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 1)) (3.8.1)
-Requirement already satisfied: Django==4.2.16 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 2)) (4.2.16)
-Requirement already satisfied: gunicorn in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 3)) (21.2.0)
-Requirement already satisfied: sqlparse==0.5.1 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 4)) (0.5.1)
-Requirement already satisfied: typing_extensions==4.12.2 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 5)) (4.12.2)
-Requirement already satisfied: packaging in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from gunicorn->-r requirements.txt (line 3)) (23.2)
-
-0 static files copied to '/var/app/staging/staticfiles', 128 unmodified.
-Operations to perform:
-  Apply all migrations: admin, auth, contenttypes, expenses, sessions
-Running migrations:
-  No migrations to apply.
-
-2024/12/07 21:07:38.305098 [INFO] WARNING: You are using pip version 21.3.1; however, version 24.3.1 is available.
-You should consider upgrading via the '/var/app/venv/staging-LQM1lest/bin/python3.9 -m pip install --upgrade pip' command.
-
-2024/12/07 21:15:51.347748 [INFO] Running command .platform/hooks/predeploy/01_setup.sh
-2024/12/07 21:15:52.577470 [INFO] Requirement already satisfied: asgiref==3.8.1 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 1)) (3.8.1)
-Requirement already satisfied: Django==4.2.16 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 2)) (4.2.16)
-Requirement already satisfied: gunicorn in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 3)) (21.2.0)
-Requirement already satisfied: sqlparse==0.5.1 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 4)) (0.5.1)
-Requirement already satisfied: typing_extensions==4.12.2 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 5)) (4.12.2)
-Requirement already satisfied: packaging in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from gunicorn->-r requirements.txt (line 3)) (23.2)
-
-0 static files copied to '/var/app/staging/staticfiles', 128 unmodified.
-Operations to perform:
-  Apply all migrations: admin, auth, contenttypes, expenses, sessions
-Running migrations:
-  No migrations to apply.
-
-2024/12/07 21:15:52.577498 [INFO] WARNING: You are using pip version 21.3.1; however, version 24.3.1 is available.
-You should consider upgrading via the '/var/app/venv/staging-LQM1lest/bin/python3.9 -m pip install --upgrade pip' command.
-
-2024/12/07 21:27:14.367728 [INFO] Running command .platform/hooks/predeploy/01_setup.sh
-2024/12/07 21:27:15.717744 [INFO] Requirement already satisfied: asgiref==3.8.1 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 1)) (3.8.1)
-Requirement already satisfied: Django==4.2.16 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 2)) (4.2.16)
-Requirement already satisfied: gunicorn in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 3)) (21.2.0)
-Requirement already satisfied: sqlparse==0.5.1 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 4)) (0.5.1)
-Requirement already satisfied: typing_extensions==4.12.2 in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from -r requirements.txt (line 5)) (4.12.2)
-Requirement already satisfied: packaging in /var/app/venv/staging-LQM1lest/lib/python3.9/site-packages (from gunicorn->-r requirements.txt (line 3)) (23.2)
-
-0 static files copied to '/var/app/staging/static', 125 unmodified.
-Operations to perform:
-  Apply all migrations: admin, auth, contenttypes, expenses, sessions
-Running migrations:
-  No migrations to apply.
-
-2024/12/07 21:27:15.717777 [INFO] WARNING: You are using pip version 21.3.1; however, version 24.3.1 is available.
+2024/12/07 21:38:07.671958 [INFO] WARNING: You are using pip version 21.3.1; however, version 24.3.1 is available.
 You should consider upgrading via the '/var/app/venv/staging-LQM1lest/bin/python3.9 -m pip install --upgrade pip' command.
 System check identified some issues:
 
 WARNINGS:
-?: (staticfiles.W004) The directory '/var/app/staging/expenses/static' in the STATICFILES_DIRS setting does not exist.
+?: (staticfiles.W004) The directory '/var/app/staging/expenses/staticfiles' in the STATICFILES_DIRS setting does not exist.
 System check identified some issues:
 
 WARNINGS:
-?: (staticfiles.W004) The directory '/var/app/staging/expenses/static' in the STATICFILES_DIRS setting does not exist.
+?: (staticfiles.W004) The directory '/var/app/staging/expenses/staticfiles' in the STATICFILES_DIRS setting does not exist.
 
 
 
 ----------------------------------------
 /var/log/nginx/access.log
 ----------------------------------------
-172.31.32.88 - - [07/Dec/2024:21:21:00 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:21:00 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:21:15 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:21:15 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:21:30 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:21:30 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:21:45 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:21:45 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:22:00 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:22:00 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:22:15 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:22:15 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:22:30 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:22:30 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:22:45 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:22:45 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:23:00 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:23:00 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:23:15 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:23:15 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:23:30 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:23:30 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:23:45 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:23:45 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:24:00 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:24:00 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:24:15 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:24:15 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:24:18 +0000] "HEAD /Core/Skin/Login.aspx HTTP/1.1" 404 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" "101.32.192.203"
-172.31.32.88 - - [07/Dec/2024:21:24:30 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:24:30 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:24:45 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:24:45 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:25:00 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:25:00 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:25:15 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:25:15 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:25:30 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:25:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:25:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:25:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:26:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:26:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:26:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:26:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:26:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:26:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:26:40 +0000] "GET /.env HTTP/1.1" 404 179 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.5845.140 Safari/537.36" "51.161.83.117"
-172.31.15.41 - - [07/Dec/2024:21:26:40 +0000] "POST / HTTP/1.1" 403 1382 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.5845.140 Safari/537.36" "51.161.83.117"
-172.31.32.88 - - [07/Dec/2024:21:26:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:26:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:27:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:27:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:27:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:27:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:27:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:27:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:28:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:28:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:28:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:28:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:28:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:28:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:28:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:28:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:29:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:29:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:29:02 +0000] "GET / HTTP/1.1" 200 979 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
-172.31.32.88 - - [07/Dec/2024:21:29:03 +0000] "GET /static/expenses/styles.css HTTP/1.1" 404 179 "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
-172.31.32.88 - - [07/Dec/2024:21:29:03 +0000] "GET /static/styles.css HTTP/1.1" 404 179 "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
-172.31.32.88 - - [07/Dec/2024:21:29:03 +0000] "GET /static/expenses/expense_list.css HTTP/1.1" 404 179 "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
-172.31.32.88 - - [07/Dec/2024:21:29:03 +0000] "GET /static/expenses/expense_list_styles.css HTTP/1.1" 404 179 "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
-172.31.32.88 - - [07/Dec/2024:21:29:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:29:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:29:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:29:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:29:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:29:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:30:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:30:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:30:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:30:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:30:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:30:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:30:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:30:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:31:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:31:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:31:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:31:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:31:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:31:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:31:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:31:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:32:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:32:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:32:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:32:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:32:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:32:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:34:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:34:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:34:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:34:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:34:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:35:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:35:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:35:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:35:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:35:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:35:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:35:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:35:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:36:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:36:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:36:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:36:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:36:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:36:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:36:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:36:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:37:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:37:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:37:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:37:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:37:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:37:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:37:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:37:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:38:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:38:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:38:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:38:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:38:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:38:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:38:32 +0000] "GET / HTTP/1.1" 200 979 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
+172.31.32.88 - - [07/Dec/2024:21:38:32 +0000] "GET /static/expenses/styles.css HTTP/1.1" 404 179 "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
+172.31.32.88 - - [07/Dec/2024:21:38:32 +0000] "GET /static/expenses/expense_list.css HTTP/1.1" 404 179 "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
+172.31.32.88 - - [07/Dec/2024:21:38:32 +0000] "GET /static/expenses/expense_list_styles.css HTTP/1.1" 404 179 "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
+172.31.32.88 - - [07/Dec/2024:21:38:32 +0000] "GET /static/styles.css HTTP/1.1" 404 179 "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
+172.31.32.88 - - [07/Dec/2024:21:38:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:38:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:39:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:39:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:39:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:39:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:39:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:39:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:39:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:39:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:40:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:40:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:40:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:40:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:40:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:40:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:40:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:40:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:41:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:41:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:41:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:41:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:41:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:41:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:41:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:41:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:42:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:42:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:42:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:42:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:42:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:42:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:42:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:42:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:42:58 +0000] "GET /.env HTTP/1.1" 404 179 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.5845.140 Safari/537.36" "51.161.83.117"
+172.31.15.41 - - [07/Dec/2024:21:42:58 +0000] "POST / HTTP/1.1" 403 1382 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.5845.140 Safari/537.36" "51.161.83.117"
+172.31.32.88 - - [07/Dec/2024:21:43:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:43:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:43:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:43:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:43:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:43:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:43:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:43:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:44:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:44:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:44:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:44:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:44:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:44:32 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:44:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:44:47 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:45:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:45:02 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:45:17 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:45:17 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:45:32 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:45:32 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:21:45:47 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:21:45:47 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
 
 
 ----------------------------------------
 /var/log/nginx/error.log
 ----------------------------------------
-2024/12/07 17:36:07 [error] 54069#54069: *326 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:36:17 [error] 54069#54069: *328 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:36:22 [error] 54069#54069: *330 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:36:32 [error] 54069#54069: *332 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:36:37 [error] 54069#54069: *334 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:36:47 [error] 54069#54069: *336 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
 2024/12/07 17:36:52 [error] 54069#54069: *338 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
 2024/12/07 17:37:02 [error] 54069#54069: *340 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
 2024/12/07 17:37:07 [error] 54069#54069: *342 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
@@ -523,5 +517,11 @@ WARNINGS:
 2024/12/07 21:27:19 [warn] 4348#4348: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
 2024/12/07 21:27:19 [warn] 4382#4382: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
 2024/12/07 21:27:19 [warn] 4383#4383: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 21:38:10 [warn] 5437#5437: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 21:38:10 [warn] 5472#5472: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 21:38:10 [warn] 5473#5473: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 21:47:10 [warn] 6378#6378: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 21:47:10 [warn] 6413#6413: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 21:47:10 [warn] 6418#6418: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
 
 
