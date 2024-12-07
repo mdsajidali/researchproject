@@ -139,6 +139,9 @@ CSRF_TRUSTED_ORIGINS = [
 # If you're running your app locally, also include:
 CSRF_TRUSTED_ORIGINS += [
     'http://localhost:8000',
-    'http://127.0.0.1:8000'
+    'http://127.0.0.1:8000',
+    'https://*.elasticbeanstalk.com',
+    'http://*.elasticbeanstalk.com',
+    'https://320baccb99c541908c3422d4f9d157f4.vfs.cloud9.eu-west-1.amazonaws.com',
 ]
 
