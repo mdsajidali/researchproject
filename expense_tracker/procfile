@@ -1,1 +1,1 @@
-web: gunicorn --bind 0.0.0.0:8000 expense_tracker.wsgi:application
+web: gunicorn expense_tracker.wsgi:application
