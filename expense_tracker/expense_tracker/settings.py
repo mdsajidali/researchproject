@@ -70,6 +70,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'expense_tracker.wsgi.application'
+WSGI_MODULE = 'expense_tracker.wsgi:application'
 
 
 # Database
