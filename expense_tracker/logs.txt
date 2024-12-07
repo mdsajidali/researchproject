@@ -1,216 +1,6 @@
 Retrieving logs...
 ============= i-00b9ba9c6db591a63 ==============
 ----------------------------------------
-/var/log/web.stdout.log
-----------------------------------------
-Dec  7 21:47:11 ip-172-31-32-201 web[6441]: [2024-12-07 21:47:11 +0000] [6441] [INFO] Worker exiting (pid: 6441)
-Dec  7 21:47:11 ip-172-31-32-201 web[6437]: [2024-12-07 21:47:11 +0000] [6437] [ERROR] Worker (pid:6441) exited with code 3
-Dec  7 21:47:11 ip-172-31-32-201 web[6437]: [2024-12-07 21:47:11 +0000] [6437] [ERROR] Shutting down: Master
-Dec  7 21:47:11 ip-172-31-32-201 web[6437]: [2024-12-07 21:47:11 +0000] [6437] [ERROR] Reason: Worker failed to boot.
-Dec  7 21:47:11 ip-172-31-32-201 web[6443]: [2024-12-07 21:47:11 +0000] [6443] [INFO] Starting gunicorn 21.2.0
-Dec  7 21:47:11 ip-172-31-32-201 web[6443]: [2024-12-07 21:47:11 +0000] [6443] [INFO] Listening at: http://127.0.0.1:8000 (6443)
-Dec  7 21:47:11 ip-172-31-32-201 web[6443]: [2024-12-07 21:47:11 +0000] [6443] [INFO] Using worker: gthread
-Dec  7 21:47:11 ip-172-31-32-201 web[6447]: [2024-12-07 21:47:11 +0000] [6447] [INFO] Booting worker with pid: 6447
-Dec  7 21:47:11 ip-172-31-32-201 web[6447]: [2024-12-07 21:47:11 +0000] [6447] [ERROR] Exception in worker process
-Dec  7 21:47:11 ip-172-31-32-201 web[6447]: Traceback (most recent call last):
-Dec  7 21:47:11 ip-172-31-32-201 web[6447]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
-Dec  7 21:47:11 ip-172-31-32-201 web[6447]:    worker.init_process()
-Dec  7 21:47:11 ip-172-31-32-201 web[6447]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
-Dec  7 21:47:11 ip-172-31-32-201 web[6447]:    super().init_process()
-Dec  7 21:47:11 ip-172-31-32-201 web[6447]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
-Dec  7 21:47:11 ip-172-31-32-201 web[6447]:    self.load_wsgi()
-Dec  7 21:47:11 ip-172-31-32-201 web[6447]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
-Dec  7 21:47:11 ip-172-31-32-201 web[6447]:    self.wsgi = self.app.wsgi()
-Dec  7 21:47:11 ip-172-31-32-201 web[6447]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
-Dec  7 21:47:11 ip-172-31-32-201 web[6447]:    self.callable = self.load()
-Dec  7 21:47:11 ip-172-31-32-201 web[6447]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
-Dec  7 21:47:11 ip-172-31-32-201 web[6447]:    return self.load_wsgiapp()
-Dec  7 21:47:11 ip-172-31-32-201 web[6447]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
-Dec  7 21:47:11 ip-172-31-32-201 web[6447]:    return util.import_app(self.app_uri)
-Dec  7 21:47:11 ip-172-31-32-201 web[6447]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
-Dec  7 21:47:11 ip-172-31-32-201 web[6447]:    mod = importlib.import_module(module)
-Dec  7 21:47:11 ip-172-31-32-201 web[6447]:  File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
-Dec  7 21:47:11 ip-172-31-32-201 web[6447]:    return _bootstrap._gcd_import(name[level:], package, level)
-Dec  7 21:47:11 ip-172-31-32-201 web[6447]:  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-Dec  7 21:47:11 ip-172-31-32-201 web[6447]:  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-Dec  7 21:47:11 ip-172-31-32-201 web[6447]:  File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
-Dec  7 21:47:11 ip-172-31-32-201 web[6447]: ModuleNotFoundError: No module named 'expense_tracker.wsgi'
-Dec  7 21:47:11 ip-172-31-32-201 web[6447]: [2024-12-07 21:47:11 +0000] [6447] [INFO] Worker exiting (pid: 6447)
-Dec  7 21:47:11 ip-172-31-32-201 web[6443]: [2024-12-07 21:47:11 +0000] [6443] [ERROR] Worker (pid:6447) exited with code 3
-Dec  7 21:47:11 ip-172-31-32-201 web[6443]: [2024-12-07 21:47:11 +0000] [6443] [ERROR] Shutting down: Master
-Dec  7 21:47:11 ip-172-31-32-201 web[6443]: [2024-12-07 21:47:11 +0000] [6443] [ERROR] Reason: Worker failed to boot.
-Dec  7 21:47:12 ip-172-31-32-201 web[6449]: [2024-12-07 21:47:12 +0000] [6449] [INFO] Starting gunicorn 21.2.0
-Dec  7 21:47:12 ip-172-31-32-201 web[6449]: [2024-12-07 21:47:12 +0000] [6449] [INFO] Listening at: http://127.0.0.1:8000 (6449)
-Dec  7 21:47:12 ip-172-31-32-201 web[6449]: [2024-12-07 21:47:12 +0000] [6449] [INFO] Using worker: gthread
-Dec  7 21:47:12 ip-172-31-32-201 web[6453]: [2024-12-07 21:47:12 +0000] [6453] [INFO] Booting worker with pid: 6453
-Dec  7 21:47:12 ip-172-31-32-201 web[6453]: [2024-12-07 21:47:12 +0000] [6453] [ERROR] Exception in worker process
-Dec  7 21:47:12 ip-172-31-32-201 web[6453]: Traceback (most recent call last):
-Dec  7 21:47:12 ip-172-31-32-201 web[6453]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
-Dec  7 21:47:12 ip-172-31-32-201 web[6453]:    worker.init_process()
-Dec  7 21:47:12 ip-172-31-32-201 web[6453]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
-Dec  7 21:47:12 ip-172-31-32-201 web[6453]:    super().init_process()
-Dec  7 21:47:12 ip-172-31-32-201 web[6453]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
-Dec  7 21:47:12 ip-172-31-32-201 web[6453]:    self.load_wsgi()
-Dec  7 21:47:12 ip-172-31-32-201 web[6453]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
-Dec  7 21:47:12 ip-172-31-32-201 web[6453]:    self.wsgi = self.app.wsgi()
-Dec  7 21:47:12 ip-172-31-32-201 web[6453]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
-Dec  7 21:47:12 ip-172-31-32-201 web[6453]:    self.callable = self.load()
-Dec  7 21:47:12 ip-172-31-32-201 web[6453]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
-Dec  7 21:47:12 ip-172-31-32-201 web[6453]:    return self.load_wsgiapp()
-Dec  7 21:47:12 ip-172-31-32-201 web[6453]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
-Dec  7 21:47:12 ip-172-31-32-201 web[6453]:    return util.import_app(self.app_uri)
-Dec  7 21:47:12 ip-172-31-32-201 web[6453]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
-Dec  7 21:47:12 ip-172-31-32-201 web[6453]:    mod = importlib.import_module(module)
-Dec  7 21:47:12 ip-172-31-32-201 web[6453]:  File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
-Dec  7 21:47:12 ip-172-31-32-201 web[6453]:    return _bootstrap._gcd_import(name[level:], package, level)
-Dec  7 21:47:12 ip-172-31-32-201 web[6453]:  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-Dec  7 21:47:12 ip-172-31-32-201 web[6453]:  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-Dec  7 21:47:12 ip-172-31-32-201 web[6453]:  File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
-Dec  7 21:47:12 ip-172-31-32-201 web[6453]: ModuleNotFoundError: No module named 'expense_tracker.wsgi'
-Dec  7 21:47:12 ip-172-31-32-201 web[6453]: [2024-12-07 21:47:12 +0000] [6453] [INFO] Worker exiting (pid: 6453)
-Dec  7 21:47:12 ip-172-31-32-201 web[6449]: [2024-12-07 21:47:12 +0000] [6449] [ERROR] Worker (pid:6453) exited with code 3
-Dec  7 21:47:12 ip-172-31-32-201 web[6449]: [2024-12-07 21:47:12 +0000] [6449] [ERROR] Shutting down: Master
-Dec  7 21:47:12 ip-172-31-32-201 web[6449]: [2024-12-07 21:47:12 +0000] [6449] [ERROR] Reason: Worker failed to boot.
-Dec  7 21:47:12 ip-172-31-32-201 web[6455]: [2024-12-07 21:47:12 +0000] [6455] [INFO] Starting gunicorn 21.2.0
-Dec  7 21:47:12 ip-172-31-32-201 web[6455]: [2024-12-07 21:47:12 +0000] [6455] [INFO] Listening at: http://127.0.0.1:8000 (6455)
-Dec  7 21:47:12 ip-172-31-32-201 web[6455]: [2024-12-07 21:47:12 +0000] [6455] [INFO] Using worker: gthread
-Dec  7 21:47:12 ip-172-31-32-201 web[6459]: [2024-12-07 21:47:12 +0000] [6459] [INFO] Booting worker with pid: 6459
-Dec  7 21:47:12 ip-172-31-32-201 web[6459]: [2024-12-07 21:47:12 +0000] [6459] [ERROR] Exception in worker process
-Dec  7 21:47:12 ip-172-31-32-201 web[6459]: Traceback (most recent call last):
-Dec  7 21:47:12 ip-172-31-32-201 web[6459]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
-Dec  7 21:47:12 ip-172-31-32-201 web[6459]:    worker.init_process()
-Dec  7 21:47:12 ip-172-31-32-201 web[6459]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
-Dec  7 21:47:12 ip-172-31-32-201 web[6459]:    super().init_process()
-Dec  7 21:47:12 ip-172-31-32-201 web[6459]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
-Dec  7 21:47:12 ip-172-31-32-201 web[6459]:    self.load_wsgi()
-Dec  7 21:47:12 ip-172-31-32-201 web[6459]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
-Dec  7 21:47:12 ip-172-31-32-201 web[6459]:    self.wsgi = self.app.wsgi()
-Dec  7 21:47:12 ip-172-31-32-201 web[6459]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
-Dec  7 21:47:12 ip-172-31-32-201 web[6459]:    self.callable = self.load()
-Dec  7 21:47:12 ip-172-31-32-201 web[6459]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
-Dec  7 21:47:12 ip-172-31-32-201 web[6459]:    return self.load_wsgiapp()
-Dec  7 21:47:12 ip-172-31-32-201 web[6459]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
-Dec  7 21:47:12 ip-172-31-32-201 web[6459]:    return util.import_app(self.app_uri)
-Dec  7 21:47:12 ip-172-31-32-201 web[6459]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
-Dec  7 21:47:12 ip-172-31-32-201 web[6459]:    mod = importlib.import_module(module)
-Dec  7 21:47:12 ip-172-31-32-201 web[6459]:  File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
-Dec  7 21:47:12 ip-172-31-32-201 web[6459]:    return _bootstrap._gcd_import(name[level:], package, level)
-Dec  7 21:47:12 ip-172-31-32-201 web[6459]:  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-Dec  7 21:47:12 ip-172-31-32-201 web[6459]:  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-Dec  7 21:47:12 ip-172-31-32-201 web[6459]:  File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
-Dec  7 21:47:12 ip-172-31-32-201 web[6459]: ModuleNotFoundError: No module named 'expense_tracker.wsgi'
-Dec  7 21:47:12 ip-172-31-32-201 web[6459]: [2024-12-07 21:47:12 +0000] [6459] [INFO] Worker exiting (pid: 6459)
-Dec  7 21:47:12 ip-172-31-32-201 web[6455]: [2024-12-07 21:47:12 +0000] [6455] [ERROR] Worker (pid:6459) exited with code 3
-Dec  7 21:47:12 ip-172-31-32-201 web[6455]: [2024-12-07 21:47:12 +0000] [6455] [ERROR] Shutting down: Master
-Dec  7 21:47:12 ip-172-31-32-201 web[6455]: [2024-12-07 21:47:12 +0000] [6455] [ERROR] Reason: Worker failed to boot.
-
-
-----------------------------------------
-/var/log/eb-engine.log
-----------------------------------------
-2024/12/07 21:47:06.847643 [INFO] Executing instruction: stop proxy
-2024/12/07 21:47:06.847672 [INFO] Running command /bin/sh -c systemctl show -p PartOf httpd.service
-2024/12/07 21:47:06.860853 [WARN] deregisterProcess Warning: process httpd is not registered, skipping...
-
-2024/12/07 21:47:06.860887 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
-2024/12/07 21:47:06.872206 [INFO] Running command /bin/sh -c systemctl is-active nginx.service
-2024/12/07 21:47:06.880195 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
-2024/12/07 21:47:06.888597 [INFO] Running command /bin/sh -c systemctl stop nginx.service
-2024/12/07 21:47:07.032360 [INFO] Running command /bin/sh -c systemctl disable nginx.service
-2024/12/07 21:47:07.283714 [INFO] Running command /bin/sh -c systemctl daemon-reload
-2024/12/07 21:47:07.522892 [INFO] Running command /bin/sh -c systemctl reset-failed
-2024/12/07 21:47:07.530943 [INFO] Executing instruction: FlipApplication
-2024/12/07 21:47:07.530965 [INFO] Fetching environment variables...
-2024/12/07 21:47:07.531136 [INFO] Purge old process...
-2024/12/07 21:47:07.531161 [INFO] Running command /bin/sh -c systemctl stop eb-app.target
-2024/12/07 21:47:07.540759 [INFO] Running command /bin/sh -c systemctl show -p ConsistsOf eb-app.target | cut -d= -f2
-2024/12/07 21:47:07.550523 [INFO] web.service
-
-2024/12/07 21:47:07.550564 [INFO] deregistering process: web
-2024/12/07 21:47:07.550576 [INFO] Running command /bin/sh -c systemctl show -p PartOf web.service
-2024/12/07 21:47:07.560869 [INFO] Running command /bin/sh -c systemctl is-active web.service
-2024/12/07 21:47:07.567805 [INFO] Running command /bin/sh -c systemctl disable web.service
-2024/12/07 21:47:07.853700 [INFO] Removed "/etc/systemd/system/multi-user.target.wants/web.service".
-
-2024/12/07 21:47:07.853876 [INFO] Running command /bin/sh -c systemctl daemon-reload
-2024/12/07 21:47:08.100781 [INFO] Running command /bin/sh -c systemctl reset-failed
-2024/12/07 21:47:08.109935 [INFO] Running command /bin/sh -c systemctl is-active web.service
-2024/12/07 21:47:08.117728 [INFO] Process web has not been fully terminated
-2024/12/07 21:47:08.117745 [INFO] Some processes have not been fully terminated, sleeping 1 seconds now
-2024/12/07 21:47:09.117867 [INFO] Running command /bin/sh -c systemctl is-active web.service
-2024/12/07 21:47:09.130067 [INFO] Process web has been fully terminated
-2024/12/07 21:47:09.130090 [INFO] All processes have been fully terminated
-2024/12/07 21:47:09.130094 [INFO] Removing /var/app/current/ if it exists
-2024/12/07 21:47:09.146732 [INFO] Renaming /var/app/staging/ to /var/app/current/
-2024/12/07 21:47:09.146802 [INFO] Register application processes...
-2024/12/07 21:47:09.146809 [INFO] Registering the proc: web
-
-2024/12/07 21:47:09.146821 [INFO] Running command /bin/sh -c systemctl show -p PartOf web.service
-2024/12/07 21:47:09.168675 [INFO] Running command /bin/sh -c systemctl daemon-reload
-2024/12/07 21:47:09.438164 [INFO] Running command /bin/sh -c systemctl reset-failed
-2024/12/07 21:47:09.448111 [INFO] Running command /bin/sh -c systemctl is-enabled eb-app.target
-2024/12/07 21:47:09.457097 [INFO] Running command /bin/sh -c systemctl enable eb-app.target
-2024/12/07 21:47:09.736111 [INFO] Running command /bin/sh -c systemctl start eb-app.target
-2024/12/07 21:47:09.744801 [INFO] Running command /bin/sh -c systemctl enable web.service
-2024/12/07 21:47:09.986239 [INFO] Created symlink /etc/systemd/system/multi-user.target.wants/web.service → /etc/systemd/system/web.service.
-
-2024/12/07 21:47:09.986278 [INFO] Running command /bin/sh -c systemctl show -p PartOf web.service
-2024/12/07 21:47:09.998263 [INFO] Running command /bin/sh -c systemctl is-active web.service
-2024/12/07 21:47:10.005712 [INFO] Running command /bin/sh -c systemctl start web.service
-2024/12/07 21:47:10.109065 [INFO] Executing instruction: start X-Ray
-2024/12/07 21:47:10.109086 [INFO] X-Ray is not enabled.
-2024/12/07 21:47:10.109092 [INFO] Executing instruction: start proxy with new configuration
-2024/12/07 21:47:10.109118 [INFO] Running command /bin/sh -c /usr/sbin/nginx -t -c /var/proxy/staging/nginx/nginx.conf
-2024/12/07 21:47:10.134080 [INFO] nginx: [warn] could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
-nginx: the configuration file /var/proxy/staging/nginx/nginx.conf syntax is ok
-nginx: configuration file /var/proxy/staging/nginx/nginx.conf test is successful
-
-2024/12/07 21:47:10.134411 [INFO] Running command /bin/sh -c cp -rp /var/proxy/staging/nginx/* /etc/nginx
-2024/12/07 21:47:10.138866 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
-2024/12/07 21:47:10.159628 [INFO] Running command /bin/sh -c systemctl daemon-reload
-2024/12/07 21:47:10.541911 [INFO] Running command /bin/sh -c systemctl reset-failed
-2024/12/07 21:47:10.592401 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
-2024/12/07 21:47:10.619891 [INFO] Running command /bin/sh -c systemctl is-active nginx.service
-2024/12/07 21:47:10.639431 [INFO] Running command /bin/sh -c systemctl start nginx.service
-2024/12/07 21:47:10.847722 [INFO] Executing instruction: configureSqsd
-2024/12/07 21:47:10.847743 [INFO] This is a web server environment instance, skip configure sqsd daemon ...
-2024/12/07 21:47:10.847748 [INFO] Executing instruction: startSqsd
-2024/12/07 21:47:10.847751 [INFO] This is a web server environment instance, skip start sqsd daemon ...
-2024/12/07 21:47:10.847755 [INFO] Executing instruction: Track pids in healthd
-2024/12/07 21:47:10.847759 [INFO] This is an enhanced health env...
-2024/12/07 21:47:10.847773 [INFO] Running command /bin/sh -c systemctl show -p ConsistsOf aws-eb.target | cut -d= -f2
-2024/12/07 21:47:10.863688 [INFO] healthd.service cfn-hup.service nginx.service
-
-2024/12/07 21:47:10.863726 [INFO] Running command /bin/sh -c systemctl show -p ConsistsOf eb-app.target | cut -d= -f2
-2024/12/07 21:47:10.881262 [INFO] web.service
-
-2024/12/07 21:47:10.881668 [INFO] Executing instruction: RunAppDeployPostDeployHooks
-2024/12/07 21:47:10.881803 [INFO] Executing platform hooks in .platform/hooks/postdeploy/
-2024/12/07 21:47:10.881823 [INFO] The dir .platform/hooks/postdeploy/ does not exist
-2024/12/07 21:47:10.881826 [INFO] Finished running scripts in /var/app/current/.platform/hooks/postdeploy
-2024/12/07 21:47:10.881833 [INFO] Executing cleanup logic
-2024/12/07 21:47:10.881983 [INFO] CommandService Response: {"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"Engine execution has succeeded.","returncode":0,"events":[{"msg":"Instance deployment successfully generated a 'Procfile'.","timestamp":1733608023695,"severity":"INFO"},{"msg":"Instance deployment completed successfully.","timestamp":1733608030881,"severity":"INFO"}]}]}
-
-2024/12/07 21:47:10.882156 [INFO] Platform Engine finished execution on command: app-deploy
-
-2024/12/07 21:50:01.532085 [INFO] Starting...
-2024/12/07 21:50:01.532131 [INFO] Starting EBPlatform-PlatformEngine
-2024/12/07 21:50:01.532152 [INFO] reading event message file
-2024/12/07 21:50:01.532293 [INFO] Engine received EB command cfn-hup-exec
-
-2024/12/07 21:50:01.638474 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:eu-west-1:250738637992:stack/awseb-e-ii2fhia2ez-stack/5b6abbb0-b3ec-11ef-b3e9-06dab945c80f -r AWSEBAutoScalingGroup --region eu-west-1
-2024/12/07 21:50:01.994006 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:eu-west-1:250738637992:stack/awseb-e-ii2fhia2ez-stack/5b6abbb0-b3ec-11ef-b3e9-06dab945c80f -r AWSEBBeanstalkMetadata --region eu-west-1
-2024/12/07 21:50:02.302365 [INFO] checking whether command tail-log is applicable to this instance...
-2024/12/07 21:50:02.302379 [INFO] this command is applicable to the instance, thus instance should execute command
-2024/12/07 21:50:02.302382 [INFO] Engine command: (tail-log)
-
-2024/12/07 21:50:02.302430 [INFO] Executing instruction: GetTailLogs
-2024/12/07 21:50:02.302433 [INFO] Tail Logs...
-2024/12/07 21:50:02.302730 [INFO] Running command /bin/sh -c tail -n 100 /var/log/web.stdout.log
-2024/12/07 21:50:02.304863 [INFO] Running command /bin/sh -c tail -n 100 /var/log/eb-engine.log
-
-
-----------------------------------------
 /var/log/eb-hooks.log
 ----------------------------------------
 Found another file with the destination path 'admin/js/change_form.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
@@ -318,29 +108,6 @@ WARNINGS:
 ----------------------------------------
 /var/log/nginx/access.log
 ----------------------------------------
-172.31.32.88 - - [07/Dec/2024:21:34:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:34:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:34:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:34:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:34:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:35:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:35:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:35:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:35:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:35:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:35:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:35:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:35:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:36:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:36:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:36:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:36:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:36:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:36:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:36:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:36:46 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:21:37:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:21:37:01 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
 172.31.32.88 - - [07/Dec/2024:21:37:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
 172.31.15.41 - - [07/Dec/2024:21:37:16 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
 172.31.32.88 - - [07/Dec/2024:21:37:31 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
@@ -418,37 +185,34 @@ WARNINGS:
 172.31.15.41 - - [07/Dec/2024:21:45:32 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
 172.31.32.88 - - [07/Dec/2024:21:45:47 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
 172.31.15.41 - - [07/Dec/2024:21:45:47 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:08:55 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:08:55 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:09:10 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:09:10 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:09:25 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:09:25 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:09:40 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:09:40 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:09:55 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:09:55 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:10:10 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:10:10 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:10:25 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:10:25 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:10:40 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:10:40 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:10:45 +0000] "GET / HTTP/1.1" 502 552 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
+172.31.15.41 - - [07/Dec/2024:22:10:55 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:10:55 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:11:10 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:11:10 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:11:25 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:11:25 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
 
 
 ----------------------------------------
 /var/log/nginx/error.log
 ----------------------------------------
-2024/12/07 17:36:52 [error] 54069#54069: *338 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:37:02 [error] 54069#54069: *340 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:37:07 [error] 54069#54069: *342 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:37:17 [error] 54069#54069: *344 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:37:22 [error] 54069#54069: *346 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:37:32 [error] 54069#54069: *348 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:37:33 [error] 54069#54069: *350 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET /.env HTTP/1.1", upstream: "http://127.0.0.1:8000/.env", host: "63.35.16.85"
-2024/12/07 17:37:33 [error] 54069#54069: *350 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "POST / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "63.35.16.85"
-2024/12/07 17:37:37 [error] 54069#54069: *353 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:37:47 [error] 54069#54069: *355 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:37:52 [error] 54069#54069: *357 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:38:02 [error] 54070#54070: *359 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:38:07 [error] 54070#54070: *361 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:38:17 [error] 54070#54070: *363 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:38:22 [error] 54070#54070: *365 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:38:32 [error] 54070#54070: *367 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:38:37 [error] 54070#54070: *369 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:38:47 [error] 54070#54070: *371 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:38:52 [error] 54070#54070: *373 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:39:02 [error] 54070#54070: *375 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:39:07 [error] 54070#54070: *377 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:39:09 [error] 54070#54070: *379 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "127.0.0.1"
-2024/12/07 17:39:17 [error] 54070#54070: *381 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:39:22 [error] 54070#54070: *383 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:39:32 [error] 54070#54070: *385 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 17:39:37 [error] 54070#54070: *387 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
 2024/12/07 17:39:47 [error] 54070#54070: *389 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
 2024/12/07 17:39:53 [error] 54069#54069: *391 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
 2024/12/07 17:40:02 [error] 54069#54069: *393 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
@@ -523,5 +287,241 @@ WARNINGS:
 2024/12/07 21:47:10 [warn] 6378#6378: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
 2024/12/07 21:47:10 [warn] 6413#6413: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
 2024/12/07 21:47:10 [warn] 6418#6418: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 22:08:55 [error] 6421#6421: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:08:55 [error] 6420#6420: *3 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:09:10 [error] 6421#6421: *5 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:09:10 [error] 6421#6421: *7 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:09:25 [error] 6421#6421: *9 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:09:25 [error] 6421#6421: *11 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:09:36 [warn] 7666#7666: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 22:09:36 [warn] 7701#7701: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 22:09:36 [warn] 7702#7702: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 22:09:40 [error] 7704#7704: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:09:40 [error] 7705#7705: *3 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:09:55 [error] 7704#7704: *5 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:09:55 [error] 7704#7704: *7 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:10:10 [error] 7704#7704: *9 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:10:10 [error] 7704#7704: *11 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:10:25 [error] 7704#7704: *13 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:10:25 [error] 7704#7704: *15 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:10:40 [error] 7704#7704: *17 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:10:40 [error] 7704#7704: *19 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:10:45 [error] 7704#7704: *21 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com"
+2024/12/07 22:10:55 [error] 7704#7704: *23 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:10:55 [error] 7704#7704: *25 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:11:10 [error] 7704#7704: *27 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:11:10 [error] 7704#7704: *29 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:11:25 [error] 7704#7704: *31 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:11:25 [error] 7704#7704: *33 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+
+
+----------------------------------------
+/var/log/web.stdout.log
+----------------------------------------
+Dec  7 22:09:38 ip-172-31-32-201 web[7736]:    super().init_process()
+Dec  7 22:09:38 ip-172-31-32-201 web[7736]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+Dec  7 22:09:38 ip-172-31-32-201 web[7736]:    self.load_wsgi()
+Dec  7 22:09:38 ip-172-31-32-201 web[7736]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+Dec  7 22:09:38 ip-172-31-32-201 web[7736]:    self.wsgi = self.app.wsgi()
+Dec  7 22:09:38 ip-172-31-32-201 web[7736]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Dec  7 22:09:38 ip-172-31-32-201 web[7736]:    self.callable = self.load()
+Dec  7 22:09:38 ip-172-31-32-201 web[7736]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+Dec  7 22:09:38 ip-172-31-32-201 web[7736]:    return self.load_wsgiapp()
+Dec  7 22:09:38 ip-172-31-32-201 web[7736]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+Dec  7 22:09:38 ip-172-31-32-201 web[7736]:    return util.import_app(self.app_uri)
+Dec  7 22:09:38 ip-172-31-32-201 web[7736]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/util.py", line 375, in import_app
+Dec  7 22:09:38 ip-172-31-32-201 web[7736]:    raise ImportError(msg % (module.rsplit(".", 1)[0], obj))
+Dec  7 22:09:38 ip-172-31-32-201 web[7736]: ImportError: Failed to find application, did you mean 'expense_tracker/expense_tracker/wsgi:application'?
+Dec  7 22:09:38 ip-172-31-32-201 web[7736]: [2024-12-07 22:09:38 +0000] [7736] [INFO] Worker exiting (pid: 7736)
+Dec  7 22:09:38 ip-172-31-32-201 web[7732]: [2024-12-07 22:09:38 +0000] [7732] [ERROR] Worker (pid:7736) exited with code 3
+Dec  7 22:09:38 ip-172-31-32-201 web[7732]: [2024-12-07 22:09:38 +0000] [7732] [ERROR] Shutting down: Master
+Dec  7 22:09:38 ip-172-31-32-201 web[7732]: [2024-12-07 22:09:38 +0000] [7732] [ERROR] Reason: Worker failed to boot.
+Dec  7 22:09:38 ip-172-31-32-201 web[7738]: [2024-12-07 22:09:38 +0000] [7738] [INFO] Starting gunicorn 21.2.0
+Dec  7 22:09:38 ip-172-31-32-201 web[7738]: [2024-12-07 22:09:38 +0000] [7738] [INFO] Listening at: http://127.0.0.1:8000 (7738)
+Dec  7 22:09:38 ip-172-31-32-201 web[7738]: [2024-12-07 22:09:38 +0000] [7738] [INFO] Using worker: gthread
+Dec  7 22:09:38 ip-172-31-32-201 web[7742]: [2024-12-07 22:09:38 +0000] [7742] [INFO] Booting worker with pid: 7742
+Dec  7 22:09:38 ip-172-31-32-201 web[7742]: [2024-12-07 22:09:38 +0000] [7742] [ERROR] Exception in worker process
+Dec  7 22:09:38 ip-172-31-32-201 web[7742]: Traceback (most recent call last):
+Dec  7 22:09:38 ip-172-31-32-201 web[7742]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+Dec  7 22:09:38 ip-172-31-32-201 web[7742]:    mod = importlib.import_module(module)
+Dec  7 22:09:38 ip-172-31-32-201 web[7742]:  File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
+Dec  7 22:09:38 ip-172-31-32-201 web[7742]:    return _bootstrap._gcd_import(name[level:], package, level)
+Dec  7 22:09:38 ip-172-31-32-201 web[7742]:  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+Dec  7 22:09:38 ip-172-31-32-201 web[7742]:  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+Dec  7 22:09:38 ip-172-31-32-201 web[7742]:  File "<frozen importlib._bootstrap>", line 972, in _find_and_load_unlocked
+Dec  7 22:09:38 ip-172-31-32-201 web[7742]:  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+Dec  7 22:09:38 ip-172-31-32-201 web[7742]:  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+Dec  7 22:09:38 ip-172-31-32-201 web[7742]:  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+Dec  7 22:09:38 ip-172-31-32-201 web[7742]:  File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
+Dec  7 22:09:38 ip-172-31-32-201 web[7742]: ModuleNotFoundError: No module named 'expense_tracker/expense_tracker/wsgi'
+Dec  7 22:09:38 ip-172-31-32-201 web[7742]: During handling of the above exception, another exception occurred:
+Dec  7 22:09:38 ip-172-31-32-201 web[7742]: Traceback (most recent call last):
+Dec  7 22:09:38 ip-172-31-32-201 web[7742]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+Dec  7 22:09:38 ip-172-31-32-201 web[7742]:    worker.init_process()
+Dec  7 22:09:38 ip-172-31-32-201 web[7742]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
+Dec  7 22:09:38 ip-172-31-32-201 web[7742]:    super().init_process()
+Dec  7 22:09:38 ip-172-31-32-201 web[7742]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+Dec  7 22:09:38 ip-172-31-32-201 web[7742]:    self.load_wsgi()
+Dec  7 22:09:38 ip-172-31-32-201 web[7742]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+Dec  7 22:09:38 ip-172-31-32-201 web[7742]:    self.wsgi = self.app.wsgi()
+Dec  7 22:09:38 ip-172-31-32-201 web[7742]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Dec  7 22:09:38 ip-172-31-32-201 web[7742]:    self.callable = self.load()
+Dec  7 22:09:38 ip-172-31-32-201 web[7742]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+Dec  7 22:09:38 ip-172-31-32-201 web[7742]:    return self.load_wsgiapp()
+Dec  7 22:09:38 ip-172-31-32-201 web[7742]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+Dec  7 22:09:38 ip-172-31-32-201 web[7742]:    return util.import_app(self.app_uri)
+Dec  7 22:09:38 ip-172-31-32-201 web[7742]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/util.py", line 375, in import_app
+Dec  7 22:09:38 ip-172-31-32-201 web[7742]:    raise ImportError(msg % (module.rsplit(".", 1)[0], obj))
+Dec  7 22:09:38 ip-172-31-32-201 web[7742]: ImportError: Failed to find application, did you mean 'expense_tracker/expense_tracker/wsgi:application'?
+Dec  7 22:09:38 ip-172-31-32-201 web[7742]: [2024-12-07 22:09:38 +0000] [7742] [INFO] Worker exiting (pid: 7742)
+Dec  7 22:09:38 ip-172-31-32-201 web[7738]: [2024-12-07 22:09:38 +0000] [7738] [ERROR] Worker (pid:7742) exited with code 3
+Dec  7 22:09:38 ip-172-31-32-201 web[7738]: [2024-12-07 22:09:38 +0000] [7738] [ERROR] Shutting down: Master
+Dec  7 22:09:38 ip-172-31-32-201 web[7738]: [2024-12-07 22:09:38 +0000] [7738] [ERROR] Reason: Worker failed to boot.
+Dec  7 22:09:39 ip-172-31-32-201 web[7744]: [2024-12-07 22:09:39 +0000] [7744] [INFO] Starting gunicorn 21.2.0
+Dec  7 22:09:39 ip-172-31-32-201 web[7744]: [2024-12-07 22:09:39 +0000] [7744] [INFO] Listening at: http://127.0.0.1:8000 (7744)
+Dec  7 22:09:39 ip-172-31-32-201 web[7744]: [2024-12-07 22:09:39 +0000] [7744] [INFO] Using worker: gthread
+Dec  7 22:09:39 ip-172-31-32-201 web[7748]: [2024-12-07 22:09:39 +0000] [7748] [INFO] Booting worker with pid: 7748
+Dec  7 22:09:39 ip-172-31-32-201 web[7748]: [2024-12-07 22:09:39 +0000] [7748] [ERROR] Exception in worker process
+Dec  7 22:09:39 ip-172-31-32-201 web[7748]: Traceback (most recent call last):
+Dec  7 22:09:39 ip-172-31-32-201 web[7748]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+Dec  7 22:09:39 ip-172-31-32-201 web[7748]:    mod = importlib.import_module(module)
+Dec  7 22:09:39 ip-172-31-32-201 web[7748]:  File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
+Dec  7 22:09:39 ip-172-31-32-201 web[7748]:    return _bootstrap._gcd_import(name[level:], package, level)
+Dec  7 22:09:39 ip-172-31-32-201 web[7748]:  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+Dec  7 22:09:39 ip-172-31-32-201 web[7748]:  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+Dec  7 22:09:39 ip-172-31-32-201 web[7748]:  File "<frozen importlib._bootstrap>", line 972, in _find_and_load_unlocked
+Dec  7 22:09:39 ip-172-31-32-201 web[7748]:  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+Dec  7 22:09:39 ip-172-31-32-201 web[7748]:  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+Dec  7 22:09:39 ip-172-31-32-201 web[7748]:  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+Dec  7 22:09:39 ip-172-31-32-201 web[7748]:  File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
+Dec  7 22:09:39 ip-172-31-32-201 web[7748]: ModuleNotFoundError: No module named 'expense_tracker/expense_tracker/wsgi'
+Dec  7 22:09:39 ip-172-31-32-201 web[7748]: During handling of the above exception, another exception occurred:
+Dec  7 22:09:39 ip-172-31-32-201 web[7748]: Traceback (most recent call last):
+Dec  7 22:09:39 ip-172-31-32-201 web[7748]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+Dec  7 22:09:39 ip-172-31-32-201 web[7748]:    worker.init_process()
+Dec  7 22:09:39 ip-172-31-32-201 web[7748]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
+Dec  7 22:09:39 ip-172-31-32-201 web[7748]:    super().init_process()
+Dec  7 22:09:39 ip-172-31-32-201 web[7748]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+Dec  7 22:09:39 ip-172-31-32-201 web[7748]:    self.load_wsgi()
+Dec  7 22:09:39 ip-172-31-32-201 web[7748]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+Dec  7 22:09:39 ip-172-31-32-201 web[7748]:    self.wsgi = self.app.wsgi()
+Dec  7 22:09:39 ip-172-31-32-201 web[7748]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Dec  7 22:09:39 ip-172-31-32-201 web[7748]:    self.callable = self.load()
+Dec  7 22:09:39 ip-172-31-32-201 web[7748]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+Dec  7 22:09:39 ip-172-31-32-201 web[7748]:    return self.load_wsgiapp()
+Dec  7 22:09:39 ip-172-31-32-201 web[7748]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+Dec  7 22:09:39 ip-172-31-32-201 web[7748]:    return util.import_app(self.app_uri)
+Dec  7 22:09:39 ip-172-31-32-201 web[7748]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/util.py", line 375, in import_app
+Dec  7 22:09:39 ip-172-31-32-201 web[7748]:    raise ImportError(msg % (module.rsplit(".", 1)[0], obj))
+Dec  7 22:09:39 ip-172-31-32-201 web[7748]: ImportError: Failed to find application, did you mean 'expense_tracker/expense_tracker/wsgi:application'?
+Dec  7 22:09:39 ip-172-31-32-201 web[7748]: [2024-12-07 22:09:39 +0000] [7748] [INFO] Worker exiting (pid: 7748)
+Dec  7 22:09:39 ip-172-31-32-201 web[7744]: [2024-12-07 22:09:39 +0000] [7744] [ERROR] Worker (pid:7748) exited with code 3
+Dec  7 22:09:39 ip-172-31-32-201 web[7744]: [2024-12-07 22:09:39 +0000] [7744] [ERROR] Shutting down: Master
+Dec  7 22:09:39 ip-172-31-32-201 web[7744]: [2024-12-07 22:09:39 +0000] [7744] [ERROR] Reason: Worker failed to boot.
+
+
+----------------------------------------
+/var/log/eb-engine.log
+----------------------------------------
+2024/12/07 22:09:33.867701 [INFO] Executing instruction: stop proxy
+2024/12/07 22:09:33.867741 [INFO] Running command /bin/sh -c systemctl show -p PartOf httpd.service
+2024/12/07 22:09:33.881105 [WARN] deregisterProcess Warning: process httpd is not registered, skipping...
+
+2024/12/07 22:09:33.881141 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
+2024/12/07 22:09:33.891850 [INFO] Running command /bin/sh -c systemctl is-active nginx.service
+2024/12/07 22:09:33.898606 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
+2024/12/07 22:09:33.907522 [INFO] Running command /bin/sh -c systemctl stop nginx.service
+2024/12/07 22:09:34.062434 [INFO] Running command /bin/sh -c systemctl disable nginx.service
+2024/12/07 22:09:34.320066 [INFO] Running command /bin/sh -c systemctl daemon-reload
+2024/12/07 22:09:34.555615 [INFO] Running command /bin/sh -c systemctl reset-failed
+2024/12/07 22:09:34.565223 [INFO] Executing instruction: FlipApplication
+2024/12/07 22:09:34.565244 [INFO] Fetching environment variables...
+2024/12/07 22:09:34.565573 [INFO] Purge old process...
+2024/12/07 22:09:34.565593 [INFO] Running command /bin/sh -c systemctl stop eb-app.target
+2024/12/07 22:09:34.573778 [INFO] Running command /bin/sh -c systemctl show -p ConsistsOf eb-app.target | cut -d= -f2
+2024/12/07 22:09:34.583963 [INFO] web.service
+
+2024/12/07 22:09:34.583984 [INFO] deregistering process: web
+2024/12/07 22:09:34.583997 [INFO] Running command /bin/sh -c systemctl show -p PartOf web.service
+2024/12/07 22:09:34.593671 [INFO] Running command /bin/sh -c systemctl is-active web.service
+2024/12/07 22:09:34.600832 [INFO] Running command /bin/sh -c systemctl disable web.service
+2024/12/07 22:09:34.831708 [INFO] Removed "/etc/systemd/system/multi-user.target.wants/web.service".
+
+2024/12/07 22:09:34.831802 [INFO] Running command /bin/sh -c systemctl daemon-reload
+2024/12/07 22:09:35.059805 [INFO] Running command /bin/sh -c systemctl reset-failed
+2024/12/07 22:09:35.067882 [INFO] Running command /bin/sh -c systemctl is-active web.service
+2024/12/07 22:09:35.074782 [INFO] Process web has been fully terminated
+2024/12/07 22:09:35.074804 [INFO] All processes have been fully terminated
+2024/12/07 22:09:35.074808 [INFO] Removing /var/app/current/ if it exists
+2024/12/07 22:09:35.267609 [INFO] Renaming /var/app/staging/ to /var/app/current/
+2024/12/07 22:09:35.267649 [INFO] Register application processes...
+2024/12/07 22:09:35.267656 [INFO] Registering the proc: web
+
+2024/12/07 22:09:35.267674 [INFO] Running command /bin/sh -c systemctl show -p PartOf web.service
+2024/12/07 22:09:35.303296 [INFO] Running command /bin/sh -c systemctl daemon-reload
+2024/12/07 22:09:35.573664 [INFO] Running command /bin/sh -c systemctl reset-failed
+2024/12/07 22:09:35.584771 [INFO] Running command /bin/sh -c systemctl is-enabled eb-app.target
+2024/12/07 22:09:35.593678 [INFO] Running command /bin/sh -c systemctl enable eb-app.target
+2024/12/07 22:09:35.874646 [INFO] Running command /bin/sh -c systemctl start eb-app.target
+2024/12/07 22:09:35.883939 [INFO] Running command /bin/sh -c systemctl enable web.service
+2024/12/07 22:09:36.138800 [INFO] Created symlink /etc/systemd/system/multi-user.target.wants/web.service → /etc/systemd/system/web.service.
+
+2024/12/07 22:09:36.138842 [INFO] Running command /bin/sh -c systemctl show -p PartOf web.service
+2024/12/07 22:09:36.149756 [INFO] Running command /bin/sh -c systemctl is-active web.service
+2024/12/07 22:09:36.160837 [INFO] Running command /bin/sh -c systemctl start web.service
+2024/12/07 22:09:36.274136 [INFO] Executing instruction: start X-Ray
+2024/12/07 22:09:36.274162 [INFO] X-Ray is not enabled.
+2024/12/07 22:09:36.274167 [INFO] Executing instruction: start proxy with new configuration
+2024/12/07 22:09:36.274192 [INFO] Running command /bin/sh -c /usr/sbin/nginx -t -c /var/proxy/staging/nginx/nginx.conf
+2024/12/07 22:09:36.304978 [INFO] nginx: [warn] could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+nginx: the configuration file /var/proxy/staging/nginx/nginx.conf syntax is ok
+nginx: configuration file /var/proxy/staging/nginx/nginx.conf test is successful
+
+2024/12/07 22:09:36.305298 [INFO] Running command /bin/sh -c cp -rp /var/proxy/staging/nginx/* /etc/nginx
+2024/12/07 22:09:36.308873 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
+2024/12/07 22:09:36.329467 [INFO] Running command /bin/sh -c systemctl daemon-reload
+2024/12/07 22:09:36.621231 [INFO] Running command /bin/sh -c systemctl reset-failed
+2024/12/07 22:09:36.688884 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
+2024/12/07 22:09:36.702195 [INFO] Running command /bin/sh -c systemctl is-active nginx.service
+2024/12/07 22:09:36.710408 [INFO] Running command /bin/sh -c systemctl start nginx.service
+2024/12/07 22:09:36.842206 [INFO] Executing instruction: configureSqsd
+2024/12/07 22:09:36.842226 [INFO] This is a web server environment instance, skip configure sqsd daemon ...
+2024/12/07 22:09:36.842230 [INFO] Executing instruction: startSqsd
+2024/12/07 22:09:36.842234 [INFO] This is a web server environment instance, skip start sqsd daemon ...
+2024/12/07 22:09:36.842238 [INFO] Executing instruction: Track pids in healthd
+2024/12/07 22:09:36.842242 [INFO] This is an enhanced health env...
+2024/12/07 22:09:36.842256 [INFO] Running command /bin/sh -c systemctl show -p ConsistsOf aws-eb.target | cut -d= -f2
+2024/12/07 22:09:36.859211 [INFO] cfn-hup.service healthd.service nginx.service
+
+2024/12/07 22:09:36.859259 [INFO] Running command /bin/sh -c systemctl show -p ConsistsOf eb-app.target | cut -d= -f2
+2024/12/07 22:09:36.874436 [INFO] web.service
+
+2024/12/07 22:09:36.874839 [INFO] Executing instruction: RunAppDeployPostDeployHooks
+2024/12/07 22:09:36.874900 [INFO] Executing platform hooks in .platform/hooks/postdeploy/
+2024/12/07 22:09:36.874922 [INFO] The dir .platform/hooks/postdeploy/ does not exist
+2024/12/07 22:09:36.874926 [INFO] Finished running scripts in /var/app/current/.platform/hooks/postdeploy
+2024/12/07 22:09:36.874932 [INFO] Executing cleanup logic
+2024/12/07 22:09:36.875047 [INFO] CommandService Response: {"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"Engine execution has succeeded.","returncode":0,"events":[{"msg":"Instance deployment successfully generated a 'Procfile'.","timestamp":1733609370088,"severity":"INFO"},{"msg":"Instance deployment completed successfully.","timestamp":1733609376874,"severity":"INFO"}]}]}
+
+2024/12/07 22:09:36.875215 [INFO] Platform Engine finished execution on command: app-deploy
+
+2024/12/07 22:11:32.197899 [INFO] Starting...
+2024/12/07 22:11:32.197954 [INFO] Starting EBPlatform-PlatformEngine
+2024/12/07 22:11:32.197976 [INFO] reading event message file
+2024/12/07 22:11:32.198269 [INFO] Engine received EB command cfn-hup-exec
+
+2024/12/07 22:11:32.263019 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:eu-west-1:250738637992:stack/awseb-e-ii2fhia2ez-stack/5b6abbb0-b3ec-11ef-b3e9-06dab945c80f -r AWSEBAutoScalingGroup --region eu-west-1
+2024/12/07 22:11:32.633898 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:eu-west-1:250738637992:stack/awseb-e-ii2fhia2ez-stack/5b6abbb0-b3ec-11ef-b3e9-06dab945c80f -r AWSEBBeanstalkMetadata --region eu-west-1
+2024/12/07 22:11:33.012645 [INFO] checking whether command tail-log is applicable to this instance...
+2024/12/07 22:11:33.012658 [INFO] this command is applicable to the instance, thus instance should execute command
+2024/12/07 22:11:33.012661 [INFO] Engine command: (tail-log)
+
+2024/12/07 22:11:33.012721 [INFO] Executing instruction: GetTailLogs
+2024/12/07 22:11:33.012724 [INFO] Tail Logs...
+2024/12/07 22:11:33.013067 [INFO] Running command /bin/sh -c tail -n 100 /var/log/eb-hooks.log
+2024/12/07 22:11:33.015378 [INFO] Running command /bin/sh -c tail -n 100 /var/log/nginx/access.log
+2024/12/07 22:11:33.017215 [INFO] Running command /bin/sh -c tail -n 100 /var/log/nginx/error.log
+2024/12/07 22:11:33.019374 [INFO] Running command /bin/sh -c tail -n 100 /var/log/web.stdout.log
+2024/12/07 22:11:33.021501 [INFO] Running command /bin/sh -c tail -n 100 /var/log/eb-engine.log
 
 
