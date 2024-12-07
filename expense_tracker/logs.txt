@@ -3,211 +3,211 @@ Retrieving logs...
 ----------------------------------------
 /var/log/web.stdout.log
 ----------------------------------------
-Dec  7 22:24:07 ip-172-31-32-201 web[8717]:    super().init_process()
-Dec  7 22:24:07 ip-172-31-32-201 web[8717]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
-Dec  7 22:24:07 ip-172-31-32-201 web[8717]:    self.load_wsgi()
-Dec  7 22:24:07 ip-172-31-32-201 web[8717]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
-Dec  7 22:24:07 ip-172-31-32-201 web[8717]:    self.wsgi = self.app.wsgi()
-Dec  7 22:24:07 ip-172-31-32-201 web[8717]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
-Dec  7 22:24:07 ip-172-31-32-201 web[8717]:    self.callable = self.load()
-Dec  7 22:24:07 ip-172-31-32-201 web[8717]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
-Dec  7 22:24:07 ip-172-31-32-201 web[8717]:    return self.load_wsgiapp()
-Dec  7 22:24:07 ip-172-31-32-201 web[8717]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
-Dec  7 22:24:07 ip-172-31-32-201 web[8717]:    return util.import_app(self.app_uri)
-Dec  7 22:24:07 ip-172-31-32-201 web[8717]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/util.py", line 375, in import_app
-Dec  7 22:24:07 ip-172-31-32-201 web[8717]:    raise ImportError(msg % (module.rsplit(".", 1)[0], obj))
-Dec  7 22:24:07 ip-172-31-32-201 web[8717]: ImportError: Failed to find application, did you mean 'expense_tracker/expense_tracker/wsgi:application'?
-Dec  7 22:24:07 ip-172-31-32-201 web[8717]: [2024-12-07 22:24:07 +0000] [8717] [INFO] Worker exiting (pid: 8717)
-Dec  7 22:24:07 ip-172-31-32-201 web[8713]: [2024-12-07 22:24:07 +0000] [8713] [ERROR] Worker (pid:8717) exited with code 3
-Dec  7 22:24:07 ip-172-31-32-201 web[8713]: [2024-12-07 22:24:07 +0000] [8713] [ERROR] Shutting down: Master
-Dec  7 22:24:07 ip-172-31-32-201 web[8713]: [2024-12-07 22:24:07 +0000] [8713] [ERROR] Reason: Worker failed to boot.
-Dec  7 22:24:07 ip-172-31-32-201 web[8719]: [2024-12-07 22:24:07 +0000] [8719] [INFO] Starting gunicorn 21.2.0
-Dec  7 22:24:07 ip-172-31-32-201 web[8719]: [2024-12-07 22:24:07 +0000] [8719] [INFO] Listening at: http://127.0.0.1:8000 (8719)
-Dec  7 22:24:07 ip-172-31-32-201 web[8719]: [2024-12-07 22:24:07 +0000] [8719] [INFO] Using worker: gthread
-Dec  7 22:24:07 ip-172-31-32-201 web[8723]: [2024-12-07 22:24:07 +0000] [8723] [INFO] Booting worker with pid: 8723
-Dec  7 22:24:07 ip-172-31-32-201 web[8723]: [2024-12-07 22:24:07 +0000] [8723] [ERROR] Exception in worker process
-Dec  7 22:24:07 ip-172-31-32-201 web[8723]: Traceback (most recent call last):
-Dec  7 22:24:07 ip-172-31-32-201 web[8723]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
-Dec  7 22:24:07 ip-172-31-32-201 web[8723]:    mod = importlib.import_module(module)
-Dec  7 22:24:07 ip-172-31-32-201 web[8723]:  File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
-Dec  7 22:24:07 ip-172-31-32-201 web[8723]:    return _bootstrap._gcd_import(name[level:], package, level)
-Dec  7 22:24:07 ip-172-31-32-201 web[8723]:  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-Dec  7 22:24:07 ip-172-31-32-201 web[8723]:  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-Dec  7 22:24:07 ip-172-31-32-201 web[8723]:  File "<frozen importlib._bootstrap>", line 972, in _find_and_load_unlocked
-Dec  7 22:24:07 ip-172-31-32-201 web[8723]:  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
-Dec  7 22:24:07 ip-172-31-32-201 web[8723]:  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-Dec  7 22:24:07 ip-172-31-32-201 web[8723]:  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-Dec  7 22:24:07 ip-172-31-32-201 web[8723]:  File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
-Dec  7 22:24:07 ip-172-31-32-201 web[8723]: ModuleNotFoundError: No module named 'expense_tracker/expense_tracker/wsgi'
-Dec  7 22:24:07 ip-172-31-32-201 web[8723]: During handling of the above exception, another exception occurred:
-Dec  7 22:24:07 ip-172-31-32-201 web[8723]: Traceback (most recent call last):
-Dec  7 22:24:07 ip-172-31-32-201 web[8723]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
-Dec  7 22:24:07 ip-172-31-32-201 web[8723]:    worker.init_process()
-Dec  7 22:24:07 ip-172-31-32-201 web[8723]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
-Dec  7 22:24:07 ip-172-31-32-201 web[8723]:    super().init_process()
-Dec  7 22:24:07 ip-172-31-32-201 web[8723]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
-Dec  7 22:24:07 ip-172-31-32-201 web[8723]:    self.load_wsgi()
-Dec  7 22:24:07 ip-172-31-32-201 web[8723]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
-Dec  7 22:24:07 ip-172-31-32-201 web[8723]:    self.wsgi = self.app.wsgi()
-Dec  7 22:24:07 ip-172-31-32-201 web[8723]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
-Dec  7 22:24:07 ip-172-31-32-201 web[8723]:    self.callable = self.load()
-Dec  7 22:24:07 ip-172-31-32-201 web[8723]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
-Dec  7 22:24:07 ip-172-31-32-201 web[8723]:    return self.load_wsgiapp()
-Dec  7 22:24:07 ip-172-31-32-201 web[8723]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
-Dec  7 22:24:07 ip-172-31-32-201 web[8723]:    return util.import_app(self.app_uri)
-Dec  7 22:24:07 ip-172-31-32-201 web[8723]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/util.py", line 375, in import_app
-Dec  7 22:24:07 ip-172-31-32-201 web[8723]:    raise ImportError(msg % (module.rsplit(".", 1)[0], obj))
-Dec  7 22:24:07 ip-172-31-32-201 web[8723]: ImportError: Failed to find application, did you mean 'expense_tracker/expense_tracker/wsgi:application'?
-Dec  7 22:24:07 ip-172-31-32-201 web[8723]: [2024-12-07 22:24:07 +0000] [8723] [INFO] Worker exiting (pid: 8723)
-Dec  7 22:24:07 ip-172-31-32-201 web[8719]: [2024-12-07 22:24:07 +0000] [8719] [ERROR] Worker (pid:8723) exited with code 3
-Dec  7 22:24:07 ip-172-31-32-201 web[8719]: [2024-12-07 22:24:07 +0000] [8719] [ERROR] Shutting down: Master
-Dec  7 22:24:07 ip-172-31-32-201 web[8719]: [2024-12-07 22:24:07 +0000] [8719] [ERROR] Reason: Worker failed to boot.
-Dec  7 22:24:08 ip-172-31-32-201 web[8725]: [2024-12-07 22:24:08 +0000] [8725] [INFO] Starting gunicorn 21.2.0
-Dec  7 22:24:08 ip-172-31-32-201 web[8725]: [2024-12-07 22:24:08 +0000] [8725] [INFO] Listening at: http://127.0.0.1:8000 (8725)
-Dec  7 22:24:08 ip-172-31-32-201 web[8725]: [2024-12-07 22:24:08 +0000] [8725] [INFO] Using worker: gthread
-Dec  7 22:24:08 ip-172-31-32-201 web[8729]: [2024-12-07 22:24:08 +0000] [8729] [INFO] Booting worker with pid: 8729
-Dec  7 22:24:08 ip-172-31-32-201 web[8729]: [2024-12-07 22:24:08 +0000] [8729] [ERROR] Exception in worker process
-Dec  7 22:24:08 ip-172-31-32-201 web[8729]: Traceback (most recent call last):
-Dec  7 22:24:08 ip-172-31-32-201 web[8729]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
-Dec  7 22:24:08 ip-172-31-32-201 web[8729]:    mod = importlib.import_module(module)
-Dec  7 22:24:08 ip-172-31-32-201 web[8729]:  File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
-Dec  7 22:24:08 ip-172-31-32-201 web[8729]:    return _bootstrap._gcd_import(name[level:], package, level)
-Dec  7 22:24:08 ip-172-31-32-201 web[8729]:  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-Dec  7 22:24:08 ip-172-31-32-201 web[8729]:  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-Dec  7 22:24:08 ip-172-31-32-201 web[8729]:  File "<frozen importlib._bootstrap>", line 972, in _find_and_load_unlocked
-Dec  7 22:24:08 ip-172-31-32-201 web[8729]:  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
-Dec  7 22:24:08 ip-172-31-32-201 web[8729]:  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-Dec  7 22:24:08 ip-172-31-32-201 web[8729]:  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-Dec  7 22:24:08 ip-172-31-32-201 web[8729]:  File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
-Dec  7 22:24:08 ip-172-31-32-201 web[8729]: ModuleNotFoundError: No module named 'expense_tracker/expense_tracker/wsgi'
-Dec  7 22:24:08 ip-172-31-32-201 web[8729]: During handling of the above exception, another exception occurred:
-Dec  7 22:24:08 ip-172-31-32-201 web[8729]: Traceback (most recent call last):
-Dec  7 22:24:08 ip-172-31-32-201 web[8729]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
-Dec  7 22:24:08 ip-172-31-32-201 web[8729]:    worker.init_process()
-Dec  7 22:24:08 ip-172-31-32-201 web[8729]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
-Dec  7 22:24:08 ip-172-31-32-201 web[8729]:    super().init_process()
-Dec  7 22:24:08 ip-172-31-32-201 web[8729]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
-Dec  7 22:24:08 ip-172-31-32-201 web[8729]:    self.load_wsgi()
-Dec  7 22:24:08 ip-172-31-32-201 web[8729]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
-Dec  7 22:24:08 ip-172-31-32-201 web[8729]:    self.wsgi = self.app.wsgi()
-Dec  7 22:24:08 ip-172-31-32-201 web[8729]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
-Dec  7 22:24:08 ip-172-31-32-201 web[8729]:    self.callable = self.load()
-Dec  7 22:24:08 ip-172-31-32-201 web[8729]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
-Dec  7 22:24:08 ip-172-31-32-201 web[8729]:    return self.load_wsgiapp()
-Dec  7 22:24:08 ip-172-31-32-201 web[8729]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
-Dec  7 22:24:08 ip-172-31-32-201 web[8729]:    return util.import_app(self.app_uri)
-Dec  7 22:24:08 ip-172-31-32-201 web[8729]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/util.py", line 375, in import_app
-Dec  7 22:24:08 ip-172-31-32-201 web[8729]:    raise ImportError(msg % (module.rsplit(".", 1)[0], obj))
-Dec  7 22:24:08 ip-172-31-32-201 web[8729]: ImportError: Failed to find application, did you mean 'expense_tracker/expense_tracker/wsgi:application'?
-Dec  7 22:24:08 ip-172-31-32-201 web[8729]: [2024-12-07 22:24:08 +0000] [8729] [INFO] Worker exiting (pid: 8729)
-Dec  7 22:24:08 ip-172-31-32-201 web[8725]: [2024-12-07 22:24:08 +0000] [8725] [ERROR] Worker (pid:8729) exited with code 3
-Dec  7 22:24:08 ip-172-31-32-201 web[8725]: [2024-12-07 22:24:08 +0000] [8725] [ERROR] Shutting down: Master
-Dec  7 22:24:08 ip-172-31-32-201 web[8725]: [2024-12-07 22:24:08 +0000] [8725] [ERROR] Reason: Worker failed to boot.
+Dec  7 22:57:26 ip-172-31-32-201 web[10784]: [2024-12-07 22:57:26 +0000] [10784] [INFO] Worker exiting (pid: 10784)
+Dec  7 22:57:26 ip-172-31-32-201 web[10780]: [2024-12-07 22:57:26 +0000] [10780] [ERROR] Worker (pid:10784) exited with code 3
+Dec  7 22:57:26 ip-172-31-32-201 web[10780]: [2024-12-07 22:57:26 +0000] [10780] [ERROR] Shutting down: Master
+Dec  7 22:57:26 ip-172-31-32-201 web[10780]: [2024-12-07 22:57:26 +0000] [10780] [ERROR] Reason: Worker failed to boot.
+Dec  7 22:57:26 ip-172-31-32-201 web[10786]: [2024-12-07 22:57:26 +0000] [10786] [INFO] Starting gunicorn 21.2.0
+Dec  7 22:57:26 ip-172-31-32-201 web[10786]: [2024-12-07 22:57:26 +0000] [10786] [INFO] Listening at: http://127.0.0.1:8000 (10786)
+Dec  7 22:57:26 ip-172-31-32-201 web[10786]: [2024-12-07 22:57:26 +0000] [10786] [INFO] Using worker: gthread
+Dec  7 22:57:26 ip-172-31-32-201 web[10790]: [2024-12-07 22:57:26 +0000] [10790] [INFO] Booting worker with pid: 10790
+Dec  7 22:57:26 ip-172-31-32-201 web[10790]: [2024-12-07 22:57:26 +0000] [10790] [ERROR] Exception in worker process
+Dec  7 22:57:26 ip-172-31-32-201 web[10790]: Traceback (most recent call last):
+Dec  7 22:57:26 ip-172-31-32-201 web[10790]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+Dec  7 22:57:26 ip-172-31-32-201 web[10790]:    worker.init_process()
+Dec  7 22:57:26 ip-172-31-32-201 web[10790]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
+Dec  7 22:57:26 ip-172-31-32-201 web[10790]:    super().init_process()
+Dec  7 22:57:26 ip-172-31-32-201 web[10790]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+Dec  7 22:57:26 ip-172-31-32-201 web[10790]:    self.load_wsgi()
+Dec  7 22:57:26 ip-172-31-32-201 web[10790]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+Dec  7 22:57:26 ip-172-31-32-201 web[10790]:    self.wsgi = self.app.wsgi()
+Dec  7 22:57:26 ip-172-31-32-201 web[10790]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Dec  7 22:57:26 ip-172-31-32-201 web[10790]:    self.callable = self.load()
+Dec  7 22:57:26 ip-172-31-32-201 web[10790]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+Dec  7 22:57:26 ip-172-31-32-201 web[10790]:    return self.load_wsgiapp()
+Dec  7 22:57:26 ip-172-31-32-201 web[10790]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+Dec  7 22:57:26 ip-172-31-32-201 web[10790]:    return util.import_app(self.app_uri)
+Dec  7 22:57:26 ip-172-31-32-201 web[10790]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+Dec  7 22:57:26 ip-172-31-32-201 web[10790]:    mod = importlib.import_module(module)
+Dec  7 22:57:26 ip-172-31-32-201 web[10790]:  File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
+Dec  7 22:57:26 ip-172-31-32-201 web[10790]:    return _bootstrap._gcd_import(name[level:], package, level)
+Dec  7 22:57:26 ip-172-31-32-201 web[10790]:  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+Dec  7 22:57:26 ip-172-31-32-201 web[10790]:  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+Dec  7 22:57:26 ip-172-31-32-201 web[10790]:  File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
+Dec  7 22:57:26 ip-172-31-32-201 web[10790]: ModuleNotFoundError: No module named 'application'
+Dec  7 22:57:26 ip-172-31-32-201 web[10790]: [2024-12-07 22:57:26 +0000] [10790] [INFO] Worker exiting (pid: 10790)
+Dec  7 22:57:26 ip-172-31-32-201 web[10786]: [2024-12-07 22:57:26 +0000] [10786] [ERROR] Worker (pid:10790) exited with code 3
+Dec  7 22:57:26 ip-172-31-32-201 web[10786]: [2024-12-07 22:57:26 +0000] [10786] [ERROR] Shutting down: Master
+Dec  7 22:57:26 ip-172-31-32-201 web[10786]: [2024-12-07 22:57:26 +0000] [10786] [ERROR] Reason: Worker failed to boot.
+Dec  7 22:57:27 ip-172-31-32-201 web[10792]: [2024-12-07 22:57:27 +0000] [10792] [INFO] Starting gunicorn 21.2.0
+Dec  7 22:57:27 ip-172-31-32-201 web[10792]: [2024-12-07 22:57:27 +0000] [10792] [INFO] Listening at: http://127.0.0.1:8000 (10792)
+Dec  7 22:57:27 ip-172-31-32-201 web[10792]: [2024-12-07 22:57:27 +0000] [10792] [INFO] Using worker: gthread
+Dec  7 22:57:27 ip-172-31-32-201 web[10796]: [2024-12-07 22:57:27 +0000] [10796] [INFO] Booting worker with pid: 10796
+Dec  7 22:57:27 ip-172-31-32-201 web[10796]: [2024-12-07 22:57:27 +0000] [10796] [ERROR] Exception in worker process
+Dec  7 22:57:27 ip-172-31-32-201 web[10796]: Traceback (most recent call last):
+Dec  7 22:57:27 ip-172-31-32-201 web[10796]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+Dec  7 22:57:27 ip-172-31-32-201 web[10796]:    worker.init_process()
+Dec  7 22:57:27 ip-172-31-32-201 web[10796]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
+Dec  7 22:57:27 ip-172-31-32-201 web[10796]:    super().init_process()
+Dec  7 22:57:27 ip-172-31-32-201 web[10796]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+Dec  7 22:57:27 ip-172-31-32-201 web[10796]:    self.load_wsgi()
+Dec  7 22:57:27 ip-172-31-32-201 web[10796]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+Dec  7 22:57:27 ip-172-31-32-201 web[10796]:    self.wsgi = self.app.wsgi()
+Dec  7 22:57:27 ip-172-31-32-201 web[10796]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Dec  7 22:57:27 ip-172-31-32-201 web[10796]:    self.callable = self.load()
+Dec  7 22:57:27 ip-172-31-32-201 web[10796]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+Dec  7 22:57:27 ip-172-31-32-201 web[10796]:    return self.load_wsgiapp()
+Dec  7 22:57:27 ip-172-31-32-201 web[10796]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+Dec  7 22:57:27 ip-172-31-32-201 web[10796]:    return util.import_app(self.app_uri)
+Dec  7 22:57:27 ip-172-31-32-201 web[10796]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+Dec  7 22:57:27 ip-172-31-32-201 web[10796]:    mod = importlib.import_module(module)
+Dec  7 22:57:27 ip-172-31-32-201 web[10796]:  File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
+Dec  7 22:57:27 ip-172-31-32-201 web[10796]:    return _bootstrap._gcd_import(name[level:], package, level)
+Dec  7 22:57:27 ip-172-31-32-201 web[10796]:  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+Dec  7 22:57:27 ip-172-31-32-201 web[10796]:  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+Dec  7 22:57:27 ip-172-31-32-201 web[10796]:  File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
+Dec  7 22:57:27 ip-172-31-32-201 web[10796]: ModuleNotFoundError: No module named 'application'
+Dec  7 22:57:27 ip-172-31-32-201 web[10796]: [2024-12-07 22:57:27 +0000] [10796] [INFO] Worker exiting (pid: 10796)
+Dec  7 22:57:27 ip-172-31-32-201 web[10792]: [2024-12-07 22:57:27 +0000] [10792] [ERROR] Worker (pid:10796) exited with code 3
+Dec  7 22:57:27 ip-172-31-32-201 web[10792]: [2024-12-07 22:57:27 +0000] [10792] [ERROR] Shutting down: Master
+Dec  7 22:57:27 ip-172-31-32-201 web[10792]: [2024-12-07 22:57:27 +0000] [10792] [ERROR] Reason: Worker failed to boot.
+Dec  7 22:57:27 ip-172-31-32-201 web[10798]: [2024-12-07 22:57:27 +0000] [10798] [INFO] Starting gunicorn 21.2.0
+Dec  7 22:57:27 ip-172-31-32-201 web[10798]: [2024-12-07 22:57:27 +0000] [10798] [INFO] Listening at: http://127.0.0.1:8000 (10798)
+Dec  7 22:57:27 ip-172-31-32-201 web[10798]: [2024-12-07 22:57:27 +0000] [10798] [INFO] Using worker: gthread
+Dec  7 22:57:27 ip-172-31-32-201 web[10802]: [2024-12-07 22:57:27 +0000] [10802] [INFO] Booting worker with pid: 10802
+Dec  7 22:57:27 ip-172-31-32-201 web[10802]: [2024-12-07 22:57:27 +0000] [10802] [ERROR] Exception in worker process
+Dec  7 22:57:27 ip-172-31-32-201 web[10802]: Traceback (most recent call last):
+Dec  7 22:57:27 ip-172-31-32-201 web[10802]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+Dec  7 22:57:27 ip-172-31-32-201 web[10802]:    worker.init_process()
+Dec  7 22:57:27 ip-172-31-32-201 web[10802]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
+Dec  7 22:57:27 ip-172-31-32-201 web[10802]:    super().init_process()
+Dec  7 22:57:27 ip-172-31-32-201 web[10802]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+Dec  7 22:57:27 ip-172-31-32-201 web[10802]:    self.load_wsgi()
+Dec  7 22:57:27 ip-172-31-32-201 web[10802]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+Dec  7 22:57:27 ip-172-31-32-201 web[10802]:    self.wsgi = self.app.wsgi()
+Dec  7 22:57:27 ip-172-31-32-201 web[10802]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Dec  7 22:57:27 ip-172-31-32-201 web[10802]:    self.callable = self.load()
+Dec  7 22:57:27 ip-172-31-32-201 web[10802]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+Dec  7 22:57:27 ip-172-31-32-201 web[10802]:    return self.load_wsgiapp()
+Dec  7 22:57:27 ip-172-31-32-201 web[10802]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+Dec  7 22:57:27 ip-172-31-32-201 web[10802]:    return util.import_app(self.app_uri)
+Dec  7 22:57:27 ip-172-31-32-201 web[10802]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+Dec  7 22:57:27 ip-172-31-32-201 web[10802]:    mod = importlib.import_module(module)
+Dec  7 22:57:27 ip-172-31-32-201 web[10802]:  File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
+Dec  7 22:57:27 ip-172-31-32-201 web[10802]:    return _bootstrap._gcd_import(name[level:], package, level)
+Dec  7 22:57:27 ip-172-31-32-201 web[10802]:  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+Dec  7 22:57:27 ip-172-31-32-201 web[10802]:  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+Dec  7 22:57:27 ip-172-31-32-201 web[10802]:  File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
+Dec  7 22:57:27 ip-172-31-32-201 web[10802]: ModuleNotFoundError: No module named 'application'
+Dec  7 22:57:27 ip-172-31-32-201 web[10802]: [2024-12-07 22:57:27 +0000] [10802] [INFO] Worker exiting (pid: 10802)
+Dec  7 22:57:27 ip-172-31-32-201 web[10798]: [2024-12-07 22:57:27 +0000] [10798] [ERROR] Worker (pid:10802) exited with code 3
+Dec  7 22:57:27 ip-172-31-32-201 web[10798]: [2024-12-07 22:57:27 +0000] [10798] [ERROR] Shutting down: Master
+Dec  7 22:57:27 ip-172-31-32-201 web[10798]: [2024-12-07 22:57:27 +0000] [10798] [ERROR] Reason: Worker failed to boot.
 
 
 ----------------------------------------
 /var/log/eb-engine.log
 ----------------------------------------
-2024/12/07 22:24:02.342934 [INFO] Running command /bin/sh -c systemctl show -p PartOf xray.service
-2024/12/07 22:24:02.355659 [WARN] stopProcess Warning: process xray is not registered 
-2024/12/07 22:24:02.355777 [INFO] Running command /bin/sh -c systemctl stop xray.service
-2024/12/07 22:24:02.370389 [INFO] Executing instruction: stop proxy
-2024/12/07 22:24:02.370423 [INFO] Running command /bin/sh -c systemctl show -p PartOf httpd.service
-2024/12/07 22:24:02.384744 [WARN] deregisterProcess Warning: process httpd is not registered, skipping...
+2024/12/07 22:57:21.139504 [INFO] Executing instruction: stop proxy
+2024/12/07 22:57:21.139537 [INFO] Running command /bin/sh -c systemctl show -p PartOf httpd.service
+2024/12/07 22:57:21.154236 [WARN] deregisterProcess Warning: process httpd is not registered, skipping...
 
-2024/12/07 22:24:02.384775 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
-2024/12/07 22:24:02.396195 [INFO] Running command /bin/sh -c systemctl is-active nginx.service
-2024/12/07 22:24:02.403950 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
-2024/12/07 22:24:02.412543 [INFO] Running command /bin/sh -c systemctl stop nginx.service
-2024/12/07 22:24:02.572833 [INFO] Running command /bin/sh -c systemctl disable nginx.service
-2024/12/07 22:24:02.835967 [INFO] Running command /bin/sh -c systemctl daemon-reload
-2024/12/07 22:24:03.103867 [INFO] Running command /bin/sh -c systemctl reset-failed
-2024/12/07 22:24:03.114764 [INFO] Executing instruction: FlipApplication
-2024/12/07 22:24:03.114787 [INFO] Fetching environment variables...
-2024/12/07 22:24:03.115145 [INFO] Purge old process...
-2024/12/07 22:24:03.115167 [INFO] Running command /bin/sh -c systemctl stop eb-app.target
-2024/12/07 22:24:03.125496 [INFO] Running command /bin/sh -c systemctl show -p ConsistsOf eb-app.target | cut -d= -f2
-2024/12/07 22:24:03.139532 [INFO] web.service
+2024/12/07 22:57:21.154270 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
+2024/12/07 22:57:21.169518 [INFO] Running command /bin/sh -c systemctl is-active nginx.service
+2024/12/07 22:57:21.180192 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
+2024/12/07 22:57:21.190780 [INFO] Running command /bin/sh -c systemctl stop nginx.service
+2024/12/07 22:57:21.363961 [INFO] Running command /bin/sh -c systemctl disable nginx.service
+2024/12/07 22:57:21.652138 [INFO] Running command /bin/sh -c systemctl daemon-reload
+2024/12/07 22:57:21.922199 [INFO] Running command /bin/sh -c systemctl reset-failed
+2024/12/07 22:57:21.932408 [INFO] Executing instruction: FlipApplication
+2024/12/07 22:57:21.932423 [INFO] Fetching environment variables...
+2024/12/07 22:57:21.933303 [INFO] Purge old process...
+2024/12/07 22:57:21.933330 [INFO] Running command /bin/sh -c systemctl stop eb-app.target
+2024/12/07 22:57:21.944066 [INFO] Running command /bin/sh -c systemctl show -p ConsistsOf eb-app.target | cut -d= -f2
+2024/12/07 22:57:21.955854 [INFO] web.service
 
-2024/12/07 22:24:03.139551 [INFO] deregistering process: web
-2024/12/07 22:24:03.139569 [INFO] Running command /bin/sh -c systemctl show -p PartOf web.service
-2024/12/07 22:24:03.155786 [INFO] Running command /bin/sh -c systemctl is-active web.service
-2024/12/07 22:24:03.170939 [INFO] Running command /bin/sh -c systemctl disable web.service
-2024/12/07 22:24:03.544238 [INFO] Removed "/etc/systemd/system/multi-user.target.wants/web.service".
+2024/12/07 22:57:21.955881 [INFO] deregistering process: web
+2024/12/07 22:57:21.955894 [INFO] Running command /bin/sh -c systemctl show -p PartOf web.service
+2024/12/07 22:57:21.967799 [INFO] Running command /bin/sh -c systemctl is-active web.service
+2024/12/07 22:57:21.978116 [INFO] Running command /bin/sh -c systemctl disable web.service
+2024/12/07 22:57:22.286288 [INFO] Removed "/etc/systemd/system/multi-user.target.wants/web.service".
 
-2024/12/07 22:24:03.544351 [INFO] Running command /bin/sh -c systemctl daemon-reload
-2024/12/07 22:24:03.906679 [INFO] Running command /bin/sh -c systemctl reset-failed
-2024/12/07 22:24:03.917525 [INFO] Running command /bin/sh -c systemctl is-active web.service
-2024/12/07 22:24:03.926478 [INFO] Process web has been fully terminated
-2024/12/07 22:24:03.926497 [INFO] All processes have been fully terminated
-2024/12/07 22:24:03.926501 [INFO] Removing /var/app/current/ if it exists
-2024/12/07 22:24:04.194977 [INFO] Renaming /var/app/staging/ to /var/app/current/
-2024/12/07 22:24:04.195008 [INFO] Register application processes...
-2024/12/07 22:24:04.195013 [INFO] Registering the proc: web
+2024/12/07 22:57:22.286355 [INFO] Running command /bin/sh -c systemctl daemon-reload
+2024/12/07 22:57:22.636308 [INFO] Running command /bin/sh -c systemctl reset-failed
+2024/12/07 22:57:22.645156 [INFO] Running command /bin/sh -c systemctl is-active web.service
+2024/12/07 22:57:22.652694 [INFO] Process web has not been fully terminated
+2024/12/07 22:57:22.652713 [INFO] Some processes have not been fully terminated, sleeping 1 seconds now
+2024/12/07 22:57:23.652896 [INFO] Running command /bin/sh -c systemctl is-active web.service
+2024/12/07 22:57:23.662930 [INFO] Process web has been fully terminated
+2024/12/07 22:57:23.662952 [INFO] All processes have been fully terminated
+2024/12/07 22:57:23.662956 [INFO] Removing /var/app/current/ if it exists
+2024/12/07 22:57:23.946369 [INFO] Renaming /var/app/staging/ to /var/app/current/
+2024/12/07 22:57:23.946408 [INFO] Register application processes...
+2024/12/07 22:57:23.946414 [INFO] Registering the proc: web
 
-2024/12/07 22:24:04.195026 [INFO] Running command /bin/sh -c systemctl show -p PartOf web.service
-2024/12/07 22:24:04.215648 [INFO] Running command /bin/sh -c systemctl daemon-reload
-2024/12/07 22:24:04.528355 [INFO] Running command /bin/sh -c systemctl reset-failed
-2024/12/07 22:24:04.538272 [INFO] Running command /bin/sh -c systemctl is-enabled eb-app.target
-2024/12/07 22:24:04.547512 [INFO] Running command /bin/sh -c systemctl enable eb-app.target
-2024/12/07 22:24:04.861044 [INFO] Running command /bin/sh -c systemctl start eb-app.target
-2024/12/07 22:24:04.871755 [INFO] Running command /bin/sh -c systemctl enable web.service
-2024/12/07 22:24:05.174085 [INFO] Created symlink /etc/systemd/system/multi-user.target.wants/web.service → /etc/systemd/system/web.service.
+2024/12/07 22:57:23.946427 [INFO] Running command /bin/sh -c systemctl show -p PartOf web.service
+2024/12/07 22:57:24.013811 [INFO] Running command /bin/sh -c systemctl daemon-reload
+2024/12/07 22:57:24.342930 [INFO] Running command /bin/sh -c systemctl reset-failed
+2024/12/07 22:57:24.352267 [INFO] Running command /bin/sh -c systemctl is-enabled eb-app.target
+2024/12/07 22:57:24.360445 [INFO] Running command /bin/sh -c systemctl enable eb-app.target
+2024/12/07 22:57:24.690721 [INFO] Running command /bin/sh -c systemctl start eb-app.target
+2024/12/07 22:57:24.706397 [INFO] Running command /bin/sh -c systemctl enable web.service
+2024/12/07 22:57:24.977850 [INFO] Created symlink /etc/systemd/system/multi-user.target.wants/web.service → /etc/systemd/system/web.service.
 
-2024/12/07 22:24:05.174125 [INFO] Running command /bin/sh -c systemctl show -p PartOf web.service
-2024/12/07 22:24:05.197398 [INFO] Running command /bin/sh -c systemctl is-active web.service
-2024/12/07 22:24:05.205217 [INFO] Running command /bin/sh -c systemctl start web.service
-2024/12/07 22:24:05.274032 [INFO] Executing instruction: start X-Ray
-2024/12/07 22:24:05.274061 [INFO] X-Ray is not enabled.
-2024/12/07 22:24:05.274066 [INFO] Executing instruction: start proxy with new configuration
-2024/12/07 22:24:05.274088 [INFO] Running command /bin/sh -c /usr/sbin/nginx -t -c /var/proxy/staging/nginx/nginx.conf
-2024/12/07 22:24:05.303135 [INFO] nginx: [warn] could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 22:57:24.977886 [INFO] Running command /bin/sh -c systemctl show -p PartOf web.service
+2024/12/07 22:57:24.990033 [INFO] Running command /bin/sh -c systemctl is-active web.service
+2024/12/07 22:57:24.998526 [INFO] Running command /bin/sh -c systemctl start web.service
+2024/12/07 22:57:25.084825 [INFO] Executing instruction: start X-Ray
+2024/12/07 22:57:25.084850 [INFO] X-Ray is not enabled.
+2024/12/07 22:57:25.084855 [INFO] Executing instruction: start proxy with new configuration
+2024/12/07 22:57:25.084877 [INFO] Running command /bin/sh -c /usr/sbin/nginx -t -c /var/proxy/staging/nginx/nginx.conf
+2024/12/07 22:57:25.112275 [INFO] nginx: [warn] could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
 nginx: the configuration file /var/proxy/staging/nginx/nginx.conf syntax is ok
 nginx: configuration file /var/proxy/staging/nginx/nginx.conf test is successful
 
-2024/12/07 22:24:05.303682 [INFO] Running command /bin/sh -c cp -rp /var/proxy/staging/nginx/* /etc/nginx
-2024/12/07 22:24:05.308690 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
-2024/12/07 22:24:05.331669 [INFO] Running command /bin/sh -c systemctl daemon-reload
-2024/12/07 22:24:05.745145 [INFO] Running command /bin/sh -c systemctl reset-failed
-2024/12/07 22:24:05.787270 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
-2024/12/07 22:24:05.804065 [INFO] Running command /bin/sh -c systemctl is-active nginx.service
-2024/12/07 22:24:05.815891 [INFO] Running command /bin/sh -c systemctl start nginx.service
-2024/12/07 22:24:05.972903 [INFO] Executing instruction: configureSqsd
-2024/12/07 22:24:05.972928 [INFO] This is a web server environment instance, skip configure sqsd daemon ...
-2024/12/07 22:24:05.972933 [INFO] Executing instruction: startSqsd
-2024/12/07 22:24:05.972936 [INFO] This is a web server environment instance, skip start sqsd daemon ...
-2024/12/07 22:24:05.972940 [INFO] Executing instruction: Track pids in healthd
-2024/12/07 22:24:05.972944 [INFO] This is an enhanced health env...
-2024/12/07 22:24:05.972958 [INFO] Running command /bin/sh -c systemctl show -p ConsistsOf aws-eb.target | cut -d= -f2
-2024/12/07 22:24:05.993185 [INFO] nginx.service cfn-hup.service healthd.service
+2024/12/07 22:57:25.112622 [INFO] Running command /bin/sh -c cp -rp /var/proxy/staging/nginx/* /etc/nginx
+2024/12/07 22:57:25.117415 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
+2024/12/07 22:57:25.139475 [INFO] Running command /bin/sh -c systemctl daemon-reload
+2024/12/07 22:57:25.505376 [INFO] Running command /bin/sh -c systemctl reset-failed
+2024/12/07 22:57:25.542970 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
+2024/12/07 22:57:25.557166 [INFO] Running command /bin/sh -c systemctl is-active nginx.service
+2024/12/07 22:57:25.567546 [INFO] Running command /bin/sh -c systemctl start nginx.service
+2024/12/07 22:57:25.659210 [INFO] Executing instruction: configureSqsd
+2024/12/07 22:57:25.659231 [INFO] This is a web server environment instance, skip configure sqsd daemon ...
+2024/12/07 22:57:25.659236 [INFO] Executing instruction: startSqsd
+2024/12/07 22:57:25.659239 [INFO] This is a web server environment instance, skip start sqsd daemon ...
+2024/12/07 22:57:25.659258 [INFO] Executing instruction: Track pids in healthd
+2024/12/07 22:57:25.659269 [INFO] This is an enhanced health env...
+2024/12/07 22:57:25.659283 [INFO] Running command /bin/sh -c systemctl show -p ConsistsOf aws-eb.target | cut -d= -f2
+2024/12/07 22:57:25.679972 [INFO] nginx.service cfn-hup.service healthd.service
 
-2024/12/07 22:24:05.993223 [INFO] Running command /bin/sh -c systemctl show -p ConsistsOf eb-app.target | cut -d= -f2
-2024/12/07 22:24:06.014383 [INFO] web.service
+2024/12/07 22:57:25.680006 [INFO] Running command /bin/sh -c systemctl show -p ConsistsOf eb-app.target | cut -d= -f2
+2024/12/07 22:57:25.697816 [INFO] web.service
 
-2024/12/07 22:24:06.014766 [INFO] Executing instruction: RunAppDeployPostDeployHooks
-2024/12/07 22:24:06.014825 [INFO] Executing platform hooks in .platform/hooks/postdeploy/
-2024/12/07 22:24:06.014844 [INFO] The dir .platform/hooks/postdeploy/ does not exist
-2024/12/07 22:24:06.014847 [INFO] Finished running scripts in /var/app/current/.platform/hooks/postdeploy
-2024/12/07 22:24:06.014853 [INFO] Executing cleanup logic
-2024/12/07 22:24:06.014961 [INFO] CommandService Response: {"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"Engine execution has succeeded.","returncode":0,"events":[{"msg":"Instance deployment successfully generated a 'Procfile'.","timestamp":1733610238461,"severity":"INFO"},{"msg":"Instance deployment completed successfully.","timestamp":1733610246014,"severity":"INFO"}]}]}
+2024/12/07 22:57:25.698219 [INFO] Executing instruction: RunAppDeployPostDeployHooks
+2024/12/07 22:57:25.698239 [INFO] Executing platform hooks in .platform/hooks/postdeploy/
+2024/12/07 22:57:25.698257 [INFO] The dir .platform/hooks/postdeploy/ does not exist
+2024/12/07 22:57:25.698261 [INFO] Finished running scripts in /var/app/current/.platform/hooks/postdeploy
+2024/12/07 22:57:25.698267 [INFO] Executing cleanup logic
+2024/12/07 22:57:25.698379 [INFO] CommandService Response: {"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"Engine execution has succeeded.","returncode":0,"events":[{"msg":"Instance deployment successfully generated a 'Procfile'.","timestamp":1733612237430,"severity":"INFO"},{"msg":"Instance deployment completed successfully.","timestamp":1733612245698,"severity":"INFO"}]}]}
 
-2024/12/07 22:24:06.015132 [INFO] Platform Engine finished execution on command: app-deploy
+2024/12/07 22:57:25.698547 [INFO] Platform Engine finished execution on command: app-deploy
 
-2024/12/07 22:25:56.380466 [INFO] Starting...
-2024/12/07 22:25:56.380516 [INFO] Starting EBPlatform-PlatformEngine
-2024/12/07 22:25:56.380540 [INFO] reading event message file
-2024/12/07 22:25:56.380693 [INFO] Engine received EB command cfn-hup-exec
+2024/12/07 23:02:09.985048 [INFO] Starting...
+2024/12/07 23:02:09.985098 [INFO] Starting EBPlatform-PlatformEngine
+2024/12/07 23:02:09.985122 [INFO] reading event message file
+2024/12/07 23:02:09.985827 [INFO] Engine received EB command cfn-hup-exec
 
-2024/12/07 22:25:56.441042 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:eu-west-1:250738637992:stack/awseb-e-ii2fhia2ez-stack/5b6abbb0-b3ec-11ef-b3e9-06dab945c80f -r AWSEBAutoScalingGroup --region eu-west-1
-2024/12/07 22:25:56.845370 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:eu-west-1:250738637992:stack/awseb-e-ii2fhia2ez-stack/5b6abbb0-b3ec-11ef-b3e9-06dab945c80f -r AWSEBBeanstalkMetadata --region eu-west-1
-2024/12/07 22:25:57.237633 [INFO] checking whether command tail-log is applicable to this instance...
-2024/12/07 22:25:57.237647 [INFO] this command is applicable to the instance, thus instance should execute command
-2024/12/07 22:25:57.237650 [INFO] Engine command: (tail-log)
+2024/12/07 23:02:10.062878 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:eu-west-1:250738637992:stack/awseb-e-ii2fhia2ez-stack/5b6abbb0-b3ec-11ef-b3e9-06dab945c80f -r AWSEBAutoScalingGroup --region eu-west-1
+2024/12/07 23:02:10.533782 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:eu-west-1:250738637992:stack/awseb-e-ii2fhia2ez-stack/5b6abbb0-b3ec-11ef-b3e9-06dab945c80f -r AWSEBBeanstalkMetadata --region eu-west-1
+2024/12/07 23:02:10.916962 [INFO] checking whether command tail-log is applicable to this instance...
+2024/12/07 23:02:10.916978 [INFO] this command is applicable to the instance, thus instance should execute command
+2024/12/07 23:02:10.916982 [INFO] Engine command: (tail-log)
 
-2024/12/07 22:25:57.237709 [INFO] Executing instruction: GetTailLogs
-2024/12/07 22:25:57.237713 [INFO] Tail Logs...
-2024/12/07 22:25:57.238000 [INFO] Running command /bin/sh -c tail -n 100 /var/log/web.stdout.log
-2024/12/07 22:25:57.240756 [INFO] Running command /bin/sh -c tail -n 100 /var/log/eb-engine.log
+2024/12/07 23:02:10.917042 [INFO] Executing instruction: GetTailLogs
+2024/12/07 23:02:10.917046 [INFO] Tail Logs...
+2024/12/07 23:02:10.917504 [INFO] Running command /bin/sh -c tail -n 100 /var/log/web.stdout.log
+2024/12/07 23:02:10.920130 [INFO] Running command /bin/sh -c tail -n 100 /var/log/eb-engine.log
 
 
 ----------------------------------------
@@ -318,210 +318,210 @@ WARNINGS:
 ----------------------------------------
 /var/log/nginx/access.log
 ----------------------------------------
-172.31.15.41 - - [07/Dec/2024:22:13:55 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:13:55 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:14:10 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:14:10 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:14:25 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:14:25 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:14:40 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:14:40 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:14:55 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:14:55 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:15:09 +0000] "GET / HTTP/1.1" 502 552 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36" "170.64.182.146"
-172.31.15.41 - - [07/Dec/2024:22:15:10 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:15:10 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:15:25 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:15:25 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:15:40 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:15:40 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:15:55 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:15:55 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:16:10 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:16:10 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:16:25 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:16:25 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:16:40 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:16:40 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:16:55 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:16:55 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:17:10 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:17:10 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:17:25 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:17:25 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:17:40 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:17:40 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:17:55 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:17:55 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:18:10 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:18:10 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:18:25 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:18:25 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:18:40 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:18:40 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:18:55 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:18:55 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:19:10 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:19:10 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:19:25 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:19:25 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:19:40 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:19:40 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:19:55 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:19:56 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:20:10 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:20:11 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:20:25 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:20:26 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:20:41 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:20:41 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:20:56 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:20:56 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:21:11 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:21:11 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:21:26 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:21:26 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:21:41 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:21:41 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:21:56 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:21:56 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:22:11 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:22:11 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:22:26 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:22:26 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:22:41 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:22:41 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:22:56 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:22:56 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:23:11 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:23:11 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:23:26 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:23:26 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:23:41 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:23:41 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:23:56 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:23:56 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:24:11 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:24:11 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:24:26 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:24:26 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:24:41 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:24:41 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:24:51 +0000] "GET / HTTP/1.1" 502 552 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
-172.31.15.41 - - [07/Dec/2024:22:24:56 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:24:56 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:25:11 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:25:11 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:25:26 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:25:26 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:25:41 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:25:41 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:25:56 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:25:56 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:50:12 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:50:27 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:50:27 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:50:42 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:50:42 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:50:57 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:50:57 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:51:12 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:51:12 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:51:27 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:51:27 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:51:42 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:51:42 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:51:57 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:51:57 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:52:12 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:52:12 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:52:27 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:52:27 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:52:42 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:52:42 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:52:57 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:52:57 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:53:12 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:53:12 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:53:27 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:53:27 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:53:42 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:53:42 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:53:57 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:53:57 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:54:12 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:54:12 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:54:27 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:54:27 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:54:42 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:54:42 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:54:50 +0000] "GET / HTTP/1.1" 200 979 "-" "Mozilla/5.0 (Linux; U; Android 4.0.3; ko-kr; LG-L160L Build/IML74K) AppleWebkit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30" "114.35.165.196"
+172.31.15.41 - - [07/Dec/2024:22:54:57 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:54:57 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:55:12 +0000] "GET / HTTP/1.1" 200 979 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
+172.31.15.41 - - [07/Dec/2024:22:55:12 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:55:12 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:55:27 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:55:27 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:55:42 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:55:42 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:55:57 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:55:57 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:56:12 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:56:12 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:56:27 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:56:27 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:56:42 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:56:42 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:56:57 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:56:57 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:57:12 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:57:12 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:57:27 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:57:27 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:57:42 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:57:42 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:57:44 +0000] "GET / HTTP/1.1" 502 150 "-" "Expanse, a Palo Alto Networks company, searches across the global IPv4 space multiple times per day to identify customers&#39; presences on the Internet. If you would like to be excluded from our scans, please send IP addresses/domains to: scaninfo@paloaltonetworks.com" "198.235.24.154"
+172.31.32.88 - - [07/Dec/2024:22:57:57 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:57:57 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:58:12 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:58:12 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:58:27 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:58:27 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:58:42 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:58:42 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:58:57 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:58:58 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:59:12 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:59:13 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:59:28 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:59:28 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:59:43 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:59:43 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:22:59:58 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:22:59:58 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:00:13 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:00:13 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:00:24 +0000] "GET / HTTP/1.1" 502 552 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
+172.31.32.88 - - [07/Dec/2024:23:00:28 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:00:28 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:00:40 +0000] "GET / HTTP/1.1" 502 552 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
+172.31.32.88 - - [07/Dec/2024:23:00:43 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:00:43 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:00:58 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:00:58 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:01:13 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:01:13 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:01:28 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:01:28 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:01:43 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:01:43 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:01:58 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:01:58 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
 
 
 ----------------------------------------
 /var/log/nginx/error.log
 ----------------------------------------
-2024/12/07 22:14:10 [error] 7704#7704: *77 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:14:25 [error] 7704#7704: *79 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:14:25 [error] 7704#7704: *81 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:14:40 [error] 7704#7704: *83 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:14:40 [error] 7704#7704: *85 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:14:55 [error] 7704#7704: *87 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:14:55 [error] 7704#7704: *89 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:15:09 [error] 7704#7704: *91 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "52.30.61.80"
-2024/12/07 22:15:10 [error] 7704#7704: *93 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:15:10 [error] 7704#7704: *95 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:15:25 [error] 7704#7704: *97 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:15:25 [error] 7704#7704: *99 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:15:40 [error] 7705#7705: *101 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:15:40 [error] 7705#7705: *103 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:15:55 [error] 7705#7705: *105 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:15:55 [error] 7705#7705: *107 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:16:10 [error] 7705#7705: *109 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:16:10 [error] 7705#7705: *111 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:16:25 [error] 7705#7705: *113 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:16:25 [error] 7705#7705: *115 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:16:40 [error] 7705#7705: *117 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:16:40 [error] 7705#7705: *119 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:16:55 [error] 7705#7705: *121 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:16:55 [error] 7705#7705: *123 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:17:10 [error] 7705#7705: *125 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:17:10 [error] 7705#7705: *127 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:17:25 [error] 7705#7705: *129 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:17:25 [error] 7705#7705: *131 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:17:40 [error] 7704#7704: *133 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:17:40 [error] 7704#7704: *135 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:17:55 [error] 7704#7704: *137 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:17:55 [error] 7704#7704: *139 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:18:10 [error] 7704#7704: *141 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:18:10 [error] 7704#7704: *143 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:18:25 [error] 7704#7704: *145 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:18:25 [error] 7704#7704: *147 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:18:40 [error] 7704#7704: *149 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:18:40 [error] 7704#7704: *151 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:18:55 [error] 7704#7704: *153 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:18:55 [error] 7704#7704: *155 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:19:10 [error] 7704#7704: *157 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:19:10 [error] 7704#7704: *159 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:19:25 [error] 7704#7704: *161 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:19:25 [error] 7704#7704: *163 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:19:40 [error] 7705#7705: *165 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:19:40 [error] 7705#7705: *167 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:19:55 [error] 7705#7705: *169 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:19:56 [error] 7705#7705: *171 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:20:10 [error] 7705#7705: *173 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:20:11 [error] 7705#7705: *175 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:20:25 [error] 7705#7705: *177 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:20:26 [error] 7705#7705: *179 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:20:41 [error] 7705#7705: *181 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:20:41 [error] 7705#7705: *183 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:20:56 [error] 7705#7705: *185 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:20:56 [error] 7705#7705: *187 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:21:11 [error] 7705#7705: *189 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:21:11 [error] 7705#7705: *191 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:21:26 [error] 7705#7705: *193 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:21:26 [error] 7705#7705: *195 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:21:41 [error] 7704#7704: *197 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:21:41 [error] 7704#7704: *199 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:21:56 [error] 7704#7704: *201 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:21:56 [error] 7704#7704: *203 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:22:11 [error] 7704#7704: *205 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:22:11 [error] 7704#7704: *207 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:22:26 [error] 7704#7704: *209 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:22:26 [error] 7704#7704: *211 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:22:41 [error] 7704#7704: *213 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:22:41 [error] 7704#7704: *215 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:22:56 [error] 7704#7704: *217 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:22:56 [error] 7704#7704: *219 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:23:11 [error] 7704#7704: *221 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:23:11 [error] 7704#7704: *223 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:23:26 [error] 7704#7704: *225 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:23:26 [error] 7704#7704: *227 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:23:41 [error] 7705#7705: *229 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:23:41 [error] 7705#7705: *231 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:23:56 [error] 7705#7705: *233 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:23:56 [error] 7705#7705: *235 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:24:05 [warn] 8646#8646: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
-2024/12/07 22:24:05 [warn] 8681#8681: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
-2024/12/07 22:24:05 [warn] 8682#8682: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
-2024/12/07 22:24:11 [error] 8689#8689: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:24:11 [error] 8688#8688: *3 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:24:26 [error] 8689#8689: *5 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:24:26 [error] 8689#8689: *7 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:24:41 [error] 8689#8689: *9 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:24:41 [error] 8689#8689: *11 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:24:51 [error] 8689#8689: *13 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com"
-2024/12/07 22:24:56 [error] 8689#8689: *15 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:24:56 [error] 8689#8689: *17 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:25:11 [error] 8689#8689: *19 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:25:11 [error] 8689#8689: *21 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:25:26 [error] 8689#8689: *23 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:25:26 [error] 8689#8689: *25 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:25:41 [error] 8689#8689: *27 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:25:41 [error] 8689#8689: *29 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:25:56 [error] 8689#8689: *31 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:25:56 [error] 8689#8689: *33 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:29:26 [error] 9310#9310: *36 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
+2024/12/07 22:29:26 [error] 9310#9310: *37 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
+2024/12/07 22:29:26 [error] 9310#9310: *36 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
+2024/12/07 22:29:26 [error] 9311#9311: *43 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
+2024/12/07 22:29:28 [error] 9310#9310: *36 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:29:28 [error] 9310#9310: *36 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:29:28 [error] 9310#9310: *37 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:29:28 [error] 9311#9311: *43 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:31:47 [error] 9310#9310: *92 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:31:47 [error] 9310#9310: *92 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:31:47 [error] 9310#9310: *94 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:31:47 [error] 9310#9310: *94 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:31:57 [error] 9310#9310: *92 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
+2024/12/07 22:31:57 [error] 9310#9310: *94 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
+2024/12/07 22:31:57 [error] 9310#9310: *94 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
+2024/12/07 22:31:57 [error] 9310#9310: *92 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
+2024/12/07 22:32:06 [error] 9310#9310: *94 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:32:06 [error] 9310#9310: *92 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:32:06 [error] 9310#9310: *94 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:32:06 [error] 9310#9310: *92 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:33:04 [error] 9311#9311: *118 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.15.41, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:33:04 [error] 9311#9311: *119 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.15.41, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:33:04 [error] 9311#9311: *120 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.15.41, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:33:04 [error] 9311#9311: *120 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.15.41, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:33:17 [error] 9311#9311: *120 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.15.41, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:33:17 [error] 9311#9311: *120 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.15.41, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:33:17 [error] 9311#9311: *120 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.15.41, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:33:17 [error] 9311#9311: *118 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.15.41, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:36:13 [error] 9311#9311: *174 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:36:13 [error] 9311#9311: *174 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:36:13 [error] 9311#9311: *174 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:36:13 [error] 9311#9311: *176 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:36:34 [error] 9311#9311: *176 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:36:34 [error] 9311#9311: *176 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:36:34 [error] 9311#9311: *176 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:36:34 [error] 9311#9311: *184 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:36:37 [error] 9311#9311: *184 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
+2024/12/07 22:36:37 [error] 9311#9311: *184 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
+2024/12/07 22:36:37 [error] 9311#9311: *174 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
+2024/12/07 22:36:37 [error] 9311#9311: *184 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
+2024/12/07 22:36:39 [error] 9311#9311: *184 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:36:39 [error] 9311#9311: *184 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:36:39 [error] 9311#9311: *174 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:36:39 [error] 9311#9311: *188 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:36:53 [error] 9311#9311: *181 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.15.41, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:36:53 [error] 9311#9311: *194 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.15.41, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:36:53 [error] 9311#9311: *195 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.15.41, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:36:53 [error] 9311#9311: *181 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.15.41, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:49:35 [error] 9310#9310: *401 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:49:35 [error] 9310#9310: *401 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:49:35 [error] 9311#9311: *403 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:49:35 [error] 9310#9310: *401 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:55:12 [error] 9311#9311: *494 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:55:12 [error] 9311#9311: *494 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:55:12 [error] 9310#9310: *488 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:55:12 [error] 9311#9311: *496 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 22:57:25 [warn] 10721#10721: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 22:57:25 [warn] 10756#10756: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 22:57:25 [warn] 10757#10757: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 22:57:27 [error] 10759#10759: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:57:27 [error] 10760#10760: *3 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:57:42 [error] 10759#10759: *5 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:57:42 [error] 10759#10759: *7 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:57:44 [error] 10759#10759: *9 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "awseb--awseb-zlzcfjnbc1sh-1614050713.eu-west-1.elb.amazonaws.com"
+2024/12/07 22:57:57 [error] 10759#10759: *11 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:57:57 [error] 10759#10759: *13 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:58:12 [error] 10759#10759: *15 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:58:12 [error] 10759#10759: *17 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:58:27 [error] 10759#10759: *19 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:58:27 [error] 10759#10759: *21 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:58:42 [error] 10759#10759: *23 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:58:42 [error] 10759#10759: *25 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:58:57 [error] 10759#10759: *27 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:58:58 [error] 10759#10759: *29 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:59:12 [error] 10759#10759: *31 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:59:13 [error] 10759#10759: *33 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:59:28 [error] 10759#10759: *35 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:59:28 [error] 10760#10760: *37 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:59:43 [error] 10760#10760: *39 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:59:43 [error] 10760#10760: *41 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:59:58 [error] 10760#10760: *43 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 22:59:58 [error] 10760#10760: *45 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:00:13 [error] 10760#10760: *47 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:00:13 [error] 10760#10760: *49 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:00:24 [error] 10760#10760: *51 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com"
+2024/12/07 23:00:28 [error] 10760#10760: *53 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:00:28 [error] 10760#10760: *55 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:00:40 [error] 10760#10760: *57 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com"
+2024/12/07 23:00:43 [error] 10760#10760: *59 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:00:43 [error] 10760#10760: *61 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:00:58 [error] 10760#10760: *63 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:00:58 [error] 10760#10760: *65 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:01:13 [error] 10760#10760: *67 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:01:13 [error] 10759#10759: *69 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:01:28 [error] 10759#10759: *71 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:01:28 [error] 10759#10759: *73 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:01:43 [error] 10759#10759: *75 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:01:43 [error] 10759#10759: *77 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:01:58 [error] 10759#10759: *79 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:01:58 [error] 10759#10759: *81 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
 
 
