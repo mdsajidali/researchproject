@@ -1,213 +1,108 @@
 Retrieving logs...
 ============= i-00b9ba9c6db591a63 ==============
 ----------------------------------------
-/var/log/web.stdout.log
-----------------------------------------
-Dec  7 22:57:26 ip-172-31-32-201 web[10784]: [2024-12-07 22:57:26 +0000] [10784] [INFO] Worker exiting (pid: 10784)
-Dec  7 22:57:26 ip-172-31-32-201 web[10780]: [2024-12-07 22:57:26 +0000] [10780] [ERROR] Worker (pid:10784) exited with code 3
-Dec  7 22:57:26 ip-172-31-32-201 web[10780]: [2024-12-07 22:57:26 +0000] [10780] [ERROR] Shutting down: Master
-Dec  7 22:57:26 ip-172-31-32-201 web[10780]: [2024-12-07 22:57:26 +0000] [10780] [ERROR] Reason: Worker failed to boot.
-Dec  7 22:57:26 ip-172-31-32-201 web[10786]: [2024-12-07 22:57:26 +0000] [10786] [INFO] Starting gunicorn 21.2.0
-Dec  7 22:57:26 ip-172-31-32-201 web[10786]: [2024-12-07 22:57:26 +0000] [10786] [INFO] Listening at: http://127.0.0.1:8000 (10786)
-Dec  7 22:57:26 ip-172-31-32-201 web[10786]: [2024-12-07 22:57:26 +0000] [10786] [INFO] Using worker: gthread
-Dec  7 22:57:26 ip-172-31-32-201 web[10790]: [2024-12-07 22:57:26 +0000] [10790] [INFO] Booting worker with pid: 10790
-Dec  7 22:57:26 ip-172-31-32-201 web[10790]: [2024-12-07 22:57:26 +0000] [10790] [ERROR] Exception in worker process
-Dec  7 22:57:26 ip-172-31-32-201 web[10790]: Traceback (most recent call last):
-Dec  7 22:57:26 ip-172-31-32-201 web[10790]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
-Dec  7 22:57:26 ip-172-31-32-201 web[10790]:    worker.init_process()
-Dec  7 22:57:26 ip-172-31-32-201 web[10790]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
-Dec  7 22:57:26 ip-172-31-32-201 web[10790]:    super().init_process()
-Dec  7 22:57:26 ip-172-31-32-201 web[10790]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
-Dec  7 22:57:26 ip-172-31-32-201 web[10790]:    self.load_wsgi()
-Dec  7 22:57:26 ip-172-31-32-201 web[10790]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
-Dec  7 22:57:26 ip-172-31-32-201 web[10790]:    self.wsgi = self.app.wsgi()
-Dec  7 22:57:26 ip-172-31-32-201 web[10790]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
-Dec  7 22:57:26 ip-172-31-32-201 web[10790]:    self.callable = self.load()
-Dec  7 22:57:26 ip-172-31-32-201 web[10790]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
-Dec  7 22:57:26 ip-172-31-32-201 web[10790]:    return self.load_wsgiapp()
-Dec  7 22:57:26 ip-172-31-32-201 web[10790]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
-Dec  7 22:57:26 ip-172-31-32-201 web[10790]:    return util.import_app(self.app_uri)
-Dec  7 22:57:26 ip-172-31-32-201 web[10790]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
-Dec  7 22:57:26 ip-172-31-32-201 web[10790]:    mod = importlib.import_module(module)
-Dec  7 22:57:26 ip-172-31-32-201 web[10790]:  File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
-Dec  7 22:57:26 ip-172-31-32-201 web[10790]:    return _bootstrap._gcd_import(name[level:], package, level)
-Dec  7 22:57:26 ip-172-31-32-201 web[10790]:  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-Dec  7 22:57:26 ip-172-31-32-201 web[10790]:  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-Dec  7 22:57:26 ip-172-31-32-201 web[10790]:  File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
-Dec  7 22:57:26 ip-172-31-32-201 web[10790]: ModuleNotFoundError: No module named 'application'
-Dec  7 22:57:26 ip-172-31-32-201 web[10790]: [2024-12-07 22:57:26 +0000] [10790] [INFO] Worker exiting (pid: 10790)
-Dec  7 22:57:26 ip-172-31-32-201 web[10786]: [2024-12-07 22:57:26 +0000] [10786] [ERROR] Worker (pid:10790) exited with code 3
-Dec  7 22:57:26 ip-172-31-32-201 web[10786]: [2024-12-07 22:57:26 +0000] [10786] [ERROR] Shutting down: Master
-Dec  7 22:57:26 ip-172-31-32-201 web[10786]: [2024-12-07 22:57:26 +0000] [10786] [ERROR] Reason: Worker failed to boot.
-Dec  7 22:57:27 ip-172-31-32-201 web[10792]: [2024-12-07 22:57:27 +0000] [10792] [INFO] Starting gunicorn 21.2.0
-Dec  7 22:57:27 ip-172-31-32-201 web[10792]: [2024-12-07 22:57:27 +0000] [10792] [INFO] Listening at: http://127.0.0.1:8000 (10792)
-Dec  7 22:57:27 ip-172-31-32-201 web[10792]: [2024-12-07 22:57:27 +0000] [10792] [INFO] Using worker: gthread
-Dec  7 22:57:27 ip-172-31-32-201 web[10796]: [2024-12-07 22:57:27 +0000] [10796] [INFO] Booting worker with pid: 10796
-Dec  7 22:57:27 ip-172-31-32-201 web[10796]: [2024-12-07 22:57:27 +0000] [10796] [ERROR] Exception in worker process
-Dec  7 22:57:27 ip-172-31-32-201 web[10796]: Traceback (most recent call last):
-Dec  7 22:57:27 ip-172-31-32-201 web[10796]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
-Dec  7 22:57:27 ip-172-31-32-201 web[10796]:    worker.init_process()
-Dec  7 22:57:27 ip-172-31-32-201 web[10796]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
-Dec  7 22:57:27 ip-172-31-32-201 web[10796]:    super().init_process()
-Dec  7 22:57:27 ip-172-31-32-201 web[10796]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
-Dec  7 22:57:27 ip-172-31-32-201 web[10796]:    self.load_wsgi()
-Dec  7 22:57:27 ip-172-31-32-201 web[10796]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
-Dec  7 22:57:27 ip-172-31-32-201 web[10796]:    self.wsgi = self.app.wsgi()
-Dec  7 22:57:27 ip-172-31-32-201 web[10796]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
-Dec  7 22:57:27 ip-172-31-32-201 web[10796]:    self.callable = self.load()
-Dec  7 22:57:27 ip-172-31-32-201 web[10796]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
-Dec  7 22:57:27 ip-172-31-32-201 web[10796]:    return self.load_wsgiapp()
-Dec  7 22:57:27 ip-172-31-32-201 web[10796]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
-Dec  7 22:57:27 ip-172-31-32-201 web[10796]:    return util.import_app(self.app_uri)
-Dec  7 22:57:27 ip-172-31-32-201 web[10796]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
-Dec  7 22:57:27 ip-172-31-32-201 web[10796]:    mod = importlib.import_module(module)
-Dec  7 22:57:27 ip-172-31-32-201 web[10796]:  File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
-Dec  7 22:57:27 ip-172-31-32-201 web[10796]:    return _bootstrap._gcd_import(name[level:], package, level)
-Dec  7 22:57:27 ip-172-31-32-201 web[10796]:  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-Dec  7 22:57:27 ip-172-31-32-201 web[10796]:  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-Dec  7 22:57:27 ip-172-31-32-201 web[10796]:  File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
-Dec  7 22:57:27 ip-172-31-32-201 web[10796]: ModuleNotFoundError: No module named 'application'
-Dec  7 22:57:27 ip-172-31-32-201 web[10796]: [2024-12-07 22:57:27 +0000] [10796] [INFO] Worker exiting (pid: 10796)
-Dec  7 22:57:27 ip-172-31-32-201 web[10792]: [2024-12-07 22:57:27 +0000] [10792] [ERROR] Worker (pid:10796) exited with code 3
-Dec  7 22:57:27 ip-172-31-32-201 web[10792]: [2024-12-07 22:57:27 +0000] [10792] [ERROR] Shutting down: Master
-Dec  7 22:57:27 ip-172-31-32-201 web[10792]: [2024-12-07 22:57:27 +0000] [10792] [ERROR] Reason: Worker failed to boot.
-Dec  7 22:57:27 ip-172-31-32-201 web[10798]: [2024-12-07 22:57:27 +0000] [10798] [INFO] Starting gunicorn 21.2.0
-Dec  7 22:57:27 ip-172-31-32-201 web[10798]: [2024-12-07 22:57:27 +0000] [10798] [INFO] Listening at: http://127.0.0.1:8000 (10798)
-Dec  7 22:57:27 ip-172-31-32-201 web[10798]: [2024-12-07 22:57:27 +0000] [10798] [INFO] Using worker: gthread
-Dec  7 22:57:27 ip-172-31-32-201 web[10802]: [2024-12-07 22:57:27 +0000] [10802] [INFO] Booting worker with pid: 10802
-Dec  7 22:57:27 ip-172-31-32-201 web[10802]: [2024-12-07 22:57:27 +0000] [10802] [ERROR] Exception in worker process
-Dec  7 22:57:27 ip-172-31-32-201 web[10802]: Traceback (most recent call last):
-Dec  7 22:57:27 ip-172-31-32-201 web[10802]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
-Dec  7 22:57:27 ip-172-31-32-201 web[10802]:    worker.init_process()
-Dec  7 22:57:27 ip-172-31-32-201 web[10802]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
-Dec  7 22:57:27 ip-172-31-32-201 web[10802]:    super().init_process()
-Dec  7 22:57:27 ip-172-31-32-201 web[10802]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
-Dec  7 22:57:27 ip-172-31-32-201 web[10802]:    self.load_wsgi()
-Dec  7 22:57:27 ip-172-31-32-201 web[10802]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
-Dec  7 22:57:27 ip-172-31-32-201 web[10802]:    self.wsgi = self.app.wsgi()
-Dec  7 22:57:27 ip-172-31-32-201 web[10802]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
-Dec  7 22:57:27 ip-172-31-32-201 web[10802]:    self.callable = self.load()
-Dec  7 22:57:27 ip-172-31-32-201 web[10802]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
-Dec  7 22:57:27 ip-172-31-32-201 web[10802]:    return self.load_wsgiapp()
-Dec  7 22:57:27 ip-172-31-32-201 web[10802]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
-Dec  7 22:57:27 ip-172-31-32-201 web[10802]:    return util.import_app(self.app_uri)
-Dec  7 22:57:27 ip-172-31-32-201 web[10802]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
-Dec  7 22:57:27 ip-172-31-32-201 web[10802]:    mod = importlib.import_module(module)
-Dec  7 22:57:27 ip-172-31-32-201 web[10802]:  File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
-Dec  7 22:57:27 ip-172-31-32-201 web[10802]:    return _bootstrap._gcd_import(name[level:], package, level)
-Dec  7 22:57:27 ip-172-31-32-201 web[10802]:  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-Dec  7 22:57:27 ip-172-31-32-201 web[10802]:  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-Dec  7 22:57:27 ip-172-31-32-201 web[10802]:  File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
-Dec  7 22:57:27 ip-172-31-32-201 web[10802]: ModuleNotFoundError: No module named 'application'
-Dec  7 22:57:27 ip-172-31-32-201 web[10802]: [2024-12-07 22:57:27 +0000] [10802] [INFO] Worker exiting (pid: 10802)
-Dec  7 22:57:27 ip-172-31-32-201 web[10798]: [2024-12-07 22:57:27 +0000] [10798] [ERROR] Worker (pid:10802) exited with code 3
-Dec  7 22:57:27 ip-172-31-32-201 web[10798]: [2024-12-07 22:57:27 +0000] [10798] [ERROR] Shutting down: Master
-Dec  7 22:57:27 ip-172-31-32-201 web[10798]: [2024-12-07 22:57:27 +0000] [10798] [ERROR] Reason: Worker failed to boot.
-
-
-----------------------------------------
 /var/log/eb-engine.log
 ----------------------------------------
-2024/12/07 22:57:21.139504 [INFO] Executing instruction: stop proxy
-2024/12/07 22:57:21.139537 [INFO] Running command /bin/sh -c systemctl show -p PartOf httpd.service
-2024/12/07 22:57:21.154236 [WARN] deregisterProcess Warning: process httpd is not registered, skipping...
+2024/12/07 23:48:21.216096 [INFO] stop X-Ray ...
+2024/12/07 23:48:21.216106 [INFO] Running command /bin/sh -c systemctl show -p PartOf xray.service
+2024/12/07 23:48:21.231402 [WARN] stopProcess Warning: process xray is not registered 
+2024/12/07 23:48:21.231436 [INFO] Running command /bin/sh -c systemctl stop xray.service
+2024/12/07 23:48:21.254459 [INFO] Executing instruction: stop proxy
+2024/12/07 23:48:21.254504 [INFO] Running command /bin/sh -c systemctl show -p PartOf httpd.service
+2024/12/07 23:48:21.268374 [WARN] deregisterProcess Warning: process httpd is not registered, skipping...
 
-2024/12/07 22:57:21.154270 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
-2024/12/07 22:57:21.169518 [INFO] Running command /bin/sh -c systemctl is-active nginx.service
-2024/12/07 22:57:21.180192 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
-2024/12/07 22:57:21.190780 [INFO] Running command /bin/sh -c systemctl stop nginx.service
-2024/12/07 22:57:21.363961 [INFO] Running command /bin/sh -c systemctl disable nginx.service
-2024/12/07 22:57:21.652138 [INFO] Running command /bin/sh -c systemctl daemon-reload
-2024/12/07 22:57:21.922199 [INFO] Running command /bin/sh -c systemctl reset-failed
-2024/12/07 22:57:21.932408 [INFO] Executing instruction: FlipApplication
-2024/12/07 22:57:21.932423 [INFO] Fetching environment variables...
-2024/12/07 22:57:21.933303 [INFO] Purge old process...
-2024/12/07 22:57:21.933330 [INFO] Running command /bin/sh -c systemctl stop eb-app.target
-2024/12/07 22:57:21.944066 [INFO] Running command /bin/sh -c systemctl show -p ConsistsOf eb-app.target | cut -d= -f2
-2024/12/07 22:57:21.955854 [INFO] web.service
+2024/12/07 23:48:21.268472 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
+2024/12/07 23:48:21.282317 [INFO] Running command /bin/sh -c systemctl is-active nginx.service
+2024/12/07 23:48:21.291709 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
+2024/12/07 23:48:21.302304 [INFO] Running command /bin/sh -c systemctl stop nginx.service
+2024/12/07 23:48:21.462312 [INFO] Running command /bin/sh -c systemctl disable nginx.service
+2024/12/07 23:48:21.762040 [INFO] Running command /bin/sh -c systemctl daemon-reload
+2024/12/07 23:48:22.052099 [INFO] Running command /bin/sh -c systemctl reset-failed
+2024/12/07 23:48:22.063933 [INFO] Executing instruction: FlipApplication
+2024/12/07 23:48:22.063950 [INFO] Fetching environment variables...
+2024/12/07 23:48:22.064940 [INFO] Purge old process...
+2024/12/07 23:48:22.064967 [INFO] Running command /bin/sh -c systemctl stop eb-app.target
+2024/12/07 23:48:22.081589 [INFO] Running command /bin/sh -c systemctl show -p ConsistsOf eb-app.target | cut -d= -f2
+2024/12/07 23:48:22.097919 [INFO] web.service
 
-2024/12/07 22:57:21.955881 [INFO] deregistering process: web
-2024/12/07 22:57:21.955894 [INFO] Running command /bin/sh -c systemctl show -p PartOf web.service
-2024/12/07 22:57:21.967799 [INFO] Running command /bin/sh -c systemctl is-active web.service
-2024/12/07 22:57:21.978116 [INFO] Running command /bin/sh -c systemctl disable web.service
-2024/12/07 22:57:22.286288 [INFO] Removed "/etc/systemd/system/multi-user.target.wants/web.service".
+2024/12/07 23:48:22.097938 [INFO] deregistering process: web
+2024/12/07 23:48:22.097953 [INFO] Running command /bin/sh -c systemctl show -p PartOf web.service
+2024/12/07 23:48:22.115639 [INFO] Running command /bin/sh -c systemctl is-active web.service
+2024/12/07 23:48:22.126335 [INFO] Running command /bin/sh -c systemctl disable web.service
+2024/12/07 23:48:22.470404 [INFO] Removed "/etc/systemd/system/multi-user.target.wants/web.service".
 
-2024/12/07 22:57:22.286355 [INFO] Running command /bin/sh -c systemctl daemon-reload
-2024/12/07 22:57:22.636308 [INFO] Running command /bin/sh -c systemctl reset-failed
-2024/12/07 22:57:22.645156 [INFO] Running command /bin/sh -c systemctl is-active web.service
-2024/12/07 22:57:22.652694 [INFO] Process web has not been fully terminated
-2024/12/07 22:57:22.652713 [INFO] Some processes have not been fully terminated, sleeping 1 seconds now
-2024/12/07 22:57:23.652896 [INFO] Running command /bin/sh -c systemctl is-active web.service
-2024/12/07 22:57:23.662930 [INFO] Process web has been fully terminated
-2024/12/07 22:57:23.662952 [INFO] All processes have been fully terminated
-2024/12/07 22:57:23.662956 [INFO] Removing /var/app/current/ if it exists
-2024/12/07 22:57:23.946369 [INFO] Renaming /var/app/staging/ to /var/app/current/
-2024/12/07 22:57:23.946408 [INFO] Register application processes...
-2024/12/07 22:57:23.946414 [INFO] Registering the proc: web
+2024/12/07 23:48:22.470684 [INFO] Running command /bin/sh -c systemctl daemon-reload
+2024/12/07 23:48:22.741677 [INFO] Running command /bin/sh -c systemctl reset-failed
+2024/12/07 23:48:22.762922 [INFO] Running command /bin/sh -c systemctl is-active web.service
+2024/12/07 23:48:22.771405 [INFO] Process web has been fully terminated
+2024/12/07 23:48:22.771427 [INFO] All processes have been fully terminated
+2024/12/07 23:48:22.771437 [INFO] Removing /var/app/current/ if it exists
+2024/12/07 23:48:23.027460 [INFO] Renaming /var/app/staging/ to /var/app/current/
+2024/12/07 23:48:23.027491 [INFO] Register application processes...
+2024/12/07 23:48:23.027496 [INFO] Registering the proc: web
 
-2024/12/07 22:57:23.946427 [INFO] Running command /bin/sh -c systemctl show -p PartOf web.service
-2024/12/07 22:57:24.013811 [INFO] Running command /bin/sh -c systemctl daemon-reload
-2024/12/07 22:57:24.342930 [INFO] Running command /bin/sh -c systemctl reset-failed
-2024/12/07 22:57:24.352267 [INFO] Running command /bin/sh -c systemctl is-enabled eb-app.target
-2024/12/07 22:57:24.360445 [INFO] Running command /bin/sh -c systemctl enable eb-app.target
-2024/12/07 22:57:24.690721 [INFO] Running command /bin/sh -c systemctl start eb-app.target
-2024/12/07 22:57:24.706397 [INFO] Running command /bin/sh -c systemctl enable web.service
-2024/12/07 22:57:24.977850 [INFO] Created symlink /etc/systemd/system/multi-user.target.wants/web.service → /etc/systemd/system/web.service.
+2024/12/07 23:48:23.027510 [INFO] Running command /bin/sh -c systemctl show -p PartOf web.service
+2024/12/07 23:48:23.068734 [INFO] Running command /bin/sh -c systemctl daemon-reload
+2024/12/07 23:48:23.306440 [INFO] Running command /bin/sh -c systemctl reset-failed
+2024/12/07 23:48:23.314425 [INFO] Running command /bin/sh -c systemctl is-enabled eb-app.target
+2024/12/07 23:48:23.321845 [INFO] Running command /bin/sh -c systemctl enable eb-app.target
+2024/12/07 23:48:23.619394 [INFO] Running command /bin/sh -c systemctl start eb-app.target
+2024/12/07 23:48:23.629171 [INFO] Running command /bin/sh -c systemctl enable web.service
+2024/12/07 23:48:23.938918 [INFO] Created symlink /etc/systemd/system/multi-user.target.wants/web.service → /etc/systemd/system/web.service.
 
-2024/12/07 22:57:24.977886 [INFO] Running command /bin/sh -c systemctl show -p PartOf web.service
-2024/12/07 22:57:24.990033 [INFO] Running command /bin/sh -c systemctl is-active web.service
-2024/12/07 22:57:24.998526 [INFO] Running command /bin/sh -c systemctl start web.service
-2024/12/07 22:57:25.084825 [INFO] Executing instruction: start X-Ray
-2024/12/07 22:57:25.084850 [INFO] X-Ray is not enabled.
-2024/12/07 22:57:25.084855 [INFO] Executing instruction: start proxy with new configuration
-2024/12/07 22:57:25.084877 [INFO] Running command /bin/sh -c /usr/sbin/nginx -t -c /var/proxy/staging/nginx/nginx.conf
-2024/12/07 22:57:25.112275 [INFO] nginx: [warn] could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 23:48:23.938954 [INFO] Running command /bin/sh -c systemctl show -p PartOf web.service
+2024/12/07 23:48:23.950131 [INFO] Running command /bin/sh -c systemctl is-active web.service
+2024/12/07 23:48:23.958172 [INFO] Running command /bin/sh -c systemctl start web.service
+2024/12/07 23:48:24.033202 [INFO] Executing instruction: start X-Ray
+2024/12/07 23:48:24.033228 [INFO] X-Ray is not enabled.
+2024/12/07 23:48:24.033233 [INFO] Executing instruction: start proxy with new configuration
+2024/12/07 23:48:24.033256 [INFO] Running command /bin/sh -c /usr/sbin/nginx -t -c /var/proxy/staging/nginx/nginx.conf
+2024/12/07 23:48:24.060655 [INFO] nginx: [warn] could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
 nginx: the configuration file /var/proxy/staging/nginx/nginx.conf syntax is ok
 nginx: configuration file /var/proxy/staging/nginx/nginx.conf test is successful
 
-2024/12/07 22:57:25.112622 [INFO] Running command /bin/sh -c cp -rp /var/proxy/staging/nginx/* /etc/nginx
-2024/12/07 22:57:25.117415 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
-2024/12/07 22:57:25.139475 [INFO] Running command /bin/sh -c systemctl daemon-reload
-2024/12/07 22:57:25.505376 [INFO] Running command /bin/sh -c systemctl reset-failed
-2024/12/07 22:57:25.542970 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
-2024/12/07 22:57:25.557166 [INFO] Running command /bin/sh -c systemctl is-active nginx.service
-2024/12/07 22:57:25.567546 [INFO] Running command /bin/sh -c systemctl start nginx.service
-2024/12/07 22:57:25.659210 [INFO] Executing instruction: configureSqsd
-2024/12/07 22:57:25.659231 [INFO] This is a web server environment instance, skip configure sqsd daemon ...
-2024/12/07 22:57:25.659236 [INFO] Executing instruction: startSqsd
-2024/12/07 22:57:25.659239 [INFO] This is a web server environment instance, skip start sqsd daemon ...
-2024/12/07 22:57:25.659258 [INFO] Executing instruction: Track pids in healthd
-2024/12/07 22:57:25.659269 [INFO] This is an enhanced health env...
-2024/12/07 22:57:25.659283 [INFO] Running command /bin/sh -c systemctl show -p ConsistsOf aws-eb.target | cut -d= -f2
-2024/12/07 22:57:25.679972 [INFO] nginx.service cfn-hup.service healthd.service
+2024/12/07 23:48:24.060962 [INFO] Running command /bin/sh -c cp -rp /var/proxy/staging/nginx/* /etc/nginx
+2024/12/07 23:48:24.065612 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
+2024/12/07 23:48:24.090385 [INFO] Running command /bin/sh -c systemctl daemon-reload
+2024/12/07 23:48:24.471474 [INFO] Running command /bin/sh -c systemctl reset-failed
+2024/12/07 23:48:24.480271 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
+2024/12/07 23:48:24.492897 [INFO] Running command /bin/sh -c systemctl is-active nginx.service
+2024/12/07 23:48:24.501412 [INFO] Running command /bin/sh -c systemctl start nginx.service
+2024/12/07 23:48:24.622104 [INFO] Executing instruction: configureSqsd
+2024/12/07 23:48:24.622118 [INFO] This is a web server environment instance, skip configure sqsd daemon ...
+2024/12/07 23:48:24.622121 [INFO] Executing instruction: startSqsd
+2024/12/07 23:48:24.622124 [INFO] This is a web server environment instance, skip start sqsd daemon ...
+2024/12/07 23:48:24.622128 [INFO] Executing instruction: Track pids in healthd
+2024/12/07 23:48:24.622132 [INFO] This is an enhanced health env...
+2024/12/07 23:48:24.622144 [INFO] Running command /bin/sh -c systemctl show -p ConsistsOf aws-eb.target | cut -d= -f2
+2024/12/07 23:48:24.633008 [INFO] cfn-hup.service healthd.service nginx.service
 
-2024/12/07 22:57:25.680006 [INFO] Running command /bin/sh -c systemctl show -p ConsistsOf eb-app.target | cut -d= -f2
-2024/12/07 22:57:25.697816 [INFO] web.service
+2024/12/07 23:48:24.633035 [INFO] Running command /bin/sh -c systemctl show -p ConsistsOf eb-app.target | cut -d= -f2
+2024/12/07 23:48:24.656131 [INFO] web.service
 
-2024/12/07 22:57:25.698219 [INFO] Executing instruction: RunAppDeployPostDeployHooks
-2024/12/07 22:57:25.698239 [INFO] Executing platform hooks in .platform/hooks/postdeploy/
-2024/12/07 22:57:25.698257 [INFO] The dir .platform/hooks/postdeploy/ does not exist
-2024/12/07 22:57:25.698261 [INFO] Finished running scripts in /var/app/current/.platform/hooks/postdeploy
-2024/12/07 22:57:25.698267 [INFO] Executing cleanup logic
-2024/12/07 22:57:25.698379 [INFO] CommandService Response: {"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"Engine execution has succeeded.","returncode":0,"events":[{"msg":"Instance deployment successfully generated a 'Procfile'.","timestamp":1733612237430,"severity":"INFO"},{"msg":"Instance deployment completed successfully.","timestamp":1733612245698,"severity":"INFO"}]}]}
+2024/12/07 23:48:24.656662 [INFO] Executing instruction: RunAppDeployPostDeployHooks
+2024/12/07 23:48:24.656704 [INFO] Executing platform hooks in .platform/hooks/postdeploy/
+2024/12/07 23:48:24.656719 [INFO] The dir .platform/hooks/postdeploy/ does not exist
+2024/12/07 23:48:24.656722 [INFO] Finished running scripts in /var/app/current/.platform/hooks/postdeploy
+2024/12/07 23:48:24.656727 [INFO] Executing cleanup logic
+2024/12/07 23:48:24.656821 [INFO] CommandService Response: {"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"Engine execution has succeeded.","returncode":0,"events":[{"msg":"Instance deployment successfully generated a 'Procfile'.","timestamp":1733615297479,"severity":"INFO"},{"msg":"Instance deployment completed successfully.","timestamp":1733615304656,"severity":"INFO"}]}]}
 
-2024/12/07 22:57:25.698547 [INFO] Platform Engine finished execution on command: app-deploy
+2024/12/07 23:48:24.656992 [INFO] Platform Engine finished execution on command: app-deploy
 
-2024/12/07 23:02:09.985048 [INFO] Starting...
-2024/12/07 23:02:09.985098 [INFO] Starting EBPlatform-PlatformEngine
-2024/12/07 23:02:09.985122 [INFO] reading event message file
-2024/12/07 23:02:09.985827 [INFO] Engine received EB command cfn-hup-exec
+2024/12/07 23:53:44.654133 [INFO] Starting...
+2024/12/07 23:53:44.654186 [INFO] Starting EBPlatform-PlatformEngine
+2024/12/07 23:53:44.654206 [INFO] reading event message file
+2024/12/07 23:53:44.654360 [INFO] Engine received EB command cfn-hup-exec
 
-2024/12/07 23:02:10.062878 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:eu-west-1:250738637992:stack/awseb-e-ii2fhia2ez-stack/5b6abbb0-b3ec-11ef-b3e9-06dab945c80f -r AWSEBAutoScalingGroup --region eu-west-1
-2024/12/07 23:02:10.533782 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:eu-west-1:250738637992:stack/awseb-e-ii2fhia2ez-stack/5b6abbb0-b3ec-11ef-b3e9-06dab945c80f -r AWSEBBeanstalkMetadata --region eu-west-1
-2024/12/07 23:02:10.916962 [INFO] checking whether command tail-log is applicable to this instance...
-2024/12/07 23:02:10.916978 [INFO] this command is applicable to the instance, thus instance should execute command
-2024/12/07 23:02:10.916982 [INFO] Engine command: (tail-log)
+2024/12/07 23:53:44.719786 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:eu-west-1:250738637992:stack/awseb-e-ii2fhia2ez-stack/5b6abbb0-b3ec-11ef-b3e9-06dab945c80f -r AWSEBAutoScalingGroup --region eu-west-1
+2024/12/07 23:53:45.082152 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:eu-west-1:250738637992:stack/awseb-e-ii2fhia2ez-stack/5b6abbb0-b3ec-11ef-b3e9-06dab945c80f -r AWSEBBeanstalkMetadata --region eu-west-1
+2024/12/07 23:53:45.447816 [INFO] checking whether command tail-log is applicable to this instance...
+2024/12/07 23:53:45.447832 [INFO] this command is applicable to the instance, thus instance should execute command
+2024/12/07 23:53:45.447836 [INFO] Engine command: (tail-log)
 
-2024/12/07 23:02:10.917042 [INFO] Executing instruction: GetTailLogs
-2024/12/07 23:02:10.917046 [INFO] Tail Logs...
-2024/12/07 23:02:10.917504 [INFO] Running command /bin/sh -c tail -n 100 /var/log/web.stdout.log
-2024/12/07 23:02:10.920130 [INFO] Running command /bin/sh -c tail -n 100 /var/log/eb-engine.log
+2024/12/07 23:53:45.447881 [INFO] Executing instruction: GetTailLogs
+2024/12/07 23:53:45.447884 [INFO] Tail Logs...
+2024/12/07 23:53:45.448234 [INFO] Running command /bin/sh -c tail -n 100 /var/log/eb-engine.log
 
 
 ----------------------------------------
@@ -318,210 +213,315 @@ WARNINGS:
 ----------------------------------------
 /var/log/nginx/access.log
 ----------------------------------------
-172.31.15.41 - - [07/Dec/2024:22:50:12 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:50:27 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:50:27 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:50:42 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:50:42 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:50:57 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:50:57 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:51:12 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:51:12 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:51:27 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:51:27 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:51:42 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:51:42 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:51:57 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:51:57 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:52:12 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:52:12 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:52:27 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:52:27 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:52:42 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:52:42 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:52:57 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:52:57 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:53:12 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:53:12 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:53:27 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:53:27 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:53:42 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:53:42 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:53:57 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:53:57 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:54:12 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:54:12 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:54:27 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:54:27 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:54:42 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:54:42 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:54:50 +0000] "GET / HTTP/1.1" 200 979 "-" "Mozilla/5.0 (Linux; U; Android 4.0.3; ko-kr; LG-L160L Build/IML74K) AppleWebkit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30" "114.35.165.196"
-172.31.15.41 - - [07/Dec/2024:22:54:57 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:54:57 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:55:12 +0000] "GET / HTTP/1.1" 200 979 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
-172.31.15.41 - - [07/Dec/2024:22:55:12 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:55:12 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:55:27 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:55:27 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:55:42 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:55:42 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:55:57 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:55:57 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:56:12 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:56:12 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:56:27 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:56:27 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:56:42 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:56:42 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:56:57 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:56:57 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:57:12 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:57:12 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:57:27 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:57:27 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:57:42 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:57:42 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:57:44 +0000] "GET / HTTP/1.1" 502 150 "-" "Expanse, a Palo Alto Networks company, searches across the global IPv4 space multiple times per day to identify customers&#39; presences on the Internet. If you would like to be excluded from our scans, please send IP addresses/domains to: scaninfo@paloaltonetworks.com" "198.235.24.154"
-172.31.32.88 - - [07/Dec/2024:22:57:57 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:57:57 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:58:12 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:58:12 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:58:27 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:58:27 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:58:42 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:58:42 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:58:57 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:58:58 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:59:12 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:59:13 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:59:28 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:59:28 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:59:43 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:59:43 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:22:59:58 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:22:59:58 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:23:00:13 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:23:00:13 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:23:00:24 +0000] "GET / HTTP/1.1" 502 552 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
-172.31.32.88 - - [07/Dec/2024:23:00:28 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:23:00:28 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:23:00:40 +0000] "GET / HTTP/1.1" 502 552 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
-172.31.32.88 - - [07/Dec/2024:23:00:43 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:23:00:43 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:23:00:58 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:23:00:58 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:23:01:13 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:23:01:13 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:23:01:28 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:23:01:28 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:23:01:43 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:23:01:43 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.32.88 - - [07/Dec/2024:23:01:58 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
-172.31.15.41 - - [07/Dec/2024:23:01:58 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:43:30 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:43:30 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:43:45 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:43:45 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:44:00 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:44:00 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:44:15 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:44:15 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:44:30 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:44:30 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:44:45 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:44:45 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:45:00 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:45:00 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:45:15 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:45:15 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:45:30 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:45:30 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:45:45 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:45:45 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:46:00 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:46:00 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:46:15 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:46:15 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:46:30 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:46:30 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:46:45 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:46:45 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:47:00 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:47:00 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:47:15 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:47:15 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:47:30 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:47:30 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:47:45 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:47:45 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:48:00 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:48:00 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:48:15 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:48:15 +0000] "GET / HTTP/1.1" 502 150 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:48:30 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:48:30 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:48:45 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:48:45 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:49:00 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:49:00 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:49:15 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:49:15 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:49:30 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:49:30 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:49:35 +0000] "GET / HTTP/1.1" 200 979 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
+172.31.32.88 - - [07/Dec/2024:23:49:42 +0000] "GET /login/ HTTP/1.1" 200 1258 "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
+172.31.32.88 - - [07/Dec/2024:23:49:43 +0000] "GET / HTTP/1.1" 200 979 "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
+172.31.32.88 - - [07/Dec/2024:23:49:44 +0000] "GET /signup/ HTTP/1.1" 200 2056 "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
+172.31.15.41 - - [07/Dec/2024:23:49:45 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:49:45 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:49:45 +0000] "GET /login/ HTTP/1.1" 200 1258 "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/signup/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
+172.31.32.88 - - [07/Dec/2024:23:49:46 +0000] "GET / HTTP/1.1" 200 979 "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
+172.31.15.41 - - [07/Dec/2024:23:50:00 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:50:00 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:50:12 +0000] "GET / HTTP/1.1" 200 979 "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
+172.31.32.88 - - [07/Dec/2024:23:50:12 +0000] "GET / HTTP/1.1" 200 979 "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
+172.31.15.41 - - [07/Dec/2024:23:50:15 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:50:15 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:50:28 +0000] "GET / HTTP/1.1" 200 979 "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
+172.31.15.41 - - [07/Dec/2024:23:50:30 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:50:30 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:50:30 +0000] "GET /login/ HTTP/1.1" 200 1258 "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
+172.31.32.88 - - [07/Dec/2024:23:50:45 +0000] "POST /login/ HTTP/1.1" 302 0 "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
+172.31.32.88 - - [07/Dec/2024:23:50:45 +0000] "GET / HTTP/1.1" 200 9020 "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
+172.31.15.41 - - [07/Dec/2024:23:50:45 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:50:45 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:51:00 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:51:00 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:51:15 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:51:15 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:51:30 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:51:30 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:51:45 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:51:45 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:52:00 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:52:00 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:52:15 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:52:15 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:52:30 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:52:30 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:52:45 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:52:45 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:52:57 +0000] "GET / HTTP/1.1" 200 9020 "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
+172.31.32.88 - - [07/Dec/2024:23:53:00 +0000] "GET /logout/ HTTP/1.1" 302 0 "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
+172.31.32.88 - - [07/Dec/2024:23:53:00 +0000] "GET /login/ HTTP/1.1" 200 1258 "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
+172.31.15.41 - - [07/Dec/2024:23:53:00 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:53:00 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:53:01 +0000] "GET /login/ HTTP/1.1" 200 1258 "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
+172.31.32.88 - - [07/Dec/2024:23:53:02 +0000] "GET / HTTP/1.1" 200 979 "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
+172.31.32.88 - - [07/Dec/2024:23:53:02 +0000] "GET / HTTP/1.1" 200 979 "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" "93.107.16.61"
+172.31.15.41 - - [07/Dec/2024:23:53:15 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:53:15 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.15.41 - - [07/Dec/2024:23:53:30 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
+172.31.32.88 - - [07/Dec/2024:23:53:30 +0000] "GET / HTTP/1.1" 200 979 "-" "ELB-HealthChecker/2.0" "-"
 
 
 ----------------------------------------
 /var/log/nginx/error.log
 ----------------------------------------
-2024/12/07 22:29:26 [error] 9310#9310: *36 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
-2024/12/07 22:29:26 [error] 9310#9310: *37 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
-2024/12/07 22:29:26 [error] 9310#9310: *36 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
-2024/12/07 22:29:26 [error] 9311#9311: *43 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
-2024/12/07 22:29:28 [error] 9310#9310: *36 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:29:28 [error] 9310#9310: *36 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:29:28 [error] 9310#9310: *37 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:29:28 [error] 9311#9311: *43 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:31:47 [error] 9310#9310: *92 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:31:47 [error] 9310#9310: *92 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:31:47 [error] 9310#9310: *94 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:31:47 [error] 9310#9310: *94 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:31:57 [error] 9310#9310: *92 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
-2024/12/07 22:31:57 [error] 9310#9310: *94 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
-2024/12/07 22:31:57 [error] 9310#9310: *94 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
-2024/12/07 22:31:57 [error] 9310#9310: *92 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
-2024/12/07 22:32:06 [error] 9310#9310: *94 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:32:06 [error] 9310#9310: *92 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:32:06 [error] 9310#9310: *94 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:32:06 [error] 9310#9310: *92 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:33:04 [error] 9311#9311: *118 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.15.41, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:33:04 [error] 9311#9311: *119 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.15.41, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:33:04 [error] 9311#9311: *120 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.15.41, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:33:04 [error] 9311#9311: *120 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.15.41, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:33:17 [error] 9311#9311: *120 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.15.41, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:33:17 [error] 9311#9311: *120 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.15.41, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:33:17 [error] 9311#9311: *120 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.15.41, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:33:17 [error] 9311#9311: *118 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.15.41, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:36:13 [error] 9311#9311: *174 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:36:13 [error] 9311#9311: *174 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:36:13 [error] 9311#9311: *174 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:36:13 [error] 9311#9311: *176 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:36:34 [error] 9311#9311: *176 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:36:34 [error] 9311#9311: *176 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:36:34 [error] 9311#9311: *176 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:36:34 [error] 9311#9311: *184 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:36:37 [error] 9311#9311: *184 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
-2024/12/07 22:36:37 [error] 9311#9311: *184 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
-2024/12/07 22:36:37 [error] 9311#9311: *174 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
-2024/12/07 22:36:37 [error] 9311#9311: *184 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
-2024/12/07 22:36:39 [error] 9311#9311: *184 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:36:39 [error] 9311#9311: *184 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:36:39 [error] 9311#9311: *174 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:36:39 [error] 9311#9311: *188 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:36:53 [error] 9311#9311: *181 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.15.41, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:36:53 [error] 9311#9311: *194 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.15.41, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:36:53 [error] 9311#9311: *195 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.15.41, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:36:53 [error] 9311#9311: *181 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.15.41, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:49:35 [error] 9310#9310: *401 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:49:35 [error] 9310#9310: *401 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:49:35 [error] 9311#9311: *403 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:49:35 [error] 9310#9310: *401 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:55:12 [error] 9311#9311: *494 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:55:12 [error] 9311#9311: *494 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:55:12 [error] 9310#9310: *488 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:55:12 [error] 9311#9311: *496 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
-2024/12/07 22:57:25 [warn] 10721#10721: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
-2024/12/07 22:57:25 [warn] 10756#10756: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
-2024/12/07 22:57:25 [warn] 10757#10757: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
-2024/12/07 22:57:27 [error] 10759#10759: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:57:27 [error] 10760#10760: *3 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:57:42 [error] 10759#10759: *5 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:57:42 [error] 10759#10759: *7 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:57:44 [error] 10759#10759: *9 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "awseb--awseb-zlzcfjnbc1sh-1614050713.eu-west-1.elb.amazonaws.com"
-2024/12/07 22:57:57 [error] 10759#10759: *11 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:57:57 [error] 10759#10759: *13 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:58:12 [error] 10759#10759: *15 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:58:12 [error] 10759#10759: *17 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:58:27 [error] 10759#10759: *19 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:58:27 [error] 10759#10759: *21 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:58:42 [error] 10759#10759: *23 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:58:42 [error] 10759#10759: *25 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:58:57 [error] 10759#10759: *27 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:58:58 [error] 10759#10759: *29 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:59:12 [error] 10759#10759: *31 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:59:13 [error] 10759#10759: *33 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:59:28 [error] 10759#10759: *35 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:59:28 [error] 10760#10760: *37 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:59:43 [error] 10760#10760: *39 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:59:43 [error] 10760#10760: *41 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:59:58 [error] 10760#10760: *43 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 22:59:58 [error] 10760#10760: *45 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 23:00:13 [error] 10760#10760: *47 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 23:00:13 [error] 10760#10760: *49 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 23:00:24 [error] 10760#10760: *51 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com"
-2024/12/07 23:00:28 [error] 10760#10760: *53 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 23:00:28 [error] 10760#10760: *55 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 23:00:40 [error] 10760#10760: *57 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com"
-2024/12/07 23:00:43 [error] 10760#10760: *59 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 23:00:43 [error] 10760#10760: *61 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 23:00:58 [error] 10760#10760: *63 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 23:00:58 [error] 10760#10760: *65 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 23:01:13 [error] 10760#10760: *67 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 23:01:13 [error] 10759#10759: *69 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 23:01:28 [error] 10759#10759: *71 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 23:01:28 [error] 10759#10759: *73 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 23:01:43 [error] 10759#10759: *75 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 23:01:43 [error] 10759#10759: *77 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 23:01:58 [error] 10759#10759: *79 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
-2024/12/07 23:01:58 [error] 10759#10759: *81 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:44:15 [error] 14459#14459: *49 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:44:30 [error] 14459#14459: *51 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:44:30 [error] 14459#14459: *53 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:44:45 [error] 14459#14459: *55 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:44:45 [error] 14459#14459: *57 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:45:00 [error] 14459#14459: *59 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:45:00 [error] 14459#14459: *61 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:45:15 [error] 14459#14459: *63 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:45:15 [error] 14459#14459: *65 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:45:30 [error] 14459#14459: *67 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:45:30 [error] 14458#14458: *69 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:45:45 [error] 14458#14458: *71 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:45:45 [error] 14458#14458: *73 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:46:00 [error] 14458#14458: *75 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:46:00 [error] 14458#14458: *77 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:46:15 [error] 14458#14458: *79 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:46:15 [error] 14458#14458: *81 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:46:30 [error] 14458#14458: *83 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:46:30 [error] 14458#14458: *85 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:46:45 [error] 14458#14458: *87 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:46:45 [error] 14458#14458: *89 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:47:00 [error] 14458#14458: *91 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:47:00 [error] 14458#14458: *93 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:47:15 [error] 14458#14458: *95 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:47:15 [error] 14458#14458: *97 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:47:30 [error] 14458#14458: *99 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:47:30 [error] 14459#14459: *101 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:47:45 [error] 14459#14459: *103 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:47:45 [error] 14459#14459: *105 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:48:00 [error] 14459#14459: *107 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:48:00 [error] 14459#14459: *109 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:48:15 [error] 14459#14459: *111 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.15.41, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:48:15 [error] 14459#14459: *113 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.32.88, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8000/", host: "172.31.32.201"
+2024/12/07 23:48:24 [warn] 15142#15142: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 23:48:24 [warn] 15176#15176: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 23:48:24 [warn] 15177#15177: could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+2024/12/07 23:49:35 [error] 15179#15179: *21 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:49:35 [error] 15180#15180: *23 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:49:35 [error] 15179#15179: *21 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:49:35 [error] 15179#15179: *24 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:49:42 [error] 15179#15179: *21 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
+2024/12/07 23:49:42 [error] 15179#15179: *21 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
+2024/12/07 23:49:42 [error] 15179#15179: *21 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
+2024/12/07 23:49:42 [error] 15179#15179: *26 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
+2024/12/07 23:49:43 [error] 15179#15179: *26 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:49:43 [error] 15179#15179: *26 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:49:43 [error] 15179#15179: *21 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:49:43 [error] 15179#15179: *28 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:49:44 [error] 15179#15179: *26 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/signup/"
+2024/12/07 23:49:44 [error] 15179#15179: *26 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/signup/"
+2024/12/07 23:49:44 [error] 15179#15179: *28 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/signup/"
+2024/12/07 23:49:44 [error] 15179#15179: *26 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/signup/"
+2024/12/07 23:49:45 [error] 15179#15179: *26 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
+2024/12/07 23:49:45 [error] 15179#15179: *26 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
+2024/12/07 23:49:45 [error] 15179#15179: *26 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
+2024/12/07 23:49:45 [error] 15179#15179: *28 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
+2024/12/07 23:49:46 [error] 15180#15180: *23 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:49:46 [error] 15180#15180: *23 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:49:46 [error] 15179#15179: *26 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:49:46 [error] 15179#15179: *28 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:50:12 [error] 15180#15180: *23 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:50:12 [error] 15179#15179: *24 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:50:12 [error] 15180#15180: *23 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:50:12 [error] 15179#15179: *26 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:50:12 [error] 15179#15179: *26 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:50:12 [error] 15180#15180: *23 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:50:12 [error] 15179#15179: *24 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:50:12 [error] 15180#15180: *42 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:50:29 [error] 15179#15179: *26 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:50:29 [error] 15180#15180: *42 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:50:29 [error] 15180#15180: *42 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:50:29 [error] 15180#15180: *42 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:50:31 [error] 15180#15180: *42 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
+2024/12/07 23:50:31 [error] 15180#15180: *42 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
+2024/12/07 23:50:31 [error] 15180#15180: *42 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
+2024/12/07 23:50:31 [error] 15180#15180: *23 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
+2024/12/07 23:50:45 [error] 15180#15180: *42 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:50:45 [error] 15180#15180: *42 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:50:45 [error] 15179#15179: *26 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:50:45 [error] 15179#15179: *26 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:52:57 [error] 15179#15179: *91 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:52:57 [error] 15179#15179: *93 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:52:57 [error] 15179#15179: *91 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:52:57 [error] 15179#15179: *94 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:53:00 [error] 15179#15179: *91 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
+2024/12/07 23:53:00 [error] 15179#15179: *91 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
+2024/12/07 23:53:00 [error] 15179#15179: *93 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
+2024/12/07 23:53:00 [error] 15179#15179: *94 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
+2024/12/07 23:53:01 [error] 15179#15179: *91 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
+2024/12/07 23:53:01 [error] 15179#15179: *91 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
+2024/12/07 23:53:01 [error] 15179#15179: *93 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
+2024/12/07 23:53:01 [error] 15179#15179: *91 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/login/"
+2024/12/07 23:53:02 [error] 15179#15179: *91 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:53:02 [error] 15179#15179: *91 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:53:02 [error] 15179#15179: *93 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:53:02 [error] 15179#15179: *91 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:53:02 [error] 15179#15179: *91 open() "/var/app/current/static/expenses/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:53:02 [error] 15179#15179: *91 open() "/var/app/current/static/expenses/expense_list_styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list_styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:53:02 [error] 15179#15179: *91 open() "/var/app/current/static/expenses/expense_list.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/expenses/expense_list.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+2024/12/07 23:53:02 [error] 15179#15179: *93 open() "/var/app/current/static/styles.css" failed (2: No such file or directory), client: 172.31.32.88, server: , request: "GET /static/styles.css HTTP/1.1", host: "x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com", referrer: "http://x23293519venv.eba-sfz7b2tv.eu-west-1.elasticbeanstalk.com/"
+
+
+----------------------------------------
+/var/log/web.stdout.log
+----------------------------------------
+Dec  7 23:41:30 ip-172-31-32-201 web[14485]: [2024-12-07 23:41:30 +0000] [14485] [INFO] Starting gunicorn 21.2.0
+Dec  7 23:41:30 ip-172-31-32-201 web[14485]: [2024-12-07 23:41:30 +0000] [14485] [INFO] Listening at: http://127.0.0.1:8000 (14485)
+Dec  7 23:41:30 ip-172-31-32-201 web[14485]: [2024-12-07 23:41:30 +0000] [14485] [INFO] Using worker: gthread
+Dec  7 23:41:30 ip-172-31-32-201 web[14489]: [2024-12-07 23:41:30 +0000] [14489] [INFO] Booting worker with pid: 14489
+Dec  7 23:41:30 ip-172-31-32-201 web[14489]: [2024-12-07 23:41:30 +0000] [14489] [ERROR] Exception in worker process
+Dec  7 23:41:30 ip-172-31-32-201 web[14489]: Traceback (most recent call last):
+Dec  7 23:41:30 ip-172-31-32-201 web[14489]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+Dec  7 23:41:30 ip-172-31-32-201 web[14489]:    worker.init_process()
+Dec  7 23:41:30 ip-172-31-32-201 web[14489]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
+Dec  7 23:41:30 ip-172-31-32-201 web[14489]:    super().init_process()
+Dec  7 23:41:30 ip-172-31-32-201 web[14489]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+Dec  7 23:41:30 ip-172-31-32-201 web[14489]:    self.load_wsgi()
+Dec  7 23:41:30 ip-172-31-32-201 web[14489]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+Dec  7 23:41:30 ip-172-31-32-201 web[14489]:    self.wsgi = self.app.wsgi()
+Dec  7 23:41:30 ip-172-31-32-201 web[14489]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Dec  7 23:41:30 ip-172-31-32-201 web[14489]:    self.callable = self.load()
+Dec  7 23:41:30 ip-172-31-32-201 web[14489]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+Dec  7 23:41:30 ip-172-31-32-201 web[14489]:    return self.load_wsgiapp()
+Dec  7 23:41:30 ip-172-31-32-201 web[14489]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+Dec  7 23:41:30 ip-172-31-32-201 web[14489]:    return util.import_app(self.app_uri)
+Dec  7 23:41:30 ip-172-31-32-201 web[14489]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+Dec  7 23:41:30 ip-172-31-32-201 web[14489]:    mod = importlib.import_module(module)
+Dec  7 23:41:30 ip-172-31-32-201 web[14489]:  File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
+Dec  7 23:41:30 ip-172-31-32-201 web[14489]:    return _bootstrap._gcd_import(name[level:], package, level)
+Dec  7 23:41:30 ip-172-31-32-201 web[14489]:  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+Dec  7 23:41:30 ip-172-31-32-201 web[14489]:  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+Dec  7 23:41:30 ip-172-31-32-201 web[14489]:  File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
+Dec  7 23:41:30 ip-172-31-32-201 web[14489]: ModuleNotFoundError: No module named 'application'
+Dec  7 23:41:30 ip-172-31-32-201 web[14489]: [2024-12-07 23:41:30 +0000] [14489] [INFO] Worker exiting (pid: 14489)
+Dec  7 23:41:30 ip-172-31-32-201 web[14485]: [2024-12-07 23:41:30 +0000] [14485] [ERROR] Worker (pid:14489) exited with code 3
+Dec  7 23:41:30 ip-172-31-32-201 web[14485]: [2024-12-07 23:41:30 +0000] [14485] [ERROR] Shutting down: Master
+Dec  7 23:41:30 ip-172-31-32-201 web[14485]: [2024-12-07 23:41:30 +0000] [14485] [ERROR] Reason: Worker failed to boot.
+Dec  7 23:41:30 ip-172-31-32-201 web[14491]: [2024-12-07 23:41:30 +0000] [14491] [INFO] Starting gunicorn 21.2.0
+Dec  7 23:41:30 ip-172-31-32-201 web[14491]: [2024-12-07 23:41:30 +0000] [14491] [INFO] Listening at: http://127.0.0.1:8000 (14491)
+Dec  7 23:41:30 ip-172-31-32-201 web[14491]: [2024-12-07 23:41:30 +0000] [14491] [INFO] Using worker: gthread
+Dec  7 23:41:30 ip-172-31-32-201 web[14495]: [2024-12-07 23:41:30 +0000] [14495] [INFO] Booting worker with pid: 14495
+Dec  7 23:41:30 ip-172-31-32-201 web[14495]: [2024-12-07 23:41:30 +0000] [14495] [ERROR] Exception in worker process
+Dec  7 23:41:30 ip-172-31-32-201 web[14495]: Traceback (most recent call last):
+Dec  7 23:41:30 ip-172-31-32-201 web[14495]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+Dec  7 23:41:30 ip-172-31-32-201 web[14495]:    worker.init_process()
+Dec  7 23:41:30 ip-172-31-32-201 web[14495]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
+Dec  7 23:41:30 ip-172-31-32-201 web[14495]:    super().init_process()
+Dec  7 23:41:30 ip-172-31-32-201 web[14495]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+Dec  7 23:41:30 ip-172-31-32-201 web[14495]:    self.load_wsgi()
+Dec  7 23:41:30 ip-172-31-32-201 web[14495]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+Dec  7 23:41:30 ip-172-31-32-201 web[14495]:    self.wsgi = self.app.wsgi()
+Dec  7 23:41:30 ip-172-31-32-201 web[14495]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Dec  7 23:41:30 ip-172-31-32-201 web[14495]:    self.callable = self.load()
+Dec  7 23:41:30 ip-172-31-32-201 web[14495]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+Dec  7 23:41:30 ip-172-31-32-201 web[14495]:    return self.load_wsgiapp()
+Dec  7 23:41:30 ip-172-31-32-201 web[14495]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+Dec  7 23:41:30 ip-172-31-32-201 web[14495]:    return util.import_app(self.app_uri)
+Dec  7 23:41:30 ip-172-31-32-201 web[14495]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+Dec  7 23:41:30 ip-172-31-32-201 web[14495]:    mod = importlib.import_module(module)
+Dec  7 23:41:30 ip-172-31-32-201 web[14495]:  File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
+Dec  7 23:41:30 ip-172-31-32-201 web[14495]:    return _bootstrap._gcd_import(name[level:], package, level)
+Dec  7 23:41:30 ip-172-31-32-201 web[14495]:  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+Dec  7 23:41:30 ip-172-31-32-201 web[14495]:  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+Dec  7 23:41:30 ip-172-31-32-201 web[14495]:  File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
+Dec  7 23:41:30 ip-172-31-32-201 web[14495]: ModuleNotFoundError: No module named 'application'
+Dec  7 23:41:30 ip-172-31-32-201 web[14495]: [2024-12-07 23:41:30 +0000] [14495] [INFO] Worker exiting (pid: 14495)
+Dec  7 23:41:30 ip-172-31-32-201 web[14491]: [2024-12-07 23:41:30 +0000] [14491] [ERROR] Worker (pid:14495) exited with code 3
+Dec  7 23:41:30 ip-172-31-32-201 web[14491]: [2024-12-07 23:41:30 +0000] [14491] [ERROR] Shutting down: Master
+Dec  7 23:41:30 ip-172-31-32-201 web[14491]: [2024-12-07 23:41:30 +0000] [14491] [ERROR] Reason: Worker failed to boot.
+Dec  7 23:41:31 ip-172-31-32-201 web[14497]: [2024-12-07 23:41:31 +0000] [14497] [INFO] Starting gunicorn 21.2.0
+Dec  7 23:41:31 ip-172-31-32-201 web[14497]: [2024-12-07 23:41:31 +0000] [14497] [INFO] Listening at: http://127.0.0.1:8000 (14497)
+Dec  7 23:41:31 ip-172-31-32-201 web[14497]: [2024-12-07 23:41:31 +0000] [14497] [INFO] Using worker: gthread
+Dec  7 23:41:31 ip-172-31-32-201 web[14501]: [2024-12-07 23:41:31 +0000] [14501] [INFO] Booting worker with pid: 14501
+Dec  7 23:41:31 ip-172-31-32-201 web[14501]: [2024-12-07 23:41:31 +0000] [14501] [ERROR] Exception in worker process
+Dec  7 23:41:31 ip-172-31-32-201 web[14501]: Traceback (most recent call last):
+Dec  7 23:41:31 ip-172-31-32-201 web[14501]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+Dec  7 23:41:31 ip-172-31-32-201 web[14501]:    worker.init_process()
+Dec  7 23:41:31 ip-172-31-32-201 web[14501]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
+Dec  7 23:41:31 ip-172-31-32-201 web[14501]:    super().init_process()
+Dec  7 23:41:31 ip-172-31-32-201 web[14501]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+Dec  7 23:41:31 ip-172-31-32-201 web[14501]:    self.load_wsgi()
+Dec  7 23:41:31 ip-172-31-32-201 web[14501]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+Dec  7 23:41:31 ip-172-31-32-201 web[14501]:    self.wsgi = self.app.wsgi()
+Dec  7 23:41:31 ip-172-31-32-201 web[14501]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+Dec  7 23:41:31 ip-172-31-32-201 web[14501]:    self.callable = self.load()
+Dec  7 23:41:31 ip-172-31-32-201 web[14501]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+Dec  7 23:41:31 ip-172-31-32-201 web[14501]:    return self.load_wsgiapp()
+Dec  7 23:41:31 ip-172-31-32-201 web[14501]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+Dec  7 23:41:31 ip-172-31-32-201 web[14501]:    return util.import_app(self.app_uri)
+Dec  7 23:41:31 ip-172-31-32-201 web[14501]:  File "/var/app/venv/staging-LQM1lest/lib64/python3.9/site-packages/gunicorn/util.py", line 371, in import_app
+Dec  7 23:41:31 ip-172-31-32-201 web[14501]:    mod = importlib.import_module(module)
+Dec  7 23:41:31 ip-172-31-32-201 web[14501]:  File "/usr/lib64/python3.9/importlib/__init__.py", line 127, in import_module
+Dec  7 23:41:31 ip-172-31-32-201 web[14501]:    return _bootstrap._gcd_import(name[level:], package, level)
+Dec  7 23:41:31 ip-172-31-32-201 web[14501]:  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+Dec  7 23:41:31 ip-172-31-32-201 web[14501]:  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+Dec  7 23:41:31 ip-172-31-32-201 web[14501]:  File "<frozen importlib._bootstrap>", line 984, in _find_and_load_unlocked
+Dec  7 23:41:31 ip-172-31-32-201 web[14501]: ModuleNotFoundError: No module named 'application'
+Dec  7 23:41:31 ip-172-31-32-201 web[14501]: [2024-12-07 23:41:31 +0000] [14501] [INFO] Worker exiting (pid: 14501)
+Dec  7 23:41:31 ip-172-31-32-201 web[14497]: [2024-12-07 23:41:31 +0000] [14497] [ERROR] Worker (pid:14501) exited with code 3
+Dec  7 23:41:31 ip-172-31-32-201 web[14497]: [2024-12-07 23:41:31 +0000] [14497] [ERROR] Shutting down: Master
+Dec  7 23:41:31 ip-172-31-32-201 web[14497]: [2024-12-07 23:41:31 +0000] [14497] [ERROR] Reason: Worker failed to boot.
+Dec  7 23:48:24 ip-172-31-32-201 web[15138]: [2024-12-07 23:48:24 +0000] [15138] [INFO] Starting gunicorn 21.2.0
+Dec  7 23:48:24 ip-172-31-32-201 web[15138]: [2024-12-07 23:48:24 +0000] [15138] [INFO] Listening at: http://127.0.0.1:8000 (15138)
+Dec  7 23:48:24 ip-172-31-32-201 web[15138]: [2024-12-07 23:48:24 +0000] [15138] [INFO] Using worker: gthread
+Dec  7 23:48:24 ip-172-31-32-201 web[15146]: [2024-12-07 23:48:24 +0000] [15146] [INFO] Booting worker with pid: 15146
 
 
