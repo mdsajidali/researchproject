@@ -4,21 +4,7 @@ Retrieving logs...
 /var/log/eb-engine.log
 ----------------------------------------
 2024/12/07 23:48:21.216096 [INFO] stop X-Ray ...
-2024/12/07 23:48:21.216106 [INFO] Running command /bin/sh -c systemctl show -p PartOf xray.service
-2024/12/07 23:48:21.231402 [WARN] stopProcess Warning: process xray is not registered 
-2024/12/07 23:48:21.231436 [INFO] Running command /bin/sh -c systemctl stop xray.service
-2024/12/07 23:48:21.254459 [INFO] Executing instruction: stop proxy
-2024/12/07 23:48:21.254504 [INFO] Running command /bin/sh -c systemctl show -p PartOf httpd.service
-2024/12/07 23:48:21.268374 [WARN] deregisterProcess Warning: process httpd is not registered, skipping...
 
-2024/12/07 23:48:21.268472 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
-2024/12/07 23:48:21.282317 [INFO] Running command /bin/sh -c systemctl is-active nginx.service
-2024/12/07 23:48:21.291709 [INFO] Running command /bin/sh -c systemctl show -p PartOf nginx.service
-2024/12/07 23:48:21.302304 [INFO] Running command /bin/sh -c systemctl stop nginx.service
-2024/12/07 23:48:21.462312 [INFO] Running command /bin/sh -c systemctl disable nginx.service
-2024/12/07 23:48:21.762040 [INFO] Running command /bin/sh -c systemctl daemon-reload
-2024/12/07 23:48:22.052099 [INFO] Running command /bin/sh -c systemctl reset-failed
-2024/12/07 23:48:22.063933 [INFO] Executing instruction: FlipApplication
 2024/12/07 23:48:22.063950 [INFO] Fetching environment variables...
 2024/12/07 23:48:22.064940 [INFO] Purge old process...
 2024/12/07 23:48:22.064967 [INFO] Running command /bin/sh -c systemctl stop eb-app.target
