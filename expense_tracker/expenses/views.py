@@ -56,6 +56,7 @@ def expense_create(request):
     return render(request, 'expenses/expense_form.html', {'form': form, 'form_title': 'Add New Expense', 'button_text': 'Save Expense'})
 
 
+#Once the user has added an expense entry, user can edit the same
 def expense_update(request, id):
     expense = get_object_or_404(Expense, id=id, user=request.user)
     if request.method == 'POST':
