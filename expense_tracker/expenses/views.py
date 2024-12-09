@@ -41,7 +41,7 @@ def expense_list(request):
     }
     return render(request, 'expenses/expense_list.html', context)
 
-
+#Only authenticated users can create new expenses
 def expense_create(request):
     if request.method == 'POST':
         form = ExpenseForm(request.POST)
