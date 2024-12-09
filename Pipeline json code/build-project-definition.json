@@ -1,0 +1,52 @@
+{
+    "projects": [
+        {
+            "name": "x23293519_devopsec",
+            "arn": "arn:aws:codebuild:eu-west-1:250738637992:project/x23293519_devopsec",
+            "source": {
+                "type": "CODEPIPELINE",
+                "buildspec": "buildspec.yml",
+                "insecureSsl": false
+            },
+            "secondarySourceVersions": [],
+            "artifacts": {
+                "type": "CODEPIPELINE",
+                "name": "x23293519_devopsec",
+                "packaging": "NONE",
+                "encryptionDisabled": false
+            },
+            "cache": {
+                "type": "NO_CACHE"
+            },
+            "environment": {
+                "type": "LINUX_CONTAINER",
+                "image": "aws/codebuild/amazonlinux-x86_64-standard:5.0",
+                "computeType": "BUILD_GENERAL1_SMALL",
+                "environmentVariables": [],
+                "privilegedMode": false,
+                "imagePullCredentialsType": "CODEBUILD"
+            },
+            "serviceRole": "arn:aws:iam::250738637992:role/service-role/CodeBuildServiceRole",
+            "timeoutInMinutes": 60,
+            "queuedTimeoutInMinutes": 480,
+            "encryptionKey": "arn:aws:kms:eu-west-1:250738637992:alias/aws/s3",
+            "tags": [],
+            "created": "2024-12-06T16:02:15.135000+00:00",
+            "lastModified": "2024-12-06T16:02:15.135000+00:00",
+            "badge": {
+                "badgeEnabled": false
+            },
+            "logsConfig": {
+                "cloudWatchLogs": {
+                    "status": "ENABLED"
+                },
+                "s3Logs": {
+                    "status": "DISABLED",
+                    "encryptionDisabled": false
+                }
+            },
+            "projectVisibility": "PRIVATE"
+        }
+    ],
+    "projectsNotFound": []
+}

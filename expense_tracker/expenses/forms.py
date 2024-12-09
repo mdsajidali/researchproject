@@ -20,7 +20,7 @@ class ExpenseForm(forms.ModelForm):
             'date': forms.SelectDateWidget(),  # This gives a date picker in the form
         }
 
-    # Optional: You can add custom validation if necessary
+    # Adding custom validation
     def clean_amount(self):
         amount = self.cleaned_data.get('amount')
         if amount < 0:

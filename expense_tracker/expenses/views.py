@@ -13,7 +13,7 @@ from django.utils.timezone import now
 import calendar
 import json
 
-
+@login_required
 def expense_list(request):
     
     expenses=None
@@ -23,7 +23,7 @@ def expense_list(request):
         #return redirect('login')
         expenses = Expense.objects.filter(user=request.user)
         
-# Calculate total expenses by category
+        # Calculate total expenses by category
         category_data = expenses.values('category').annotate(total=Sum('amount'))
         chart_data['categories'] = [item['category'] for item in category_data]
         chart_data['category_totals'] = [float(item['total']) for item in category_data]  # Convert Decimal to float
@@ -40,10 +40,6 @@ def expense_list(request):
         'chart_data': json.dumps(chart_data)
     }
     return render(request, 'expenses/expense_list.html', context)
-    
-'''def home_view(request):
-    #if not request.user.is_authenticated:
-        return render(request,'expenses/home_page.html')'''  # Redirect to the expense list if logged in
 
 
 def expense_create(request):
