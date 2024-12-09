@@ -13,7 +13,7 @@ from django.utils.timezone import now
 import calendar
 import json
 
-@login_required
+#@login_required
 def expense_list(request):
     
     expenses=None
