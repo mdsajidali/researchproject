@@ -33,15 +33,18 @@ The goal of this project is to benchmark multiple **container orchestration plat
 
 researchproject/
 │
-├── expense_tracker/      # Django app source code
-├── docker/               # Dockerfiles and Compose configs
-├── k8s/                  # Kubernetes manifests
-├── swarm/                # Docker Swarm stack files
-├── nomad/                # Nomad job specs
-├── monitoring/           # Prometheus, Grafana, ELK configs
-├── jmeter/               # JMeter load test plans and results
-├── documentation/                 # Screenshots, weekly logs, environment notes
-└── README.md             # Project overview and instructions
+├── expense_tracker/ # Django app source code
+├── docker/ # Dockerfiles and Compose configs
+├── k8s/ # Kubernetes manifests
+├── swarm/ # Docker Swarm stack
+├── nomad/ # Nomad job specs
+├── mesos/ # Apache Mesos / Marathon configs
+├── openshift/ # OpenShift manifests (OKD/ROSA)
+├── monitoring/ # Prometheus, Grafana, ELK configs
+├── jmeter/ # JMeter load test plans and results
+├── docs/ # Documentation (logs, screenshots, environment)
+├── .env.example # Example environment variables (DO NOT commit .env)
+└── README.md # Project overview and instructions
 
 ````
 
@@ -115,7 +118,19 @@ Deploy job:
 nomad job run nomad/expense.nomad.hcl
 ```
 
+### 4. Apache Mesos (Marathon)
+curl -X POST http://localhost:8080/v2/apps -d @mesos/postgres.json -H "Content-Type: application/json"
+curl -X POST http://localhost:8080/v2/apps -d @mesos/expense.json -H "Content-Type: application/json"
+
 ---
+### 5. OpenShift (OKD/ROSA)
+oc new-project expense-tracker
+oc apply -f openshift/postgres.yaml
+oc apply -f openshift/deployment.yaml
+oc apply -f openshift/service.yaml
+oc apply -f openshift/route.yaml
+oc get routes
+
 
 ## Monitoring & Load Testing
 
