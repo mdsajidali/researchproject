@@ -2,19 +2,27 @@
 set -euo pipefail
 
 # Wait for DB
+# Wait for DB
 if [ -n "${DB_HOST:-}" ]; then
-  echo "Waiting for database at $DB_HOST:$DB_PORT..."
+  echo "Waiting for database at $DB_HOST:${DB_PORT:-5432}..."
   for i in {1..60}; do
-    if python - <<'PY' ; then
-import os, socket
-s=socket.socket(); s.settimeout(1.0)
-s.connect((os.environ.get("DB_HOST","db"), int(os.environ.get("DB_PORT","5432"))))
-print("db up")
+    python <<PY
+import os, socket, sys
+s = socket.socket(); s.settimeout(1.0)
+try:
+    s.connect((os.environ.get("DB_HOST", "db"), int(os.environ.get("DB_PORT", "5432"))))
+    print("db up")
+    sys.exit(0)
+except Exception as e:
+    sys.exit(1)
 PY
-    then break; fi
+    if [ $? -eq 0 ]; then
+      break
+    fi
     sleep 1
   done
 fi
+
 
 python manage.py migrate --noinput
 python manage.py collectstatic --noinput
