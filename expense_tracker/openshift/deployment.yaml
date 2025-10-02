@@ -1,0 +1,39 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: expense-tracker
+  labels:
+    app: expense-tracker
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: expense-tracker
+  template:
+    metadata:
+      labels:
+        app: expense-tracker
+    spec:
+      containers:
+        - name: web
+          image: mdsajidali/expense-tracker:1.0
+          ports:
+            - containerPort: 8000
+          env:
+            - name: DEBUG
+              value: "False"
+            - name: SECRET_KEY
+              value: "prod-secret-change-me"
+            - name: ALLOWED_HOSTS
+              value: "*"
+            - name: DB_NAME
+              value: "expensedb"
+            - name: DB_USER
+              value: "expense"
+            - name: DB_PASSWORD
+              value: "expensepass"
+            - name: DB_HOST
+              value: "postgres"
+            - name: DB_PORT
+              value: "5432"

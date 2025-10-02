@@ -9,7 +9,7 @@ spec:
     spec:
       containers:
       - name: web
-        image: <dockerhub-username>/expense-tracker:1.0
+        image: docker.io/mdsajidali/expense-tracker:1.0
         env:
         - name: DEBUG           ; value: "False"
         - name: SECRET_KEY      ; value: "prod-secret-change-me"

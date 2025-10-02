@@ -1,0 +1,28 @@
+{
+  "id": "postgres",
+  "cpus": 0.5,
+  "mem": 512,
+  "instances": 1,
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "postgres:15",
+      "network": "BRIDGE",
+      "portMappings": [
+        { "containerPort": 5432, "hostPort": 0, "protocol": "tcp" }
+      ]
+    }
+  },
+  "env": {
+    "POSTGRES_DB": "expensedb",
+    "POSTGRES_USER": "expense",
+    "POSTGRES_PASSWORD": "expensepass"
+  },
+  "persistentVolumes": [
+    {
+      "containerPath": "data",
+      "mode": "RW",
+      "size": 1024
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "expense-tracker",
+  "cpus": 0.5,
+  "mem": 512,
+  "instances": 1,
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "mdsajidali/expense-tracker:1.0",
+      "network": "BRIDGE",
+      "portMappings": [
+        { "containerPort": 8000, "hostPort": 0, "protocol": "tcp" }
+      ]
+    }
+  },
+  "env": {
+    "DEBUG": "False",
+    "SECRET_KEY": "prod-secret-change-me",
+    "ALLOWED_HOSTS": "*,127.0.0.1,localhost",
+    "DB_NAME": "expensedb",
+    "DB_USER": "expense",
+    "DB_PASSWORD": "expensepass",
+    "DB_HOST": "postgres",
+    "DB_PORT": "5432"
+  },
+  "dependencies": ["/postgres"]
+}
