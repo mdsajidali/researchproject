@@ -2,7 +2,6 @@
 set -euo pipefail
 
 # Wait for DB
-# Wait for DB
 if [ -n "${DB_HOST:-}" ]; then
   echo "Waiting for database at $DB_HOST:${DB_PORT:-5432}..."
   for i in {1..60}; do
@@ -22,7 +21,6 @@ PY
     sleep 1
   done
 fi
-
 
 python manage.py migrate --noinput
 python manage.py collectstatic --noinput

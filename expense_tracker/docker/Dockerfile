@@ -18,10 +18,13 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # copy project
 COPY . /app
+COPY entrypoint.sh /app/entrypoint.sh
+RUN chmod +x /app/entrypoint.sh
+
 
 # create non-root user
-RUN useradd -m appuser && chown -R appuser:appuser /app
-USER appuser
+#RUN useradd -m appuser && chown -R appuser:appuser /app
+#USER appuser
 
 # collect static at runtime (entrypoint will run migrations etc.)
 ENV DJANGO_SETTINGS_MODULE=expense_tracker.settings
