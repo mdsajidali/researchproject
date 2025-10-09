@@ -1,0 +1,52 @@
+version: "3.9"
+services:
+  prometheus:
+    image: prom/prometheus:v2.55.0
+    command: ["--config.file=/etc/prometheus/prometheus.yml", "--storage.tsdb.path=/prometheus"]
+    volumes:
+      - ../monitoring/prometheus/prometheus.docker.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus-data:/prometheus
+    ports:
+      - "9090:9090"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  grafana:
+    image: grafana/grafana:11.1.4
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../monitoring/grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yml:ro
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+
+  node-exporter:
+    image: quay.io/prometheus/node-exporter:v1.8.2
+    pid: "host"
+    network_mode: "host"
+    command: ["--path.rootfs=/host"]
+    volumes:
+      - /:/host:ro,rslave
+
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:v0.49.1
+    ports:
+      - "8080:8080"
+    privileged: true
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker:/var/lib/docker:ro
+      - /var/lib/containerd:/var/lib/containerd:ro
+
+  blackbox-exporter:
+    image: prom/blackbox-exporter:v0.25.0
+    ports: [ "9115:9115" ]
+    volumes:
+      - ../monitoring/exporters/blackbox/blackbox.yml:/etc/blackbox_exporter/config.yml:ro
+    command: ["--config.file=/etc/blackbox_exporter/config.yml"]
+
+volumes:
+  prometheus-data:
