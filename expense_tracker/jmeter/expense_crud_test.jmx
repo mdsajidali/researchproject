@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Expense Tracker CRUD Test" enabled="true">
+      <stringProp name="TestPlan.comments">Simulates concurrent CRUD actions for Django Expense Tracker</stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="base_url" elementType="Argument">
+            <stringProp name="Argument.name">base_url</stringProp>
+            <stringProp name="Argument.value">http://192.168.74.128:32413</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="User Load" enabled="true">
+        <stringProp name="ThreadGroup.num_threads">50</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">10</stringProp>
+        <longProp name="ThreadGroup.start_time">1728454800000</longProp>
+        <longProp name="ThreadGroup.end_time">1728458400000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">10</stringProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Home" enabled="true">
+          <stringProp name="HTTPSampler.domain">${__BeanShell(${base_url}.split('//')[1].split(':')[0])}</stringProp>
+          <stringProp name="HTTPSampler.port">${__BeanShell(${base_url}.split(':')[2])}</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.path">/</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Login" enabled="true">
+          <stringProp name="HTTPSampler.domain">${__BeanShell(${base_url}.split('//')[1].split(':')[0])}</stringProp>
+          <stringProp name="HTTPSampler.port">${__BeanShell(${base_url}.split(':')[2])}</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.path">/login/</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="username" elementType="HTTPArgument">
+                <stringProp name="Argument.name">username</stringProp>
+                <stringProp name="Argument.value">testuser</stringProp>
+              </elementProp>
+              <elementProp name="password" elementType="HTTPArgument">
+                <stringProp name="Argument.name">password</stringProp>
+                <stringProp name="Argument.value">password123</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Expenses" enabled="true">
+          <stringProp name="HTTPSampler.domain">${__BeanShell(${base_url}.split('//')[1].split(':')[0])}</stringProp>
+          <stringProp name="HTTPSampler.port">${__BeanShell(${base_url}.split(':')[2])}</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.path">/expenses/</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Add Expense" enabled="true">
+          <stringProp name="HTTPSampler.domain">${__BeanShell(${base_url}.split('//')[1].split(':')[0])}</stringProp>
+          <stringProp name="HTTPSampler.port">${__BeanShell(${base_url}.split(':')[2])}</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.path">/add/</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="title" elementType="HTTPArgument">
+                <stringProp name="Argument.name">title</stringProp>
+                <stringProp name="Argument.value">TestExpense</stringProp>
+              </elementProp>
+              <elementProp name="amount" elementType="HTTPArgument">
+                <stringProp name="Argument.name">amount</stringProp>
+                <stringProp name="Argument.value">100</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <stringProp name="filename">results_k8s.jtl</stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
+

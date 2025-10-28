@@ -1,34 +1,225 @@
-version: "3.9"
-services:
-  db:
-    image: postgres:15
-    environment:
-      POSTGRES_DB: expensedb
-      POSTGRES_USER: expense
-      POSTGRES_PASSWORD: expensepass
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-    deploy:
-      placement: { constraints: [node.role == manager] }
+version: "3.8"
 
-  web:
-    image: <dockerhub-username>/expense-tracker:1.0
-    environment:
-      DEBUG: "False"
-      SECRET_KEY: prod-secret-change-me
-      ALLOWED_HOSTS: "localhost,127.0.0.1"
-      DB_NAME: expensedb
-      DB_USER: expense
-      DB_PASSWORD: expensepass
-      DB_HOST: db
-      DB_PORT: "5432"
-    ports:
-      - "8000:8000"
-    depends_on: [db]
-    deploy:
-      replicas: 2
-      restart_policy: { condition: on-failure }
+# -------------------------------
+# NETWORKS & VOLUMES
+# -------------------------------
+networks:
+  expense_net:
+    driver: overlay
+    attachable: true
 
 volumes:
-  pgdata:
+  pgdata_v2: {}
+  prometheus_data: {}
+  grafana_data: {}
+
+# -------------------------------
+# CONFIGS & SECRETS
+# -------------------------------
+configs:
+  blackbox_cfg:
+    file: ./monitoring/blackbox.yml
+  prometheus_cfg:
+    file: ./monitoring/prometheus.yml
+
+secrets:
+  expense_pg_password:
+    external: true   # ✅ use global secret created manually via: echo "expensepass" | docker secret create expense_pg_password -
+
+# -------------------------------
+# SERVICES
+# -------------------------------
+services:
+
+  # ---------------------------
+  # POSTGRES DATABASE
+  # ---------------------------
+  db:
+    image: postgres:15
+    networks:
+      - expense_net
+    volumes:
+      - pgdata_v2:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD_FILE: /run/secrets/expense_pg_password
+    secrets:
+      - expense_pg_password
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 1G
+        reservations:
+          cpus: "0.25"
+          memory: 256M
+      restart_policy:
+        condition: on-failure
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ---------------------------
+  # DJANGO APPLICATION
+  # ---------------------------
+  app:
+    image: ${APP_IMAGE}
+    networks:
+      - expense_net
+    depends_on:
+      - db
+    environment:
+      DJANGO_SECRET_KEY: ${DJANGO_SECRET_KEY}
+      DJANGO_DEBUG: ${DJANGO_DEBUG}
+      DJANGO_ALLOWED_HOSTS: ${DJANGO_ALLOWED_HOSTS}
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_PASSWORD_FILE: /run/secrets/expense_pg_password
+    secrets:
+      - expense_pg_password
+    ports:
+      - "8000:8000"
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+      update_config:
+        parallelism: 1
+        delay: 10s
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 1G
+        reservations:
+          cpus: "0.25"
+          memory: 256M
+    command: >
+      sh -c "
+      if [ \"$$HOSTNAME\" = '$(docker service ps --no-trunc --filter name=${STACK_NAME}_app -q | head -n1)']; then
+        python manage.py migrate;
+      fi;
+      gunicorn expense_tracker.wsgi:application --bind 0.0.0.0:${APP_PORT}
+      "
+
+  # ---------------------------
+  # PROMETHEUS MONITORING
+  # ---------------------------
+  prometheus:
+    image: prom/prometheus:v2.55.0
+    networks:
+      - expense_net
+    configs:
+      - source: prometheus_cfg
+        target: /etc/prometheus/prometheus.yml
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--storage.tsdb.retention.time=${PROMETHEUS_RETENTION}'
+    volumes:
+      - prometheus_data:/prometheus
+    ports:
+      - "${PROMETHEUS_PORT}:9090"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.8"
+          memory: 1G
+        reservations:
+          cpus: "0.2"
+          memory: 256M
+
+  # ---------------------------
+  # GRAFANA DASHBOARD
+  # ---------------------------
+  grafana:
+    image: grafana/grafana:11.2.2
+    networks:
+      - expense_net
+    volumes:
+      - grafana_data:/var/lib/grafana
+    ports:
+      - "${GRAFANA_PORT}:3000"
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: admin
+      GF_INSTALL_PLUGINS: grafana-piechart-panel
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+        reservations:
+          cpus: "0.1"
+          memory: 128M
+
+  # ---------------------------
+  # BLACKBOX EXPORTER
+  # ---------------------------
+  blackbox:
+    image: prom/blackbox-exporter:v0.25.0
+    networks:
+      - expense_net
+    configs:
+      - source: blackbox_cfg
+        target: /etc/blackbox_exporter/config.yml
+    ports:
+      - "${BLACKBOX_PORT}:9115"
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          cpus: "0.2"
+          memory: 128M
+        reservations:
+          cpus: "0.05"
+          memory: 64M
+
+  # ---------------------------
+  # NODE EXPORTER
+  # ---------------------------
+  node-exporter:
+    image: prom/node-exporter:v1.8.1
+    networks:
+      - expense_net
+    deploy:
+      mode: global
+      resources:
+        limits:
+          cpus: "0.2"
+          memory: 128M
+        reservations:
+          cpus: "0.05"
+          memory: 64M
+    command:
+      - '--path.rootfs=/host'
+    volumes:
+      - '/:/host:ro,rslave'
+
+  # ---------------------------
+  # CADVISOR
+  # ---------------------------
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:v0.49.1
+    networks:
+      - expense_net
+    deploy:
+      mode: global
+      resources:
+        limits:
+          cpus: "0.3"
+          memory: 256M
+        reservations:
+          cpus: "0.05"
+          memory: 64M
+    ports:
+      - "8080:8080"
+    volumes:
+      - '/:/rootfs:ro'
+      - '/var/run:/var/run:ro'
+      - '/sys:/sys:ro'
+      - '/var/lib/docker/:/var/lib/docker:ro'
 

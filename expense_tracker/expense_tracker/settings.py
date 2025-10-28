@@ -7,6 +7,7 @@ Revised for MSc Thesis Deployment (Docker, Kubernetes, Swarm, Nomad, Mesos, Open
 from pathlib import Path
 import os
 import environ
+import socket
 
 # ----------------------------------------------------------------------
 # Base directories and environment
@@ -30,7 +31,28 @@ environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 # ----------------------------------------------------------------------
 DEBUG = env("DEBUG")
 SECRET_KEY = env("SECRET_KEY")
-ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
+# ----------------------------------------------------------------------
+# ----------------------------------------------------------------------
+# Allowed hosts (stable version for all orchestrators)
+# ----------------------------------------------------------------------
+
+# Always accept these baseline hosts
+default_hosts = ["localhost", "127.0.0.1", "0.0.0.0", "app"]
+
+# Add any IPs discovered at runtime (so container internal IP works)
+try:
+    default_hosts.append(socket.gethostbyname(socket.gethostname()))
+except Exception:
+    pass
+
+# Merge with environment variable, if provided
+raw_hosts = os.getenv("DJANGO_ALLOWED_HOSTS", "")
+if raw_hosts:
+    extra_hosts = [h.strip() for h in raw_hosts.replace(" ", "").split(",") if h]
+    default_hosts.extend(extra_hosts)
+
+# Final unique list
+ALLOWED_HOSTS = list(set(default_hosts))
 
 # ----------------------------------------------------------------------
 # Application definition
@@ -79,6 +101,12 @@ WSGI_APPLICATION = "expense_tracker.wsgi.application"
 # ----------------------------------------------------------------------
 # Database Configuration (PostgreSQL for all orchestrators)
 # ----------------------------------------------------------------------
+# Allow reading DB password from Docker secret file if present
+db_pw_file = os.getenv("DB_PASSWORD_FILE")
+if db_pw_file and os.path.exists(db_pw_file):
+    with open(db_pw_file) as f:
+        os.environ["DB_PASSWORD"] = f.read().strip()
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
@@ -148,3 +176,6 @@ LOGGING = {
         "level": "INFO",
     },
 }
+import logging
+logging.getLogger("django.security.DisallowedHost").setLevel(logging.ERROR)
+
