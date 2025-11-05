@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: Namespace
+metadata: { name: kube-system }
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: metrics-server
+  namespace: kube-system
+  labels: { k8s-app: metrics-server }
+spec:
+  selector: { matchLabels: { k8s-app: metrics-server } }
+  template:
+    metadata: { labels: { k8s-app: metrics-server } }
+    spec:
+      securityContext:
+        runAsNonRoot: true
+      containers:
+        - name: metrics-server
+          image: registry.k8s.io/metrics-server/metrics-server:v0.7.1
+          args:
+            - --kubelet-insecure-tls
+            - --metric-resolution=15s
+          ports:
+            - containerPort: 4443
+              name: main-port
+          resources:
+            requests: { cpu: "50m", memory: "64Mi" }
+            limits:   { cpu: "200m", memory: "128Mi" }
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            capabilities: { drop: ["ALL"] }
+            seccompProfile: { type: RuntimeDefault }
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: metrics-server
+  namespace: kube-system
+  labels: { k8s-app: metrics-server }
+spec:
+  selector: { k8s-app: metrics-server }
+  ports:
+    - port: 443
+      targetPort: main-port
+

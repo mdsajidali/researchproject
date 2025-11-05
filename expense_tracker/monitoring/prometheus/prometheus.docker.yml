@@ -3,52 +3,44 @@ global:
   evaluation_interval: 15s
 
 scrape_configs:
-  # Prometheus itself
+  # --- Prometheus itself (local container)
   - job_name: 'prometheus'
     static_configs:
       - targets: ['localhost:9090']
 
-  # Node Exporter (host metrics)
+  # --- Node Exporter (host metrics)
   - job_name: 'node_exporter'
     static_configs:
-      - targets: ['192.168.74.128:9100']
+      - targets: ['192.168.74.130:9100']
 
-  # cAdvisor (container metrics)
+  # --- cAdvisor (container metrics)
   - job_name: 'cadvisor'
     static_configs:
-      - targets: ['192.168.74.128:8080']
+      - targets: ['192.168.74.130:8080']
 
-  # Blackbox exporter (HTTP uptime for all orchestrators)
-  - job_name: 'blackbox'
+  # --- Blackbox Exporter (MicroShift expense-tracker app endpoint)
+  - job_name: 'microshift-expense-tracker'
     metrics_path: /probe
     params:
       module: [http_2xx]
     static_configs:
       - targets:
-          - http://192.168.74.128:8000  # Expense Tracker app on Mesos
+          - http://192.168.74.130:31883  # Expense Tracker NodePort
     relabel_configs:
       - source_labels: [__address__]
         target_label: __param_target
-      - target_label: instance
-        replacement: http://192.168.74.128:8000
+      - source_labels: [__param_target]
+        target_label: instance
       - target_label: __address__
-        replacement: 192.168.74.128:9115
+        replacement: 192.168.74.130:9115   # ✅ use host IP, not host.docker.internal
 
-  # Mesos Master
-  - job_name: 'mesos_master'
-    metrics_path: /metrics/snapshot
+  # --- MicroShift Prometheus (inside cluster)
+  - job_name: 'microshift-prometheus'
     static_configs:
-      - targets: ['192.168.74.128:5050']
+      - targets: ['192.168.74.130:30187']  # MicroShift Prometheus NodePort
 
-  # Mesos Agent
-  - job_name: 'mesos_agent'
-    metrics_path: /metrics/snapshot
+  # --- MicroShift Grafana (inside cluster)
+  - job_name: 'microshift-grafana'
     static_configs:
-      - targets: ['192.168.74.128:5051']
-
-  # Marathon (using updated port 8088)
-  - job_name: 'marathon'
-    metrics_path: /metrics
-    static_configs:
-      - targets: ['192.168.74.128:8088']
+      - targets: ['192.168.74.130:31398']  # MicroShift Grafana NodePort
 

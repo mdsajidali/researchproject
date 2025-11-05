@@ -37,7 +37,7 @@ SECRET_KEY = env("SECRET_KEY")
 # ----------------------------------------------------------------------
 
 # Always accept these baseline hosts
-default_hosts = ["localhost", "127.0.0.1", "0.0.0.0", "app"]
+default_hosts = ["*","localhost", "127.0.0.1", "0.0.0.0", "app"]
 
 # Add any IPs discovered at runtime (so container internal IP works)
 try:
@@ -139,11 +139,21 @@ USE_TZ = True
 # ----------------------------------------------------------------------
 # Static files (CSS, JavaScript, Images)
 # ----------------------------------------------------------------------
-STATIC_URL = "/static/"
-STATIC_ROOT = BASE_DIR / "staticfiles"
+BASE_DIR = Path(__file__).resolve().parent.parent
+#STATIC_URL = "/static/"
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),  # include your 'static' directory
+]
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
+# Optional but good practice for collectstatic
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 # Enable WhiteNoise compressed caching for production
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+#STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # ----------------------------------------------------------------------
 # Miscellaneous Settings
@@ -152,13 +162,26 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 LOGIN_URL = "/login/"
 
 # CSRF trusted origins (expand as needed)
-CSRF_TRUSTED_ORIGINS = [
-    "http://localhost:8000",
-    "http://127.0.0.1:8000",
-    "https://*.elasticbeanstalk.com",
-    "http://*.elasticbeanstalk.com",
-    "https://*.cloud9.eu-west-1.amazonaws.com",
-]
+#CSRF_TRUSTED_ORIGINS = [
+#    "*",
+#    "http://192.168.74.130:31883",
+ #   "http://localhost:8000",
+  #  "http://127.0.0.1:8000",
+   # "https://*.elasticbeanstalk.com",
+    #"http://*.elasticbeanstalk.com",
+    #"https://*.cloud9.eu-west-1.amazonaws.com",
+#]
+# CSRF trusted origins (read from env if set)
+CSRF_TRUSTED_ORIGINS = env.list(
+    "DJANGO_CSRF_TRUSTED_ORIGINS",
+    default=[
+        "http://localhost:8000",
+        "http://127.0.0.1:8000",
+        "https://*.elasticbeanstalk.com",
+        "http://*.elasticbeanstalk.com",
+        "https://*.cloud9.eu-west-1.amazonaws.com",
+    ],
+)
 
 # ----------------------------------------------------------------------
 # Logging (optional for debugging in orchestration environments)

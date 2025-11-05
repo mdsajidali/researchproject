@@ -1,0 +1,20 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: prometheus
+  namespace: edge-demo
+spec:
+  to: { kind: Service, name: prometheus }
+  port: { targetPort: http }
+  tls: { termination: edge }
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: grafana
+  namespace: edge-demo
+spec:
+  to: { kind: Service, name: grafana }
+  port: { targetPort: http }
+  tls: { termination: edge }
+

@@ -1,0 +1,14 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: expense-tracker
+  namespace: edge-demo
+spec:
+  to:
+    kind: Service
+    name: expense-tracker
+  port:
+    targetPort: http
+  tls:
+    termination: edge
+

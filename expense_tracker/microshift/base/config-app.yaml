@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: expense-config
+  namespace: edge-demo
+data:
+  DJANGO_SETTINGS_MODULE: expense_tracker.settings
+  SECRET_KEY: "prod-secret-change-me"
+  DEBUG: "False"
+  DJANGO_ALLOWED_HOSTS: "*"
+  DB_NAME: expensedb
+  DB_USER: expense
+  DB_HOST: postgres
+  DB_PORT: "5432"
+  PORT: "8000"
+
