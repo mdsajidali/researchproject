@@ -66,7 +66,7 @@ services:
   # DJANGO APPLICATION
   # ---------------------------
   app:
-    image: ${APP_IMAGE}
+    image: docker.io/mdsajidali/expense-tracker:1.1
     networks:
       - expense_net
     depends_on:
