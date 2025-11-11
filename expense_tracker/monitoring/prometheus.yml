@@ -1,8 +1,28 @@
 global:
-  scrape_interval: 10s
+  scrape_interval: 5s
+  evaluation_interval: 5s
+
 scrape_configs:
-  - job_name: 'django'
-    metrics_path: /metrics
+  - job_name: 'node'
     static_configs:
-      - targets: ['host.docker.internal:8000']  # for local compose on Mac/Win
-        labels: { app: 'expense-web' }
+      - targets: ['50.19.153.82:9100']  # Replace <EC2-PRIVATE-IP> with your EC2 private IP or Elastic IP
+
+  - job_name: 'cadvisor'
+    static_configs:
+      - targets: ['172.31.28.246:8080']  # Replace <EC2-PRIVATE-IP> with your EC2 private IP or Elastic IP
+
+  - job_name: 'blackbox_http'
+    metrics_path: /probe
+    params:
+      module: [http_2xx]
+    static_configs:
+      - targets:
+        - http://50.19.153.82:8000/login/  # Replace <EC2-PRIVATE-IP> with your EC2 private IP or Elastic IP
+        - http://50.19.153.82:8000/       # Replace <EC2-PRIVATE-IP> with your EC2 private IP or Elastic IP
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: 50.19.153.82:9115  # Replace <EC2-PRIVATE-IP> with your EC2 private IP or Elastic IP

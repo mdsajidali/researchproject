@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """
-Cross-Orchestrator Prometheus Metric Exporter
+Cross-Orchestrator Prometheus Metric Exporter (Final Unified Version)
 Author: Sajid Ali
+Updated by: ChatGPT
 Purpose:
-  Collect standardized metrics (CPU, Memory, HTTP uptime)
-  from Prometheus for Kubernetes (MicroShift), Docker Swarm, Nomad, and others.
+  Collect comparable metrics (CPU %, Memory %, HTTP uptime)
+  across Kubernetes, Docker Swarm, MicroShift, and Nomad orchestrators.
+  Automatically adapts between container- and node-level metrics.
 """
 
 import requests, csv, time, datetime, os, sys
@@ -12,9 +14,9 @@ import requests, csv, time, datetime, os, sys
 # -------------------------------------------------------------------
 # CONFIGURATION
 # -------------------------------------------------------------------
-PROM_URL = os.getenv("PROM_URL", "http://192.168.74.130:30187/api/v1/query")
+PROM_URL = os.getenv("PROM_URL", "http://localhost:9090")  # no /api/v1/query
 OUTPUT_DIR = os.getenv("OUTPUT_DIR", "./data")
-ORCHESTRATOR = os.getenv("ORCHESTRATOR", "k8s").lower()
+ORCHESTRATOR = os.getenv("ORCHESTRATOR", "nomad").lower()
 SCENARIO = os.getenv("SCENARIO", "baseline").lower()
 INTERVAL = int(os.getenv("SCRAPE_INTERVAL", "10"))  # seconds
 
@@ -22,78 +24,86 @@ timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
 DEFAULT_FILE = f"{OUTPUT_DIR}/metrics_{ORCHESTRATOR}_{SCENARIO}_{timestamp}.csv"
 OUTPUT_FILE = os.getenv("OUTPUT_FILE", DEFAULT_FILE)
 
+
 # -------------------------------------------------------------------
-# DYNAMIC METRIC DEFINITIONS
+# DYNAMIC QUERY SELECTION
 # -------------------------------------------------------------------
 def get_queries(orc: str):
-    """Return orchestrator-specific PromQL queries."""
-    if orc in ["k8s", "kubernetes", "openshift", "microshift"]:
-        # MicroShift cAdvisor & blackbox compatible metrics
+    """
+    Return orchestrator-specific PromQL queries.
+    For Nomad, uses container-level (cAdvisor) metrics if present;
+    otherwise, falls back to node-level metrics.
+    """
+
+    # --- Preferred: container-level metrics (used in earlier runs)
+    container_queries = {
+        "cpu_usage": 'sum(rate(container_cpu_usage_seconds_total{image!=""}[1m])) * 100',
+        "memory_usage": 'sum(container_memory_usage_bytes{image!=""}) / 1024 / 1024',
+        "http_uptime": 'avg_over_time(probe_success[1m])'
+        #"cpu_usage": "sum(rate(container_cpu_usage_seconds_total[1m])) * 100",
+        #"memory_usage": "100 * (sum(container_memory_usage_bytes) / sum(machine_memory_bytes))",
+        #"http_uptime": "avg_over_time(probe_success[1m])"
+    }
+
+    # --- Fallback: node-level metrics
+    node_queries = {
+        "cpu_usage": "100 - (avg by (instance)(rate(node_cpu_seconds_total{mode='idle'}[1m])) * 100)",
+        "memory_usage": "100 * (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes))",
+        "http_uptime": "avg_over_time(probe_success[1m])"
+    }
+
+    # --- For Docker Swarm
+    if orc in ["swarm", "docker", "docker-swarm"]:
         return {
-            "cpu_usage": 'sum(rate(container_cpu_usage_seconds_total[1m]))',
-            "memory_usage": 'sum(container_memory_usage_bytes)',
+            "cpu_usage": 'sum(rate(container_cpu_usage_seconds_total{container_label_com_docker_swarm_service_name="expense_app"}[1m])) * 100',
+            "memory_usage": '100 * (sum(container_memory_usage_bytes{container_label_com_docker_swarm_service_name="expense_app"}) / sum(machine_memory_bytes))',
             "http_uptime": 'avg_over_time(probe_success[1m])'
         }
 
-    elif orc in ["swarm", "docker", "docker-swarm"]:
-        return {
-            "cpu_usage": 'sum(rate(container_cpu_usage_seconds_total{container_label_com_docker_swarm_service_name="expense_app"}[1m]))',
-            "memory_usage": 'avg(container_memory_usage_bytes{container_label_com_docker_swarm_service_name="expense_app"})',
-            "http_uptime": 'avg_over_time(probe_success[1m])'
-        }
+    # --- For K8s / MicroShift / Nomad: detect cAdvisor presence
+    try:
+        url = f"{PROM_URL}/api/v1/label/__name__/values"
+        resp = requests.get(url, timeout=5)
+        resp.raise_for_status()
+        all_metrics = resp.json().get("data", [])
+        if any(m.startswith("container_cpu_usage_seconds_total") for m in all_metrics):
+            print("[INFO] Detected cAdvisor metrics — using container-level queries.")
+            return container_queries
+        else:
+            print("[INFO] cAdvisor metrics not found — using node-level queries.")
+            return node_queries
+    except Exception:
+        print("[WARN] Could not verify metrics list — defaulting to node-level queries.")
+        return node_queries
 
-    elif orc == "nomad":
-        return {
-            "cpu_usage": 'avg(nomad_client_allocs_cpu_total_percent)',
-            "memory_usage": 'avg(nomad_client_allocs_memory_rss_bytes)',
-            "http_uptime": 'avg_over_time(probe_success[1m])'
-        }
-
-    else:
-        print(f"[WARN] Unknown orchestrator '{orc}', using node-level metrics.")
-        return {
-            "cpu_usage": 'avg(rate(node_cpu_seconds_total{mode!="idle"}[1m]))',
-            "memory_usage": 'node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes',
-            "http_uptime": 'avg_over_time(probe_success[1m])'
-        }
 
 METRICS = get_queries(ORCHESTRATOR)
 
+
 # -------------------------------------------------------------------
-# FUNCTIONS
+# QUERY FUNCTION
 # -------------------------------------------------------------------
 def query(metric_name, promql):
     """Run a single Prometheus query and return numeric value."""
     try:
-        response = requests.get(PROM_URL, params={"query": promql}, timeout=10)
+        url = f"{PROM_URL}/api/v1/query"
+        response = requests.get(url, params={"query": promql}, timeout=10)
         response.raise_for_status()
-        data = response.json().get("data", {}).get("result", [])
-        if data:
-            # Sum multiple results if vector
-            values = [float(v["value"][1]) for v in data if "value" in v]
-            return sum(values) / len(values)
-        else:
-            # Try fallback metric names for microshift
-            if metric_name == "cpu_usage":
-                fallback = 'sum(rate(container_cpu_cfs_throttled_seconds_total[1m]))'
-            elif metric_name == "memory_usage":
-                fallback = 'sum(machine_memory_bytes)'
-            else:
-                fallback = 'avg_over_time(probe_success[1m])'
-            resp2 = requests.get(PROM_URL, params={"query": fallback}, timeout=10)
-            resp2.raise_for_status()
-            data2 = resp2.json().get("data", {}).get("result", [])
-            if data2:
-                vals = [float(v["value"][1]) for v in data2 if "value" in v]
-                return sum(vals) / len(vals)
-        return 0.0
+        payload = response.json()
+        data = payload.get("data", {}).get("result", [])
+        if not data:
+            return 0.0
+        values = [float(item["value"][1]) for item in data if "value" in item]
+        return sum(values) / len(values) if values else 0.0
     except Exception as e:
         print(f"[WARN] Query failed for {metric_name}: {e}")
         return 0.0
 
 
+# -------------------------------------------------------------------
+# MAIN EXPORT LOOP
+# -------------------------------------------------------------------
 def export_loop():
-    """Continuously scrape metrics and append to CSV."""
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     print(f"\n[INFO] Orchestrator: {ORCHESTRATOR}")
     print(f"[INFO] Starting metric collection from {PROM_URL}")
@@ -106,18 +116,20 @@ def export_loop():
 
     while True:
         timestamp = datetime.datetime.now().isoformat(timespec="seconds")
-        row = [timestamp] + [query(k, v) for k, v in METRICS.items()]
+        results = [query(k, v) for k, v in METRICS.items()]
+        row = [timestamp] + results
 
         with open(OUTPUT_FILE, "a", newline="") as f:
-            writer = csv.writer(f)
-            writer.writerow(row)
+            csv.writer(f).writerow(row)
 
-        pretty = " | ".join([f"{k}:{v:.4f}" for k, v in zip(METRICS.keys(), row[1:])])
+        pretty = " | ".join(f"{k}:{v:.4f}" for k, v in zip(METRICS.keys(), results))
         print(f"[{timestamp}] {pretty}")
-
         time.sleep(INTERVAL)
 
 
+# -------------------------------------------------------------------
+# ENTRYPOINT
+# -------------------------------------------------------------------
 if __name__ == "__main__":
     try:
         export_loop()
