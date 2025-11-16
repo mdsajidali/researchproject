@@ -1,0 +1,61 @@
+global:
+  scrape_interval: 5s
+  evaluation_interval: 5s
+
+scrape_configs:
+  # ========== MICROSHIFT HYBRID (separate EC2) ==========
+  - job_name: 'microshift_cloud_host'
+    static_configs:
+      - targets:
+          - '54.175.149.162:9100'
+          - '54.175.149.162:8080'
+        labels:
+          orchestrator: 'microshift'
+          env: 'cloud'
+
+  - job_name: 'blackbox_http_microshift'
+    metrics_path: /probe
+    params:
+      module: [http_2xx]
+    static_configs:
+      - targets:
+          - 'http://54.175.149.162:30080'
+        labels:
+          orchestrator: 'microshift'
+          env: 'cloud'
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: 'blackbox:9115'
+
+  # ========== K8S HYBRID (EC2 54.89.159.32) ==========
+  - job_name: 'k8s_cloud_host'
+    static_configs:
+      - targets:
+          - '54.89.159.32:19100'   # node-exporter on host 19100 -> container 9100
+          - '54.89.159.32:18080'   # cadvisor on host 18080 -> container 8080
+        labels:
+          orchestrator: 'k8s'
+          env: 'cloud'
+
+  - job_name: 'blackbox_http_k8s'
+    metrics_path: /probe
+    params:
+      module: [http_2xx]
+    static_configs:
+      - targets:
+          - 'http://54.89.159.32:30080'
+        labels:
+          orchestrator: 'k8s'
+          env: 'cloud'
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: 'blackbox:9115'
+
