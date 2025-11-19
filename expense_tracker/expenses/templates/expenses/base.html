@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 {% load static %}
-<link rel="stylesheet" href="{% static 'expenses/styles.css' %}">
-<link rel="stylesheet" href="{% static 'expenses/expense_list_styles.css' %}">
-<link rel="stylesheet" href="{% static 'expenses/expense_list.css' %}">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Expense Tracker{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+    <!-- Main styles for the app -->
+    <link rel="stylesheet" href="{% static 'expenses/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'expenses/expense_list_styles.css' %}">
+    <link rel="stylesheet" href="{% static 'expenses/expense_list.css' %}">
 </head>
 <body>
     <nav>
@@ -20,8 +21,10 @@
             <a href="{% url 'signup' %}">Sign up</a>
         {% endif %}
     </nav>
+
     <div class="container">
         {% block content %}{% endblock %}
     </div>
 </body>
 </html>
+
