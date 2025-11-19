@@ -37,7 +37,7 @@ SECRET_KEY = env("SECRET_KEY")
 # ----------------------------------------------------------------------
 
 # Always accept these baseline hosts
-default_hosts = ["localhost", "127.0.0.1", "0.0.0.0", "app"]
+default_hosts = ["localhost", "127.0.0.1", "0.0.0.0", "app", "192.168.74.128"]
 
 # Add any IPs discovered at runtime (so container internal IP works)
 try:

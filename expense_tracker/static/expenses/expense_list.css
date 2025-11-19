@@ -1,77 +1,80 @@
-/* expense_list.css */
+/* Layout for the dashboard, tables and charts */
 
-/* Styling for the container holding both charts */
-.chart-container {
+.dashboard-header {
     display: flex;
-    flex-direction:column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.dashboard-header__actions {
+    display: flex;
     align-items: center;
-    margin-top: 20px;
 }
 
-/* Individual chart styling */
-.chart {
-    width: 250px; /* Sets each chart to occupy 45% of the container width */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
 }
 
-/* Responsive styling for smaller screens */
-@media (max-width: 768px) {
-    .chart-container {
-        flex-direction: column; /* Stacks charts vertically on smaller screens */
-    }
-}
-
-/* Table and button styling for expenses */
-table {
+.card canvas {
     width: 100%;
-    margin-top: 20px;
+    min-height: 220px;
+}
+
+.table-section {
+    margin-top: 1rem;
+}
+
+.table-wrapper {
+    margin-top: 0.5rem;
+    overflow-x: auto;
+}
+
+.expenses-table {
+    width: 100%;
     border-collapse: collapse;
+    font-size: 0.9rem;
+    background: #ffffff;
+    border-radius: 0.75rem;
+    overflow: hidden;
 }
 
-table, th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
+.expenses-table thead {
+    background: #f3f4f6;
 }
 
-th {
-    background-color: #f2f2f2;
-    text-align: left;
+.expenses-table th,
+.expenses-table td {
+    padding: 0.6rem 0.75rem;
+    border-bottom: 1px solid #e5e7eb;
 }
 
-.button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    max-height: fit-content;
+.expenses-table tbody tr:nth-child(even) {
+    background: #f9fafb;
 }
 
-.button:hover {
-    background-color: #45a049;
+.expenses-table tbody tr:hover {
+    background: #eef2ff;
 }
 
-/* Styling for the home container */
-.container2 {
+.col-numeric {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+.col-actions {
+    text-align: right;
+    white-space: nowrap;
+}
+
+/* Empty state when there are no expenses */
+
+.empty-state {
+    margin-top: 2.5rem;
     text-align: center;
-    margin-top: 50px;
 }
 
-.home-button {
-    display: inline-block;
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    margin: 10px;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.home-button:hover {
-    background-color: #0056b3;
-}
-
-.outer_layout {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}

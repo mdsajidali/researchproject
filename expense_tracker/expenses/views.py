@@ -1,119 +1,212 @@
-# Create your views here.
-from django.shortcuts import render, redirect, get_object_or_404
-from .models import Expense
-from .forms import ExpenseForm
-from django.shortcuts import redirect
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth import login, logout, authenticate
-from django.contrib.auth.forms import AuthenticationForm
-from .forms import UserRegistrationForm
 from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import AuthenticationForm
 from django.db.models import Sum
+from django.shortcuts import get_object_or_404, redirect, render
 from django.utils.timezone import now
+
 import calendar
 import json
 
-#@login_required
-def expense_list(request):
-    
-    expenses=None
-    chart_data = {}
-    
-    if  request.user.is_authenticated:
-        #return redirect('login')
-        expenses = Expense.objects.filter(user=request.user)
-        
-        # Calculate total expenses by category
-        category_data = expenses.values('category').annotate(total=Sum('amount'))
-        chart_data['categories'] = [item['category'] for item in category_data]
-        chart_data['category_totals'] = [float(item['total']) for item in category_data]  # Convert Decimal to float
-        
-        # Calculate total expenses by month
-        current_year = now().year
-        monthly_data = expenses.filter(date__year=current_year).values_list('date__month').annotate(total=Sum('amount'))
-        chart_data['months'] = [calendar.month_name[month[0]] for month in monthly_data]
-        chart_data['monthly_totals'] = [float(month[1]) for month in monthly_data]  # Convert Decimal to float
-    
-    context = {
-        'expenses': expenses,
-        'loggedin': request.user.is_authenticated,
-        'chart_data': json.dumps(chart_data)
-    }
-    return render(request, 'expenses/expense_list.html', context)
+from .forms import ExpenseForm, UserRegistrationForm
+from .models import Expense
 
-#Only authenticated users can create new expenses
+
+def _get_user_expenses(user):
+    """
+    Return a queryset of expenses for the given user.
+
+    Anonymous users simply get an empty queryset so that the view
+    can safely render the public landing page.
+    """
+    if not user.is_authenticated:
+        return Expense.objects.none()
+    return Expense.objects.filter(user=user).order_by("-date", "-id")
+
+
+def _build_chart_data(expenses):
+    """
+    Prepare aggregated data for the charts (by category and by month).
+
+    The structure of this dictionary matches what the JavaScript
+    in the template expects:
+        {
+            "categories": [...],
+            "category_totals": [...],
+            "months": [...],
+            "monthly_totals": [...]
+        }
+    """
+    chart_data = {
+        "categories": [],
+        "category_totals": [],
+        "months": [],
+        "monthly_totals": [],
+    }
+
+    if not expenses.exists():
+        return chart_data
+
+    # Aggregate by category
+    category_rows = (
+        expenses.values("category")
+        .annotate(total=Sum("amount"))
+        .order_by("category")
+    )
+    chart_data["categories"] = [row["category"] for row in category_rows]
+    chart_data["category_totals"] = [
+        float(row["total"]) for row in category_rows
+    ]
+
+    # Aggregate by month for the current year
+    current_year = now().year
+    monthly_rows = (
+        expenses.filter(date__year=current_year)
+        .values_list("date__month")
+        .annotate(total=Sum("amount"))
+        .order_by("date__month")
+    )
+    chart_data["months"] = [calendar.month_name[m] for m, _ in monthly_rows]
+    chart_data["monthly_totals"] = [float(total) for _, total in monthly_rows]
+
+    return chart_data
+
+
+def expense_list(request):
+    """
+    Main page.
+
+    - For authenticated users: show dashboard, charts and expense table.
+    - For anonymous users: show a simple landing page with login/signup links.
+    """
+    expenses = _get_user_expenses(request.user)
+    chart_data = _build_chart_data(expenses)
+
+    context = {
+        "expenses": expenses,
+        "loggedin": request.user.is_authenticated,
+        "chart_data": json.dumps(chart_data),
+    }
+    return render(request, "expenses/expense_list.html", context)
+
+
+@login_required
 def expense_create(request):
-    if request.method == 'POST':
+    """
+    Create a new expense entry for the current user.
+    """
+    if request.method == "POST":
         form = ExpenseForm(request.POST)
         if form.is_valid():
             expense = form.save(commit=False)
             expense.user = request.user
             expense.save()
-            messages.success(request, "Expense created successfully!")
-            return redirect('expense_list')
+            messages.success(request, "Your expense has been recorded.")
+            return redirect("expense_list")
     else:
         form = ExpenseForm()
-    return render(request, 'expenses/expense_form.html', {'form': form, 'form_title': 'Add New Expense', 'button_text': 'Save Expense'})
+
+    context = {
+        "form": form,
+        "form_title": "Add a new expense",
+        "button_text": "Save expense",
+    }
+    return render(request, "expenses/expense_form.html", context)
 
 
-#Once the user has added an expense entry, user can edit the same
+@login_required
 def expense_update(request, id):
+    """
+    Update an existing expense belonging to the current user.
+    """
     expense = get_object_or_404(Expense, id=id, user=request.user)
-    if request.method == 'POST':
+
+    if request.method == "POST":
         form = ExpenseForm(request.POST, instance=expense)
         if form.is_valid():
             form.save()
-            messages.success(request, "Expense updated successfully!")
-            return redirect('expense_list')
+            messages.success(request, "Your changes have been saved.")
+            return redirect("expense_list")
     else:
         form = ExpenseForm(instance=expense)
-    return render(request, 'expenses/expense_form.html', {'form': form, 'form_title': 'Edit Expense', 'button_text': 'Update Expense'})
+
+    context = {
+        "form": form,
+        "form_title": "Edit expense",
+        "button_text": "Update",
+    }
+    return render(request, "expenses/expense_form.html", context)
 
 
+@login_required
 def expense_delete(request, id):
+    """
+    Delete an expense owned by the current user.
+
+    In this simple app we perform the delete immediately and then
+    send the user back to the list.
+    """
     expense = get_object_or_404(Expense, id=id, user=request.user)
     expense.delete()
-    messages.success(request, "Expense deleted successfully!")
-    return redirect('expense_list')
+    messages.success(request, "Expense deleted.")
+    return redirect("expense_list")
+
 
 def signup_view(request):
-    if request.method == 'POST':
+    """
+    Handle user registration and log the new user in immediately.
+    """
+    if request.method == "POST":
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
             user = form.save()
             login(request, user)
-            messages.success(request, "Signup successful!")
-            return redirect('login')
+            messages.success(
+                request,
+                "Your account has been created. You can now start tracking expenses.",
+            )
+            return redirect("expense_list")
         else:
-            messages.error(request, "Signup failed. Please try again.")
+            messages.error(request, "We could not create your account. Please check the form.")
     else:
         form = UserRegistrationForm()
-    return render(request, 'expenses/signup.html', {'form': form})
+
+    return render(request, "expenses/signup.html", {"form": form})
 
 
 def login_view(request):
+    """
+    Basic username/password login.
+    """
     if request.user.is_authenticated:
-        return redirect('expense_list')  # Redirect authenticated users to the home page
-    if request.method == 'POST':
+        # Already logged in, go straight to the dashboard.
+        return redirect("expense_list")
+
+    if request.method == "POST":
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
+            username = form.cleaned_data.get("username")
+            password = form.cleaned_data.get("password")
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
                 messages.success(request, f"Welcome back, {username}!")
-                return redirect('expense_list')
-            else:
-                messages.error(request, "Invalid username or password.")
+                return redirect("expense_list")
+            messages.error(request, "The username or password did not match.")
         else:
-            messages.error(request, "Invalid credentials.")
+            messages.error(request, "Please check the details you entered.")
     else:
         form = AuthenticationForm()
-    return render(request, 'expenses/login.html', {'form': form})
+
+    return render(request, "expenses/login.html", {"form": form})
 
 
 def logout_view(request):
+    """
+    Log the current user out and send them back to the login screen.
+    """
     logout(request)
-    messages.success(request, "Logged out successfully!")
-    return redirect('login') #Redirecting again to the login page
+    messages.success(request, "You have been logged out.")
+    return redirect("login")
+
