@@ -1,0 +1,65 @@
+global:
+  scrape_interval: 5s
+  evaluation_interval: 5s
+
+scrape_configs:
+  # ------------ MicroShift EC2: host metrics ------------
+  - job_name: 'microshift_cloud_host'
+    static_configs:
+      - targets:
+          - '54.175.149.162:9100'   # node-exporter on MicroShift EC2
+          - '54.175.149.162:8080'   # cadvisor on MicroShift EC2
+        labels:
+          orchestrator: 'microshift'
+          env: 'cloud'
+
+  # ------------ Blackbox: HTTP probe to MicroShift app ------------
+  - job_name: 'blackbox_http_microshift'
+    metrics_path: /probe
+    params:
+      module: [http_2xx]
+    static_configs:
+      - targets:
+          - 'http://54.175.149.162:30080'
+        labels:
+          orchestrator: 'microshift'
+          env: 'cloud'
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: 'blackbox:9115'
+
+  # ========== NOMAD HYBRID (EC2 cloud node) ==========
+
+  # ------------ Nomad EC2: host / container metrics ------------
+  - job_name: 'nomad_cloud_host'
+    static_configs:
+      - targets:
+          - '54.226.32.20:9100'   # node-exporter on Nomad EC2
+          - '54.226.32.20:8080'   # cadvisor on Nomad EC2
+        labels:
+          orchestrator: 'nomad'
+          env: 'cloud'
+
+  # ------------ Blackbox: HTTP probe to Nomad app ------------
+  - job_name: 'blackbox_http_nomad'
+    metrics_path: /probe
+    params:
+      module: [http_2xx]
+    static_configs:
+      - targets:
+          - 'http://54.226.32.20:8000'
+        labels:
+          orchestrator: 'nomad'
+          env: 'cloud'
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: 'blackbox:9115'
+

@@ -1,10 +1,24 @@
 {% extends 'expenses/base.html' %}
+
 {% block title %}Login{% endblock %}
+
 {% block content %}
-<h2>Login</h2>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-</form>
+<section class="form-page">
+    <div class="form-card">
+        <h1 class="page-title">Login</h1>
+        <p class="page-subtitle">
+            Use your username and password to access your expense dashboard.
+        </p>
+        <form method="post" class="form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="button button--primary">Login</button>
+        </form>
+        <p class="form-footer">
+            New here?
+            <a href="{% url 'signup' %}" class="link-inline">Create an account</a>
+        </p>
+    </div>
+</section>
 {% endblock %}
+

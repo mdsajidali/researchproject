@@ -1,0 +1,67 @@
+global:
+  scrape_interval: 5s
+  evaluation_interval: 5s
+
+scrape_configs:
+  # ========== MICROSHIFT HYBRID (separate EC2) ==========
+
+  # MicroShift host / container metrics
+  - job_name: 'microshift_cloud_host'
+    static_configs:
+      - targets:
+          - '54.175.149.162:9100'   # node-exporter on MicroShift EC2
+          - '54.175.149.162:8080'   # cadvisor on MicroShift EC2
+        labels:
+          orchestrator: 'microshift'
+          env: 'cloud'
+
+  # MicroShift app HTTP probe via Blackbox
+  - job_name: 'blackbox_http_microshift'
+    metrics_path: /probe
+    params:
+      module: [http_2xx]
+    static_configs:
+      - targets:
+          - 'http://54.175.149.162:30080'
+        labels:
+          orchestrator: 'microshift'
+          env: 'cloud'
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: 'blackbox:9115'
+
+  # ========== SWARM HYBRID (EC2 54.226.32.20) ==========
+
+  # Swarm host / container metrics
+  - job_name: 'swarm_cloud_host'
+    static_configs:
+      - targets:
+          - '54.226.32.20:9100'   # node-exporter on Swarm EC2
+          - '54.226.32.20:8080'   # cadvisor on Swarm EC2
+        labels:
+          orchestrator: 'swarm'
+          env: 'cloud'
+
+  # Swarm app HTTP probe via Blackbox
+  - job_name: 'blackbox_http_swarm'
+    metrics_path: /probe
+    params:
+      module: [http_2xx]
+    static_configs:
+      - targets:
+          - 'http://54.226.32.20:8000'
+        labels:
+          orchestrator: 'swarm'
+          env: 'cloud'
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: 'blackbox:9115'
+

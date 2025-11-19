@@ -1,96 +1,75 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: expense-web
+  name: expense-app
   namespace: expense
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: expense-web
+      app: expense-app
   template:
     metadata:
       labels:
-        app: expense-web
+        app: expense-app
     spec:
-      initContainers:
-        - name: wait-for-db
-          image: busybox:1.36
-          command:
-            - sh
-            - -c
-            - >
-              echo "Waiting for Postgres to be ready..." &&
-              until nc -z postgres 5432; do
-                echo "Still waiting for database..."; sleep 2;
-              done;
-              echo "Database is up!"
       containers:
-        - name: web
-          image: docker.io/mdsajidali/expense-tracker:1.0
+        - name: app
+          image: docker.io/mdsajidali/expense-tracker:1.1
           imagePullPolicy: IfNotPresent
           env:
-            - name: DEBUG
+            - name: DJANGO_SECRET_KEY
+              value: change-me
+            - name: DJANGO_DEBUG
               value: "False"
-            - name: SECRET_KEY
-              value: prod-secret-change-me
-            - name: ALLOWED_HOSTS
-              value: "localhost,127.0.0.1,192.168.74.128"
+            - name: DJANGO_ALLOWED_HOSTS
+              value: "*,54.89.159.32,localhost,127.0.0.1"
             - name: DB_NAME
               valueFrom:
                 secretKeyRef:
-                  name: db-secret
+                  name: pg-secret
                   key: POSTGRES_DB
             - name: DB_USER
               valueFrom:
                 secretKeyRef:
-                  name: db-secret
+                  name: pg-secret
                   key: POSTGRES_USER
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: db-secret
+                  name: pg-secret
                   key: POSTGRES_PASSWORD
             - name: DB_HOST
-              value: postgres
+              value: db
             - name: DB_PORT
               value: "5432"
-          command:
-            - /bin/sh
-            - -c
-            - |
-              python manage.py migrate --noinput && \
-              python manage.py collectstatic --noinput && \
-              gunicorn --bind 0.0.0.0:8000 expense_tracker.wsgi:application
           ports:
             - containerPort: 8000
-              name: http
-          livenessProbe:
-            httpGet:
-              path: /
-              port: 8000
-            initialDelaySeconds: 90
-            periodSeconds: 20
-            timeoutSeconds: 5
-            failureThreshold: 6
           readinessProbe:
             httpGet:
               path: /
               port: 8000
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8000
             initialDelaySeconds: 60
-            periodSeconds: 15
+            periodSeconds: 20
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: expense-web
+  name: expense-app
   namespace: expense
 spec:
   type: NodePort
   selector:
-    app: expense-web
+    app: expense-app
   ports:
     - name: http
       port: 8000
       targetPort: 8000
-      nodePort: 32413
+      nodePort: 30080
+

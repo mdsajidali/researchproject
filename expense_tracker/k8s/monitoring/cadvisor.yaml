@@ -3,6 +3,8 @@ kind: DaemonSet
 metadata:
   name: cadvisor
   namespace: monitoring
+  labels:
+    app: cadvisor
 spec:
   selector:
     matchLabels:
@@ -12,38 +14,26 @@ spec:
       labels:
         app: cadvisor
     spec:
-      hostPID: true
       hostNetwork: true
-      automountServiceAccountToken: false   # ✅ prevents /var/run/secrets mount error
       containers:
         - name: cadvisor
           image: gcr.io/cadvisor/cadvisor:v0.49.1
-          args:
-            - --docker_only=false
-            - --housekeeping_interval=10s
-            - --enable_load_reader=true
-            - --store_container_labels=false
-            - --v=2
-          securityContext:
-            privileged: true
           ports:
             - name: http
               containerPort: 8080
+              hostPort: 8080
           volumeMounts:
             - name: rootfs
               mountPath: /rootfs
               readOnly: true
             - name: var-run
               mountPath: /var/run
-              readOnly: true
+              readOnly: false
             - name: sys
               mountPath: /sys
               readOnly: true
-            - name: cgroup
-              mountPath: /sys/fs/cgroup
-              readOnly: true
-            - name: containerd
-              mountPath: /var/lib/rancher/k3s/agent/containerd
+            - name: docker
+              mountPath: /var/lib/docker
               readOnly: true
       volumes:
         - name: rootfs
@@ -55,23 +45,7 @@ spec:
         - name: sys
           hostPath:
             path: /sys
-        - name: cgroup
+        - name: docker
           hostPath:
-            path: /sys/fs/cgroup
-        - name: containerd
-          hostPath:
-            path: /var/lib/rancher/k3s/agent/containerd
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: cadvisor
-  namespace: monitoring
-spec:
-  selector:
-    app: cadvisor
-  ports:
-    - name: http
-      port: 8080
-      targetPort: http
+            path: /var/lib/docker
 
