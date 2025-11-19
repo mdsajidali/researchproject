@@ -9,7 +9,7 @@
       <collectionProp name="Arguments.arguments">
         <elementProp name="base_url" elementType="Argument">
           <stringProp name="Argument.name">base_url</stringProp>
-          <stringProp name="Argument.value">http://192.168.74.130:31883</stringProp>
+          <stringProp name="Argument.value">http://172.31.94.133:30080</stringProp>
           <stringProp name="Argument.metadata">=</stringProp>
         </elementProp>
       </collectionProp>
@@ -40,8 +40,8 @@
 
       <!-- 1️⃣ GET Login Page -->
       <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Login Page" enabled="true">
-        <stringProp name="HTTPSampler.domain">192.168.74.130</stringProp>
-        <stringProp name="HTTPSampler.port">31883</stringProp>
+        <stringProp name="HTTPSampler.domain">172.31.94.133</stringProp>
+        <stringProp name="HTTPSampler.port">30080</stringProp>
         <stringProp name="HTTPSampler.protocol">http</stringProp>
         <stringProp name="HTTPSampler.path">/login/</stringProp>
         <stringProp name="HTTPSampler.method">GET</stringProp>
@@ -57,8 +57,8 @@
 
       <!-- 2️⃣ POST Login -->
       <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Login" enabled="true">
-        <stringProp name="HTTPSampler.domain">192.168.74.130</stringProp>
-        <stringProp name="HTTPSampler.port">31883</stringProp>
+        <stringProp name="HTTPSampler.domain">172.31.94.133</stringProp>
+        <stringProp name="HTTPSampler.port">30080</stringProp>
         <stringProp name="HTTPSampler.protocol">http</stringProp>
         <stringProp name="HTTPSampler.path">/login/</stringProp>
         <stringProp name="HTTPSampler.method">POST</stringProp>
@@ -86,14 +86,13 @@
 
       <!-- 3️⃣ GET Add Expense Page -->
       <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Add Expense Page" enabled="true">
-        <stringProp name="HTTPSampler.domain">192.168.74.130</stringProp>
-        <stringProp name="HTTPSampler.port">31883</stringProp>
+        <stringProp name="HTTPSampler.domain">172.31.94.133</stringProp>
+        <stringProp name="HTTPSampler.port">30080</stringProp>
         <stringProp name="HTTPSampler.protocol">http</stringProp>
         <stringProp name="HTTPSampler.path">/add/</stringProp>
         <stringProp name="HTTPSampler.method">GET</stringProp>
       </HTTPSamplerProxy>
       <hashTree>
-        <!-- Extract CSRF token from Add Expense form -->
         <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Add Expense CSRF Token" enabled="true">
           <stringProp name="RegexExtractor.refname">csrf_token_add</stringProp>
           <stringProp name="RegexExtractor.regex">name="csrfmiddlewaretoken" value="(.+?)"</stringProp>
@@ -104,8 +103,8 @@
 
       <!-- 4️⃣ POST Add Expense -->
       <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Add Expense" enabled="true">
-        <stringProp name="HTTPSampler.domain">192.168.74.130</stringProp>
-        <stringProp name="HTTPSampler.port">31883</stringProp>
+        <stringProp name="HTTPSampler.domain">172.31.94.133</stringProp>
+        <stringProp name="HTTPSampler.port">30080</stringProp>
         <stringProp name="HTTPSampler.protocol">http</stringProp>
         <stringProp name="HTTPSampler.path">/add/</stringProp>
         <stringProp name="HTTPSampler.method">POST</stringProp>

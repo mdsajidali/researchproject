@@ -1,8 +1,28 @@
 global:
   scrape_interval: 10s
+  evaluation_interval: 10s
+
 scrape_configs:
-  - job_name: 'django'
-    metrics_path: /metrics
+  - job_name: node
     static_configs:
-      - targets: ['host.docker.internal:8000']  # for local compose on Mac/Win
-        labels: { app: 'expense-web' }
+      - targets: ['127.0.0.1:9100']
+
+  - job_name: cadvisor
+    static_configs:
+      - targets: ['127.0.0.1:8080']
+
+  - job_name: blackbox_http
+    metrics_path: /probe
+    params:
+      module: [http_2xx]
+    static_configs:
+      - targets:
+        - http://172.31.94.133:30080/login/
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: 127.0.0.1:9115
+

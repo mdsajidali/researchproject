@@ -1,0 +1,170 @@
+apiVersion: v1
+kind: Namespace
+metadata: { name: expense }
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: expense-db-secret
+  namespace: expense
+type: Opaque
+stringData:
+  POSTGRES_DB: expense
+  POSTGRES_USER: expense
+  POSTGRES_PASSWORD: expense123
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-expense-postgres
+spec:
+  capacity: { storage: 5Gi }
+  accessModes: ["ReadWriteOnce"]
+  persistentVolumeReclaimPolicy: Retain
+  hostPath: { path: /var/lib/microshift/pv/pgdata }
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-expense-postgres
+  namespace: expense
+spec:
+  accessModes: ["ReadWriteOnce"]
+  resources: { requests: { storage: 5Gi } }
+  volumeName: pv-expense-postgres
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: expense-db
+  namespace: expense
+spec:
+  replicas: 1
+  selector: { matchLabels: { app: expense-db } }
+  template:
+    metadata: { labels: { app: expense-db } }
+    spec:
+      securityContext: { fsGroup: 1001 }
+      initContainers:
+        - name: init-perms
+          image: registry.access.redhat.com/ubi9/ubi-minimal
+          command: ["sh","-c","chown -R 1001:1001 /var/lib/postgresql/data || true"]
+          volumeMounts: [{ name: pgdata, mountPath: /var/lib/postgresql/data }]
+      containers:
+        - name: postgres
+          image: postgres:15
+          ports: [{ containerPort: 5432 }]
+          envFrom:
+            - secretRef: { name: expense-db-secret }
+          env:
+            - { name: PGDATA, value: /var/lib/postgresql/data/pgdata }
+          volumeMounts:
+            - { name: pgdata, mountPath: /var/lib/postgresql/data }
+          readinessProbe: { tcpSocket: { port: 5432 }, initialDelaySeconds: 5, periodSeconds: 5 }
+          livenessProbe:  { tcpSocket: { port: 5432 }, initialDelaySeconds: 10, periodSeconds: 10 }
+      volumes:
+        - name: pgdata
+          persistentVolumeClaim: { claimName: pvc-expense-postgres }
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: expense-db
+  namespace: expense
+spec:
+  selector: { app: expense-db }
+  ports: [{ port: 5432, targetPort: 5432 }]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: expense-app
+  namespace: expense
+spec:
+  replicas: 1
+  selector: { matchLabels: { app: expense-app } }
+  template:
+    metadata: { labels: { app: expense-app } }
+    spec:
+      containers:
+        - name: app
+          image: docker.io/mdsajidali/expense-tracker:1.0  # <Image
+          ports: [{ containerPort: 8000 }]
+          env:
+            - { name: DB_HOST, value: expense-db }
+            - { name: DB_NAME, valueFrom: { secretKeyRef: { name: expense-db-secret, key: POSTGRES_DB } } }
+            - { name: DB_USER, valueFrom: { secretKeyRef: { name: expense-db-secret, key: POSTGRES_USER } } }
+            - { name: DB_PASSWORD, valueFrom: { secretKeyRef: { name: expense-db-secret, key: POSTGRES_PASSWORD } } }
+          readinessProbe: { httpGet: { path: /health, port: 8000 }, initialDelaySeconds: 5, periodSeconds: 5 }
+          livenessProbe:  { httpGet: { path: /health, port: 8000 }, initialDelaySeconds: 15, periodSeconds: 10 }
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: expense-app
+  namespace: expense
+spec:
+  type: NodePort
+  selector: { app: expense-app }
+  ports:
+    - name: http
+      port: 8000
+      targetPort: 8000
+      nodePort: 30080
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: node-exporter
+  namespace: expense
+spec:
+  selector: { matchLabels: { app: node-exporter } }
+  template:
+    metadata: { labels: { app: node-exporter } }
+    spec:
+      hostNetwork: true
+      hostPID: true
+      containers:
+        - name: node-exporter
+          image: quay.io/prometheus/node-exporter:v1.8.1
+          args: ["--path.rootfs=/host"]
+          ports: [{ containerPort: 9100, hostPort: 9100 }]
+          securityContext: { privileged: true }
+          volumeMounts: [{ name: rootfs, mountPath: /host, readOnly: true }]
+      volumes:
+        - name: rootfs
+          hostPath: { path: / }
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: cadvisor
+  namespace: expense
+spec:
+  selector: { matchLabels: { app: cadvisor } }
+  template:
+    metadata: { labels: { app: cadvisor } }
+    spec:
+      hostNetwork: true
+      hostPID: true
+      containers:
+        - name: cadvisor
+          image: gcr.io/cadvisor/cadvisor:v0.47.2
+          args:
+            - --enable_metrics=cpu,memory,network,filesystem
+            - --housekeeping_interval=10s
+            - --max_housekeeping_interval=15s
+          ports: [{ containerPort: 8080, hostPort: 8080 }]
+          securityContext: { privileged: true }
+          volumeMounts:
+            - { name: rootfs,     mountPath: /rootfs,            readOnly: true }
+            - { name: varrun,     mountPath: /var/run,           readOnly: false }
+            - { name: sys,        mountPath: /sys,               readOnly: true }
+            - { name: cgroup,     mountPath: /sys/fs/cgroup,     readOnly: true }
+            - { name: containers, mountPath: /var/lib/containers,readOnly: true }
+      volumes:
+        - { name: rootfs,     hostPath: { path: / } }
+        - { name: varrun,     hostPath: { path: /var/run } }
+        - { name: sys,        hostPath: { path: /sys } }
+        - { name: cgroup,     hostPath: { path: /sys/fs/cgroup } }
+        - { name: containers, hostPath: { path: /var/lib/containers } }

@@ -1,5 +1,12 @@
+*.jtl
+*/report/*
+expense_tracker/jmeter/report/*
 
-# Elastic Beanstalk Files
-.elasticbeanstalk/*
-!.elasticbeanstalk/*.cfg.yml
-!.elasticbeanstalk/*.global.yml
+# Ignore metrics CSV exports
+*.csv
+expense_tracker/monitoring/scripts/data/*.csv
+
+# Optional: ignore temporary or log outputs
+*.log
+*.tmp
+
