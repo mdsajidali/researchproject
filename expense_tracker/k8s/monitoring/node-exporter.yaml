@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   name: node-exporter
+  namespace: monitoring
   labels:
     app: node-exporter
 spec:
@@ -18,16 +19,18 @@ spec:
       containers:
         - name: node-exporter
           image: prom/node-exporter:v1.8.1
-          args: ["--path.rootfs=/host"]
+          args:
+            - '--path.rootfs=/host'
           ports:
-            - containerPort: 9100
-              hostPort: 9100  # Ensure this port is exposed correctly
+            - name: metrics
+              containerPort: 9100
+              hostPort: 9100
           volumeMounts:
-            - name: rootfs
+            - name: root
               mountPath: /host
               readOnly: true
       volumes:
-        - name: rootfs
+        - name: root
           hostPath:
             path: /
             type: Directory

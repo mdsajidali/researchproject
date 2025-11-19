@@ -4,7 +4,7 @@ metadata:
   name: expense-app
   namespace: expense
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: expense-app
@@ -15,24 +15,25 @@ spec:
     spec:
       containers:
         - name: app
-          image: mdsajidali/expense-tracker:1.1  # Ensure this image is correct
-          ports:
-            - containerPort: 8000
-              hostPort: 8000  # Exposing app on port 8000
+          image: docker.io/mdsajidali/expense-tracker:1.1
+          imagePullPolicy: IfNotPresent
           env:
             - name: DJANGO_SECRET_KEY
-              valueFrom:
-                secretKeyRef:
-                  name: django-secret
-                  key: DJANGO_SECRET_KEY
+              value: change-me
             - name: DJANGO_DEBUG
               value: "False"
             - name: DJANGO_ALLOWED_HOSTS
-              value: "*"
+              value: "*,54.89.159.32,localhost,127.0.0.1"
             - name: DB_NAME
-              value: expense
+              valueFrom:
+                secretKeyRef:
+                  name: pg-secret
+                  key: POSTGRES_DB
             - name: DB_USER
-              value: expense
+              valueFrom:
+                secretKeyRef:
+                  name: pg-secret
+                  key: POSTGRES_USER
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
@@ -42,4 +43,33 @@ spec:
               value: db
             - name: DB_PORT
               value: "5432"
+          ports:
+            - containerPort: 8000
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8000
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8000
+            initialDelaySeconds: 60
+            periodSeconds: 20
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: expense-app
+  namespace: expense
+spec:
+  type: NodePort
+  selector:
+    app: expense-app
+  ports:
+    - name: http
+      port: 8000
+      targetPort: 8000
+      nodePort: 30080
 

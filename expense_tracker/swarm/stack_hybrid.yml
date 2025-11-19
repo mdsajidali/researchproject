@@ -1,0 +1,135 @@
+version: "3.8"
+
+networks:
+  expense_net:
+    driver: overlay
+    attachable: true
+
+volumes:
+  pgdata_v2: {}
+
+secrets:
+  expense_pg_password:
+    external: true
+
+services:
+  # ---------------------------
+  # POSTGRES DATABASE
+  # ---------------------------
+  db:
+    image: postgres:15
+    networks:
+      - expense_net
+    volumes:
+      - pgdata_v2:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD_FILE: /run/secrets/expense_pg_password
+    secrets:
+      - expense_pg_password
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 1G
+        reservations:
+          cpus: "0.25"
+          memory: 256M
+      restart_policy:
+        condition: on-failure
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ---------------------------
+  # DJANGO APPLICATION
+  # ---------------------------
+  app:
+    image: ${APP_IMAGE:-docker.io/mdsajidali/expense-tracker:1.1}
+    networks:
+      - expense_net
+    depends_on:
+      - db
+    environment:
+      DJANGO_SECRET_KEY: ${DJANGO_SECRET_KEY}
+      DJANGO_DEBUG: ${DJANGO_DEBUG}
+      DJANGO_ALLOWED_HOSTS: ${DJANGO_ALLOWED_HOSTS}
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_PASSWORD_FILE: /run/secrets/expense_pg_password
+    secrets:
+      - expense_pg_password
+    ports:
+      - "8000:8000"
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+      update_config:
+        parallelism: 1
+        delay: 10s
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 1G
+        reservations:
+          cpus: "0.25"
+          memory: 256M
+    command: >
+      sh -c "
+      python manage.py migrate;
+      gunicorn expense_tracker.wsgi:application --bind 0.0.0.0:${APP_PORT}
+      "
+
+  # ---------------------------
+  # NODE EXPORTER
+  # ---------------------------
+  node-exporter:
+    image: prom/node-exporter:v1.8.1
+    networks:
+      - expense_net
+    deploy:
+      mode: global
+      resources:
+        limits:
+          cpus: "0.2"
+          memory: 128M
+        reservations:
+          cpus: "0.05"
+          memory: 64M
+    command:
+      - '--path.rootfs=/host'
+    volumes:
+      - '/:/host:ro,rslave'
+    ports:
+      - "9100:9100"
+
+  # ---------------------------
+  # CADVISOR
+  # ---------------------------
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:v0.49.1
+    networks:
+      - expense_net
+    deploy:
+      mode: global
+      resources:
+        limits:
+          cpus: "0.3"
+          memory: 256M
+        reservations:
+          cpus: "0.05"
+          memory: 64M
+    ports:
+      - "8080:8080"
+    volumes:
+      - '/:/rootfs:ro'
+      - '/var/run:/var/run:ro'
+      - '/sys:/sys:ro'
+      - '/var/lib/docker/:/var/lib/docker:ro'
+
